@@ -268,7 +268,7 @@ export function Footer() {
             {/* Bottom Bar */}
             <div className="mt-12 pt-8 border-t border-[#2A3B50]/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#A4B0BE]">
               <p>
-                © {new Date().getFullYear()} KanchanFlow Inc. All rights reserved. Precision manufacturing CRM platform.
+                © 2026 KanchanFlow Inc. All rights reserved. Precision manufacturing CRM platform.
               </p>
 
               <div className="flex items-center gap-6">
