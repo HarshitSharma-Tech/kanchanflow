@@ -12,6 +12,7 @@ import {
   Pause,
   Maximize2,
   X,
+  SunMedium,
 } from "lucide-react";
 import { Container } from "./container";
 import { Button } from "./button";
@@ -28,9 +29,10 @@ export function VideoHero() {
   const [isPlaying, setIsPlaying] = useState(true);
   const [isCinemaOpen, setIsCinemaOpen] = useState(false);
   const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+  const [isHighExposure, setIsHighExposure] = useState(true);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  // Defer video stream until after initial render paint to guarantee 90+ LCP
+  // Defer video stream until after initial render paint to guarantee high Lighthouse score
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
@@ -39,15 +41,15 @@ export function VideoHero() {
     if (!prefersReducedMotion) {
       const timer = setTimeout(() => {
         setShouldLoadVideo(true);
-      }, 80);
+      }, 60);
       return () => clearTimeout(timer);
     }
   }, []);
 
-  // Ensure video runs at smooth 0.6x cinematic walking speed
+  // Ensure video runs at smooth playback rate (0.6x speed is baked into file PTS)
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 0.6;
+      videoRef.current.playbackRate = 1.0;
     }
   }, [shouldLoadVideo]);
 
@@ -64,9 +66,9 @@ export function VideoHero() {
 
   return (
     <>
-      <section className="relative min-h-[92vh] flex items-center pt-10 pb-16 lg:pt-16 lg:pb-24 overflow-hidden bg-[#08090C]">
+      <section className="relative min-h-[92vh] flex items-center pt-10 pb-16 lg:pt-16 lg:pb-24 overflow-hidden bg-[#07090E]">
         {/* ========================================================= */}
-        {/* FULL BACKGROUND VIDEO / POSTER: Walking Down Factory Side  */}
+        {/* FULL BACKGROUND VIDEO: Walking Down Precision Factory Aisle */}
         {/* ========================================================= */}
         <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none select-none z-0">
           <video
@@ -78,9 +80,13 @@ export function VideoHero() {
             playsInline
             preload={shouldLoadVideo ? "metadata" : "none"}
             onLoadedData={() => {
-              if (videoRef.current) videoRef.current.playbackRate = 0.6;
+              if (videoRef.current) videoRef.current.playbackRate = 1.0;
             }}
-            className="w-full h-full object-cover object-center scale-[1.02] filter contrast-[1.06] brightness-[0.88] opacity-90 transition-opacity duration-700"
+            className={`w-full h-full object-cover object-center scale-[1.01] filter transition-all duration-700 ${
+              isHighExposure
+                ? "brightness-[1.28] contrast-[1.08] saturate-[1.25]"
+                : "brightness-[1.12] contrast-[1.05] saturate-[1.15]"
+            }`}
           >
             {shouldLoadVideo && (
               <>
@@ -96,17 +102,17 @@ export function VideoHero() {
             )}
           </video>
 
-          {/* Left Gradient for 100% solid contrast on all devices */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#08090C]/95 via-[#08090C]/78 via-45% to-[#08090C]/40 z-10" />
+          {/* Soft Left Reading Gradient: keeps text legible while leaving 70% of factory walkway bright & open */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#07090E]/75 via-[#07090E]/30 via-35% to-transparent z-10 pointer-events-none" />
 
-          {/* Top & Bottom Vignettes for Seamless Blending */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#08090C] via-transparent via-40% to-[#08090C]/85 z-10" />
+          {/* Top & Bottom seamless edge blend for header and next section */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#07090E]/35 via-transparent via-15% to-[#08090C]/65 z-10 pointer-events-none" />
 
-          {/* Molten Amber / Tungsten Color Grade Tint */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#F0B33E]/12 via-transparent to-amber-950/20 mix-blend-color-dodge z-10 pointer-events-none" />
+          {/* Luminous Warm Sunlight Glow enhancing the factory aisle lighting */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(240,179,62,0.24),transparent_65%)] pointer-events-none z-10" />
 
-          {/* Deep Film Contrast Multiplier */}
-          <div className="absolute inset-0 bg-[#08090C]/20 mix-blend-multiply z-10 pointer-events-none" />
+          {/* Subtle warm floor reflection sheen */}
+          <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-[#08090C]/65 via-transparent to-transparent pointer-events-none z-10" />
         </div>
 
         {/* Ambient Golden Wave Ribbon - GPU Accelerated */}
@@ -159,13 +165,13 @@ export function VideoHero() {
             {/* Left Content Column */}
             <div className="lg:col-span-8 xl:col-span-7 text-left space-y-6">
               {/* Eyebrow Pill */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#F0B33E]/40 bg-[#070B12]/85 backdrop-blur-md text-xs font-semibold uppercase tracking-wider text-[#F0B33E] shadow-sm">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#F0B33E]/50 bg-[#070B12]/80 backdrop-blur-md text-xs font-semibold uppercase tracking-wider text-[#F0B33E] shadow-sm">
                 <Factory className="w-3.5 h-3.5 text-[#F0B33E]" />
                 <span>BUILT FOR MANUFACTURING TEAMS</span>
               </div>
 
               {/* Bold Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12] drop-shadow-sm">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12] drop-shadow-[0_4px_22px_rgba(0,0,0,0.95)]">
                 From quotation to order.{" "}
                 <span className="text-[#F0B33E] block mt-1">
                   Without the chaos.
@@ -173,7 +179,7 @@ export function VideoHero() {
               </h1>
 
               {/* Supporting Copy */}
-              <p className="text-base sm:text-lg text-[#CBD5E1] leading-relaxed max-w-2xl font-normal drop-shadow-xs">
+              <p className="text-base sm:text-lg text-[#E2E8F0] leading-relaxed max-w-2xl font-normal drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
                 Bring customer enquiries, costing, quotations, and order handoffs into one connected workflow designed for precision manufacturers.
               </p>
 
@@ -199,11 +205,11 @@ export function VideoHero() {
                 </Button>
               </div>
 
-              {/* Three Value Bullets */}
-              <div className="pt-8 border-t border-[#2A3F5E]/60 grid grid-cols-1 sm:grid-cols-3 gap-6 text-left max-w-2xl">
+              {/* Three Value Bullets with sleek glass panel cards */}
+              <div className="pt-8 border-t border-[#2A3F5E]/50 grid grid-cols-1 sm:grid-cols-3 gap-4 text-left max-w-2xl">
                 {/* 1. Fast Quotes */}
-                <div className="flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-full bg-[#111C2E]/90 border border-[#2A3F5E] flex items-center justify-center text-[#F0B33E] shrink-0 mt-0.5 shadow-sm">
+                <div className="flex items-start gap-3 p-3 rounded-xl bg-[#090D15]/80 border border-[#2A3F5E]/60 backdrop-blur-md shadow-lg transition-transform hover:-translate-y-0.5">
+                  <div className="w-8 h-8 rounded-lg bg-[#111C2E] border border-[#F0B33E]/30 flex items-center justify-center text-[#F0B33E] shrink-0 shadow-sm">
                     <Zap className="w-4 h-4" />
                   </div>
                   <div>
@@ -217,8 +223,8 @@ export function VideoHero() {
                 </div>
 
                 {/* 2. True Costing */}
-                <div className="flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-full bg-[#111C2E]/90 border border-[#2A3F5E] flex items-center justify-center text-[#F0B33E] shrink-0 mt-0.5 shadow-sm">
+                <div className="flex items-start gap-3 p-3 rounded-xl bg-[#090D15]/80 border border-[#2A3F5E]/60 backdrop-blur-md shadow-lg transition-transform hover:-translate-y-0.5">
+                  <div className="w-8 h-8 rounded-lg bg-[#111C2E] border border-[#F0B33E]/30 flex items-center justify-center text-[#F0B33E] shrink-0 shadow-sm">
                     <Target className="w-4 h-4" />
                   </div>
                   <div>
@@ -232,8 +238,8 @@ export function VideoHero() {
                 </div>
 
                 {/* 3. Clean Handoffs */}
-                <div className="flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-full bg-[#111C2E]/90 border border-[#2A3F5E] flex items-center justify-center text-[#F0B33E] shrink-0 mt-0.5 shadow-sm">
+                <div className="flex items-start gap-3 p-3 rounded-xl bg-[#090D15]/80 border border-[#2A3F5E]/60 backdrop-blur-md shadow-lg transition-transform hover:-translate-y-0.5">
+                  <div className="w-8 h-8 rounded-lg bg-[#111C2E] border border-[#F0B33E]/30 flex items-center justify-center text-[#F0B33E] shrink-0 shadow-sm">
                     <ShieldCheck className="w-4 h-4" />
                   </div>
                   <div>
@@ -248,15 +254,31 @@ export function VideoHero() {
               </div>
             </div>
 
-            {/* Right Side: Floating Video Controller Badge */}
+            {/* Right Side: Creative High-Tech HUD Video Controller Badge */}
             <div className="lg:col-span-4 xl:col-span-5 flex flex-col items-start lg:items-end justify-end">
-              <div className="flex items-center gap-2 p-1.5 rounded-full bg-[#08090C]/85 backdrop-blur-md border border-[#262B38] shadow-xl text-xs">
+              <div className="flex items-center gap-1.5 p-1.5 rounded-full bg-[#08090C]/85 backdrop-blur-md border border-[#F0B33E]/30 shadow-2xl text-xs">
+                {/* Live Status indicator */}
                 <div className="flex items-center gap-2 px-3 py-1">
                   <span className="w-2 h-2 rounded-full bg-[#36C98F] animate-pulse" />
-                  <span className="text-white font-medium text-xs">
+                  <span className="text-white font-medium text-xs tracking-tight">
                     Plant Floor • 0.6x Walkthrough
                   </span>
                 </div>
+
+                {/* Brightness / High Exposure Boost Toggle */}
+                <button
+                  type="button"
+                  onClick={() => setIsHighExposure(!isHighExposure)}
+                  className={`p-1.5 rounded-full transition-colors ${
+                    isHighExposure
+                      ? "text-[#F0B33E] bg-[#F0B33E]/15 hover:bg-[#F0B33E]/25"
+                      : "text-[#94A3B8] hover:text-white hover:bg-[#181C26]"
+                  }`}
+                  aria-label={isHighExposure ? "High exposure active" : "Enable high exposure"}
+                  title={isHighExposure ? "High brightness mode (Active)" : "Switch to high exposure mode"}
+                >
+                  <SunMedium className="w-3.5 h-3.5" />
+                </button>
 
                 {/* Play/Pause Button */}
                 <button
@@ -273,7 +295,7 @@ export function VideoHero() {
                 <button
                   type="button"
                   onClick={() => setIsCinemaOpen(true)}
-                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#181C26] text-xs font-semibold text-[#F0B33E] hover:bg-[#222736] transition-colors"
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#181C26] text-xs font-semibold text-[#F0B33E] hover:bg-[#222736] transition-colors border border-[#F0B33E]/25"
                   aria-label="Expand video cinema mode"
                   title="Expand video cinema mode"
                 >
@@ -331,10 +353,7 @@ export function VideoHero() {
                 poster="/videos/factory-poster.webp"
                 controls
                 autoPlay
-                onLoadedData={(e) => {
-                  e.currentTarget.playbackRate = 0.6;
-                }}
-                className="w-full h-full object-contain filter contrast-[1.08] brightness-[0.92]"
+                className="w-full h-full object-contain filter contrast-[1.08] brightness-[1.20] saturate-[1.20]"
               >
                 <source
                   src="/videos/factory-precision-walkthrough.mp4"
