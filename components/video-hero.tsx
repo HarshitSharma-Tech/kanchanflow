@@ -248,7 +248,7 @@ export function VideoHero() {
                 alt="Detailed view of KanchanFlow CRM workstation in precision machining plant"
                 fill
                 className="object-contain"
-                sizes="100vw"
+                sizes="(max-width: 1200px) 100vw, 1200px"
                 priority
               />
             </div>
