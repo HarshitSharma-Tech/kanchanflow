@@ -36,33 +36,33 @@ export function VideoHero() {
 
   return (
     <>
-      <section className="relative min-h-[92vh] flex items-center pt-10 pb-16 lg:pt-16 lg:pb-24 overflow-hidden bg-[#070B12]">
+      <section className="relative min-h-[92vh] flex items-center pt-10 pb-16 lg:pt-16 lg:pb-24 overflow-hidden bg-[#08090C]">
         {/* ========================================================= */}
-        {/* FULL BACKGROUND VIDEO: Robot mills metal & lights (MUTED) */}
+        {/* FULL BACKGROUND VIDEO: Subtle Precision Manufacturing (MUTED) */}
         {/* ========================================================= */}
         <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none select-none z-0">
           <video
             ref={videoRef}
-            src="/videos/robot-mills.mp4"
+            src="/videos/subtle-precision-manufacturing.mp4"
             autoPlay
             loop
             muted
             playsInline
             preload="auto"
-            className="w-full h-full object-cover object-center scale-105 filter contrast-[1.18] brightness-[0.82] saturate-[1.3] hue-rotate-[-3deg]"
+            className="w-full h-full object-cover object-center scale-105 filter contrast-[1.08] brightness-[0.85] opacity-90 transition-opacity duration-1000"
           />
 
           {/* Left Gradient so text has 100% solid contrast on all devices */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#070B12]/95 via-[#070B12]/75 via-45% to-[#070B12]/30 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#08090C]/95 via-[#08090C]/75 via-45% to-[#08090C]/35 z-10" />
 
           {/* Top & Bottom Vignettes for Seamless Blending */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#070B12] via-transparent via-40% to-[#070B12]/85 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#08090C] via-transparent via-40% to-[#08090C]/85 z-10" />
 
           {/* Molten Amber / Tungsten Color Grade Tint */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#F0B33E]/12 via-transparent to-amber-950/25 mix-blend-color-dodge z-10 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#F0B33E]/10 via-transparent to-amber-950/20 mix-blend-color-dodge z-10 pointer-events-none" />
 
           {/* Deep Film Contrast Multiplier */}
-          <div className="absolute inset-0 bg-[#070B12]/30 mix-blend-multiply z-10 pointer-events-none" />
+          <div className="absolute inset-0 bg-[#08090C]/20 mix-blend-multiply z-10 pointer-events-none" />
         </div>
 
         {/* Ambient Golden Wave Ribbon */}
@@ -202,11 +202,11 @@ export function VideoHero() {
             {/* Right Side: Unobstructed View of the Cinematic Robotic Milling Video with Floating Video Controller Badge */}
             <div className="lg:col-span-4 xl:col-span-5 flex flex-col items-start lg:items-end justify-end">
               {/* Subtle Floating Video Badge & Cinema Button */}
-              <div className="flex items-center gap-2 p-1.5 rounded-full bg-[#070B12]/80 backdrop-blur-md border border-[#2A3F5E] shadow-xl text-xs">
+              <div className="flex items-center gap-2 p-1.5 rounded-full bg-[#08090C]/85 backdrop-blur-md border border-[#262B38] shadow-xl text-xs">
                 <div className="flex items-center gap-2 px-3 py-1">
                   <span className="w-2 h-2 rounded-full bg-[#36C98F] animate-pulse" />
                   <span className="text-white font-medium text-xs">
-                    Autonomous Robotic Milling
+                    Precision CNC Machining
                   </span>
                 </div>
 
@@ -214,7 +214,7 @@ export function VideoHero() {
                 <button
                   type="button"
                   onClick={togglePlay}
-                  className="p-1.5 rounded-full text-[#94A3B8] hover:text-[#F0B33E] hover:bg-[#111C2E] transition-colors"
+                  className="p-1.5 rounded-full text-[#94A3B8] hover:text-[#F0B33E] hover:bg-[#181C26] transition-colors"
                   aria-label={isPlaying ? "Pause background video" : "Play background video"}
                   title={isPlaying ? "Pause background video" : "Play background video"}
                 >
@@ -225,7 +225,7 @@ export function VideoHero() {
                 <button
                   type="button"
                   onClick={() => setIsCinemaOpen(true)}
-                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#111C2E] text-xs font-semibold text-[#F0B33E] hover:bg-[#1A2A42] transition-colors"
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#181C26] text-xs font-semibold text-[#F0B33E] hover:bg-[#222736] transition-colors"
                   aria-label="Expand video cinema mode"
                   title="Expand video cinema mode"
                 >
@@ -249,26 +249,26 @@ export function VideoHero() {
         <div
           role="dialog"
           aria-modal="true"
-          aria-label="Full screen robotic milling video"
+          aria-label="Full screen precision manufacturing video"
           onClick={() => setIsCinemaOpen(false)}
           className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-black/95 backdrop-blur-xl animate-in fade-in duration-200"
         >
           <div
-            className="relative max-w-5xl w-full bg-[#070B12] rounded-2xl border border-[#F0B33E]/50 overflow-hidden shadow-2xl"
+            className="relative max-w-5xl w-full bg-[#08090C] rounded-2xl border border-[#F0B33E]/50 overflow-hidden shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="flex items-center justify-between px-5 py-3.5 bg-[#0B1322] border-b border-[#2A3F5E]">
+            <div className="flex items-center justify-between px-5 py-3.5 bg-[#12151D] border-b border-[#262B38]">
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#36C98F]" />
                 <span className="text-sm font-semibold text-white">
-                  Robot Mills Metal & Lights • Precision 5-Axis Robotic Milling
+                  Precision Plant Engineering • CNC Machining & Costing Pipeline
                 </span>
               </div>
               <button
                 type="button"
                 onClick={() => setIsCinemaOpen(false)}
-                className="p-1.5 rounded-lg text-[#94A3B8] hover:text-white hover:bg-[#111C2E] transition-colors"
+                className="p-1.5 rounded-lg text-[#94A3B8] hover:text-white hover:bg-[#181C26] transition-colors"
                 aria-label="Close cinema mode"
               >
                 <X className="w-5 h-5" />
@@ -278,10 +278,10 @@ export function VideoHero() {
             {/* Video Viewport */}
             <div className="relative aspect-video w-full bg-black">
               <video
-                src="/videos/robot-mills.mp4"
+                src="/videos/subtle-precision-manufacturing.mp4"
                 controls
                 autoPlay
-                className="w-full h-full object-contain filter contrast-[1.15] brightness-[0.95]"
+                className="w-full h-full object-contain filter contrast-[1.08] brightness-[0.92]"
               />
             </div>
           </div>
