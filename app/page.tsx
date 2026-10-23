@@ -161,90 +161,87 @@ export default function HomePage() {
 
           <Container>
             <SectionHeading
-              eyebrow="The Manufacturing Reality"
+              eyebrow="The Problem"
               title="Manufacturing sales shouldn't run on scattered spreadsheets."
-              description="When RFQs arrive in emails and cost estimates live across personal Excel files, quotations take days to issue, margins erode, and orders get miscommunicated to the shop floor."
+              description="When enquiries arrive by email and costing lives in disconnected Excel files, quotes take days to send and costly errors slip into production."
             />
 
             {/* Three Problems Grid */}
-            <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Problem 1 */}
-              <div className="p-8 rounded-2xl glass-panel-luxury glass-panel-hover relative group">
-                <div className="w-13 h-13 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 flex items-center justify-center mb-6 shadow-md">
+              <div className="p-7 rounded-2xl glass-panel-luxury glass-panel-hover relative group">
+                <div className="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 flex items-center justify-center mb-5">
                   <Mail className="w-6 h-6" />
                 </div>
-                <div className="text-xs font-mono uppercase tracking-wider text-red-400 font-bold mb-1.5 flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-ping" />
-                  Bottleneck 01 • Email Fragmentation
+                <div className="text-xs font-mono uppercase tracking-wider text-red-400 font-semibold mb-1">
+                  Problem 01
                 </div>
-                <h3 className="text-xl font-bold text-[#F5F3ED] tracking-tight">
-                  Lost Enquiries & Uncontrolled Revisions
+                <h3 className="text-lg font-bold text-white tracking-tight">
+                  Quotes Get Lost in Email Threads
                 </h3>
-                <p className="mt-3 text-sm text-[#A4B0BE] leading-relaxed">
-                  Customer RFQs and revised CAD drawings get buried inside sales executives&apos; personal inboxes. When revision C is quoted but revision B was priced, margin leakage is inevitable.
+                <p className="mt-2.5 text-sm text-[#A4B0BE] leading-relaxed">
+                  Customer enquiries and drawing revisions get buried in inboxes. Quotations take days to prepare, and estimators risk pricing old drawing versions.
                 </p>
-                <div className="mt-6 pt-4 border-t border-[#2A3B50]/60 text-xs text-[#A4B0BE] flex items-center justify-between font-mono">
-                  <span>Quote Latency:</span>
-                  <span className="text-red-400 font-semibold">4 to 7 Business Days</span>
+                <div className="mt-6 pt-3 border-t border-[#2A3B50]/60 text-xs text-[#A4B0BE] flex items-center justify-between">
+                  <span>Typical delay:</span>
+                  <span className="text-red-400 font-medium">4 to 7 days per quote</span>
                 </div>
               </div>
 
               {/* Problem 2 */}
-              <div className="p-8 rounded-2xl glass-panel-luxury glass-panel-hover relative group">
-                <div className="w-13 h-13 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center mb-6 shadow-md">
+              <div className="p-7 rounded-2xl glass-panel-luxury glass-panel-hover relative group">
+                <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-5">
                   <FileSpreadsheet className="w-6 h-6" />
                 </div>
-                <div className="text-xs font-mono uppercase tracking-wider text-amber-400 font-bold mb-1.5 flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping" />
-                  Bottleneck 02 • Formula Inconsistency
+                <div className="text-xs font-mono uppercase tracking-wider text-amber-400 font-semibold mb-1">
+                  Problem 02
                 </div>
-                <h3 className="text-xl font-bold text-[#F5F3ED] tracking-tight">
-                  Inconsistent BOM & Cost Tracking
+                <h3 className="text-lg font-bold text-white tracking-tight">
+                  Inconsistent Costing in Spreadsheets
                 </h3>
-                <p className="mt-3 text-sm text-[#A4B0BE] leading-relaxed">
-                  Every estimator maintains their own spreadsheet template with broken formulas. Machine hour rates, raw material surcharges, and tool wear allowances are rarely applied uniformly.
+                <p className="mt-2.5 text-sm text-[#A4B0BE] leading-relaxed">
+                  Every estimator maintains their own template. Machine hourly rates, material markups, and scrap allowances are applied inconsistently.
                 </p>
-                <div className="mt-6 pt-4 border-t border-[#2A3B50]/60 text-xs text-[#A4B0BE] flex items-center justify-between font-mono">
-                  <span>Margin Variance:</span>
-                  <span className="text-amber-400 font-semibold">8% to 15% Error / Batch</span>
+                <div className="mt-6 pt-3 border-t border-[#2A3B50]/60 text-xs text-[#A4B0BE] flex items-center justify-between">
+                  <span>Margin risk:</span>
+                  <span className="text-amber-400 font-medium">Unpredictable job profits</span>
                 </div>
               </div>
 
               {/* Problem 3 */}
-              <div className="p-8 rounded-2xl glass-panel-luxury glass-panel-hover relative group">
-                <div className="w-13 h-13 rounded-xl bg-[#F0B33E]/10 border border-[#F0B33E]/30 text-[#F0B33E] flex items-center justify-center mb-6 shadow-md">
+              <div className="p-7 rounded-2xl glass-panel-luxury glass-panel-hover relative group">
+                <div className="w-12 h-12 rounded-xl bg-[#F0B33E]/10 border border-[#F0B33E]/20 text-[#F0B33E] flex items-center justify-center mb-5">
                   <AlertTriangle className="w-6 h-6" />
                 </div>
-                <div className="text-xs font-mono uppercase tracking-wider text-[#F0B33E] font-bold mb-1.5 flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#F0B33E] animate-ping" />
-                  Bottleneck 03 • Commercial Blindspot
+                <div className="text-xs font-mono uppercase tracking-wider text-[#F0B33E] font-semibold mb-1">
+                  Problem 03
                 </div>
-                <h3 className="text-xl font-bold text-[#F5F3ED] tracking-tight">
-                  Blind Follow-ups & Broken Handoffs
+                <h3 className="text-lg font-bold text-white tracking-tight">
+                  Missed Follow-Ups & Handoff Errors
                 </h3>
-                <p className="mt-3 text-sm text-[#A4B0BE] leading-relaxed">
-                  Management cannot see which high-value quotes require immediate commercial follow-up. When purchase orders arrive, transferring technical specs to the production floor is fraught with errors.
+                <p className="mt-2.5 text-sm text-[#A4B0BE] leading-relaxed">
+                  Sales teams don&apos;t know which quotations need a call today. When an order arrives, passing drawings to the shop floor causes misunderstandings.
                 </p>
-                <div className="mt-6 pt-4 border-t border-[#2A3B50]/60 text-xs text-[#A4B0BE] flex items-center justify-between font-mono">
-                  <span>Lost Tenders:</span>
-                  <span className="text-[#F0B33E] font-semibold">&gt;30% Lost to Delays</span>
+                <div className="mt-6 pt-3 border-t border-[#2A3B50]/60 text-xs text-[#A4B0BE] flex items-center justify-between">
+                  <span>Lost opportunities:</span>
+                  <span className="text-[#F0B33E] font-medium">Quotes go cold without calls</span>
                 </div>
               </div>
             </div>
 
             {/* The Connected KanchanFlow Solution Card */}
-            <div className="mt-14 p-8 sm:p-10 rounded-3xl glass-panel-luxury border-2 border-[#F0B33E]/50 shadow-2xl relative overflow-hidden gold-glow-card">
+            <div className="mt-12 p-8 rounded-2xl glass-panel-luxury border border-[#F0B33E]/40 shadow-xl relative overflow-hidden">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div className="lg:col-span-8 space-y-3">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#36C98F]/15 border border-[#36C98F]/30 text-xs font-semibold uppercase tracking-wider text-[#36C98F]">
                     <CheckCircle2 className="w-3.5 h-3.5" />
-                    The KanchanFlow Connected Solution
+                    The Connected Solution
                   </div>
-                  <h3 className="text-2xl font-bold text-[#F5F3ED]">
-                    One unified operational system from RFQ receipt to shop release
+                  <h3 className="text-2xl font-bold text-white">
+                    One connected workflow from customer enquiry to shop release
                   </h3>
                   <p className="text-sm sm:text-base text-[#A4B0BE] leading-relaxed">
-                    KanchanFlow connects estimation, commercial quoting, and production handoffs. Every team member works from the same live revision, locked cost formulas, and real-time customer pipeline.
+                    KanchanFlow connects estimation, commercial quoting, and production handoffs. Your team always works from the latest drawing and verified cost formulas.
                   </p>
                 </div>
 
@@ -287,59 +284,59 @@ export default function HomePage() {
                 icon={<FileCheck2 className="w-6 h-6" />}
                 title="Quote-to-Order"
                 badge="Core Flow"
-                metrics="48hr Turnaround"
+                metrics="48h Turnaround"
                 href="/features#quote-to-order"
-                description="Manage customer enquiries, multi-revision quote iterations, price breaks, and converted purchase orders with total audit history."
+                description="Log customer enquiries, create professional quotes, track revisions, and convert accepted quotes into shop orders."
               />
 
               {/* Feature 2 */}
               <FeatureCard
                 icon={<Layers className="w-6 h-6" />}
                 title="Bill of Materials (BOM)"
-                badge="Engineering"
-                metrics="Component Precision"
+                badge="Costing"
+                metrics="Accurate Margins"
                 href="/features#bom-costing"
-                description="Organise multi-tier material requirements, scrap allowances, tooling costs, and sub-assembly hierarchies with automated margin protection."
+                description="Break down raw materials, machine hourly rates, and labor into a structured BOM that protects your margins."
               />
 
               {/* Feature 3 */}
               <FeatureCard
                 icon={<TrendingUp className="w-6 h-6" />}
                 title="Sales Pipeline"
-                badge="Commercial"
-                metrics="32% Higher Win Rate"
+                badge="Tracking"
+                metrics="+32% Win Rate"
                 href="/features#pipeline"
-                description="Track opportunities by manufacturing stage, deal probability, customer plant locations, and scheduled commercial follow-ups."
+                description="See every active deal at a glance, prioritize high-value tenders, and know which quotes need a follow-up today."
               />
 
               {/* Feature 4 */}
               <FeatureCard
                 icon={<MessageSquare className="w-6 h-6" />}
-                title="WhatsApp Business"
-                badge="Communication"
-                metrics="Instant Dispatch Alerts"
+                title="WhatsApp Updates"
+                badge="Messaging"
+                metrics="Instant Delivery"
                 href="/features#whatsapp"
-                description="Keep customer conversations, drawing updates, quote dispatch links, and order dispatch notices directly tied to the deal file."
+                description="Keep customer chats tied to the quote. Send instant quote links and dispatch notifications directly on WhatsApp."
               />
 
               {/* Feature 5 */}
               <FeatureCard
                 icon={<BarChart3 className="w-6 h-6" />}
                 title="Reports & Insights"
-                badge="Telemetry"
-                metrics="Real-Time Visibility"
+                badge="Analytics"
+                metrics="Clear Visibility"
                 href="/features#reporting"
-                description="Gain clear analytics on quote turnaround time, win/loss ratios by component type, margin realization, and estimator throughput."
+                description="Track quote conversion rates, see which parts generate the most profit, and measure estimator turnaround velocity."
               />
 
               {/* Feature 6 */}
               <FeatureCard
                 icon={<Smartphone className="w-6 h-6" />}
                 title="Mobile Access"
-                badge="Field & Plant"
-                metrics="Cross-Device"
+                badge="On the Move"
+                metrics="Any Device"
                 href="/features#mobile"
-                description="Enable technical sales engineers and factory floor supervisors to review active quotes, specs, and status on iOS and Android devices."
+                description="Review customer history, active drawings, and quotation statuses on any smartphone or tablet while on the shop floor."
               />
             </div>
           </Container>

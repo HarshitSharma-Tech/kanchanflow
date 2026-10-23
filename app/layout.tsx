@@ -1,17 +1,19 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import { GoldenSparkles } from "@/components/golden-sparkles";
 import { ScrollProgress } from "@/components/scroll-progress";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const viewport: Viewport = {
@@ -22,27 +24,25 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "KanchanFlow | Connected Manufacturing CRM & Quote-to-Order Platform",
+    default: "KanchanFlow | Manufacturing CRM & Quote-to-Order Platform",
     template: "%s | KanchanFlow",
   },
   description:
-    "Industrial CRM purpose-built for precision CNC machining, metal fabrication, and engineering manufacturers to unify RFQ enquiries, multi-tier BOM costing, quotation revisions, and shop floor order handoffs.",
+    "The connected sales and quotation workflow for manufacturing teams. Track enquiries, calculate accurate costs, send quotes, and hand off orders to the shop floor.",
   keywords: [
     "Manufacturing CRM",
     "Quote to Order",
     "BOM Costing",
-    "Machine Hour Rate",
-    "Precision Engineering",
-    "Sheet Metal Fabrication",
-    "Shop Floor Handoff",
-    "RFQ Management",
+    "Machine Shop Software",
+    "Quotation Software",
+    "Order Handoff",
   ],
   authors: [{ name: "KanchanFlow" }],
   metadataBase: new URL("https://kanchanflow.com"),
   openGraph: {
     title: "KanchanFlow | Manufacturing CRM Platform",
     description:
-      "From quotation to order. Without the chaos. The connected workflow for precision engineering teams.",
+      "From quotation to order. Without the chaos. Connected workflow for manufacturing teams.",
     siteName: "KanchanFlow",
     type: "website",
     locale: "en_US",
@@ -63,7 +63,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
+      className={`${inter.variable} ${jetbrainsMono.variable} h-full antialiased dark`}
     >
       <body className="min-h-full flex flex-col bg-[#0B111B] text-[#F5F3ED] font-sans selection:bg-[#F0B33E]/30 selection:text-[#F0B33E]">
         <GoldenSparkles />

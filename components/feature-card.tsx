@@ -28,13 +28,7 @@ export function FeatureCard({
       {/* Top accent radiant beam on hover */}
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#F0B33E]/0 to-transparent group-hover:via-[#F0B33E] transition-all duration-500" />
 
-      {/* Engineering precision corner markers */}
-      <span className="absolute top-2.5 right-2.5 font-mono text-[9px] text-[#2A3B50] group-hover:text-[#F0B33E]/40 transition-colors select-none">
-        +
-      </span>
-      <span className="absolute bottom-2.5 left-2.5 font-mono text-[9px] text-[#2A3B50] group-hover:text-[#F0B33E]/40 transition-colors select-none">
-        +
-      </span>
+
 
       <div>
         <div className="flex items-center justify-between mb-6">
