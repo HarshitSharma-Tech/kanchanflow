@@ -94,7 +94,7 @@ export default function FeaturesPage() {
     <div className="flex flex-col min-h-screen bg-[#0B111B] text-[#F5F3ED]">
       <Navbar />
 
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         {/* FEATURES HERO */}
         <section className="relative pt-16 pb-20 lg:pt-24 lg:pb-28 bg-[#0B111B] border-b border-[#2A3B50] overflow-hidden">
           <div className="absolute inset-0 bg-grid-industrial opacity-30 pointer-events-none" />
@@ -109,10 +109,10 @@ export default function FeaturesPage() {
 
               <h1 className="text-3xl sm:text-5xl font-extrabold text-[#F5F3ED] tracking-tight leading-tight">
                 The workflow behind{" "}
-                <span className="text-[#F0B33E]">better manufacturing sales.</span>
+                <span className="gold-gradient-text">better manufacturing sales.</span>
               </h1>
 
-              <p className="text-base sm:text-lg text-[#A4B0BE] leading-relaxed">
+              <p className="text-base sm:text-lg text-[#A4B0BE] leading-relaxed font-normal">
                 From the first customer enquiry to the confirmed production order, keep engineering specs, costing formulas, and commercial handoffs tightly connected.
               </p>
 
@@ -127,7 +127,7 @@ export default function FeaturesPage() {
             </div>
 
             {/* Quick Metrics Bar */}
-            <div className="mt-14 max-w-4xl mx-auto p-4 rounded-xl bg-[#111B29] border border-[#2A3B50] grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+            <div className="mt-14 max-w-4xl mx-auto p-6 rounded-2xl glass-panel-luxury border-2 border-[#F0B33E]/40 shadow-2xl gold-glow-card grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
               <div>
                 <span className="block text-2xl font-bold text-[#F0B33E] font-mono">
                   65%

@@ -22,7 +22,7 @@ export default function PricingPage() {
     <div className="flex flex-col min-h-screen bg-[#0B111B] text-[#F5F3ED]">
       <Navbar />
 
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         <PricingView />
 
         <SectionCTA

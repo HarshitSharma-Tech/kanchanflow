@@ -148,7 +148,7 @@ export default function HomePage() {
     <div className="flex flex-col min-h-screen bg-[#0B111B] text-[#F5F3ED]">
       <Navbar />
 
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         {/* SECTION 1: HERO */}
         <VideoHero />
 
@@ -169,68 +169,71 @@ export default function HomePage() {
             {/* Three Problems Grid */}
             <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
               {/* Problem 1 */}
-              <div className="p-7 rounded-xl bg-[#0B111B] border border-[#2A3B50] relative group hover:border-[#F0B33E]/40 transition-colors">
-                <div className="w-12 h-12 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 flex items-center justify-center mb-5">
+              <div className="p-8 rounded-2xl glass-panel-luxury glass-panel-hover relative group">
+                <div className="w-13 h-13 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 flex items-center justify-center mb-6 shadow-md">
                   <Mail className="w-6 h-6" />
                 </div>
-                <div className="text-xs font-mono uppercase tracking-wider text-red-400 mb-1">
-                  Bottleneck 01
+                <div className="text-xs font-mono uppercase tracking-wider text-red-400 font-bold mb-1.5 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-ping" />
+                  Bottleneck 01 • Email Fragmentation
                 </div>
-                <h3 className="text-lg font-bold text-[#F5F3ED]">
+                <h3 className="text-xl font-bold text-[#F5F3ED] tracking-tight">
                   Lost Enquiries & Uncontrolled Revisions
                 </h3>
-                <p className="mt-2.5 text-sm text-[#A4B0BE] leading-relaxed">
+                <p className="mt-3 text-sm text-[#A4B0BE] leading-relaxed">
                   Customer RFQs and revised CAD drawings get buried inside sales executives&apos; personal inboxes. When revision C is quoted but revision B was priced, margin leakage is inevitable.
                 </p>
-                <div className="mt-5 pt-3 border-t border-[#2A3B50]/60 text-xs text-[#A4B0BE] flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-red-400" />
-                  Average quote latency: 4 to 7 business days
+                <div className="mt-6 pt-4 border-t border-[#2A3B50]/60 text-xs text-[#A4B0BE] flex items-center justify-between font-mono">
+                  <span>Quote Latency:</span>
+                  <span className="text-red-400 font-semibold">4 to 7 Business Days</span>
                 </div>
               </div>
 
               {/* Problem 2 */}
-              <div className="p-7 rounded-xl bg-[#0B111B] border border-[#2A3B50] relative group hover:border-[#F0B33E]/40 transition-colors">
-                <div className="w-12 h-12 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-5">
+              <div className="p-8 rounded-2xl glass-panel-luxury glass-panel-hover relative group">
+                <div className="w-13 h-13 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center mb-6 shadow-md">
                   <FileSpreadsheet className="w-6 h-6" />
                 </div>
-                <div className="text-xs font-mono uppercase tracking-wider text-amber-400 mb-1">
-                  Bottleneck 02
+                <div className="text-xs font-mono uppercase tracking-wider text-amber-400 font-bold mb-1.5 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping" />
+                  Bottleneck 02 • Formula Inconsistency
                 </div>
-                <h3 className="text-lg font-bold text-[#F5F3ED]">
+                <h3 className="text-xl font-bold text-[#F5F3ED] tracking-tight">
                   Inconsistent BOM & Cost Tracking
                 </h3>
-                <p className="mt-2.5 text-sm text-[#A4B0BE] leading-relaxed">
+                <p className="mt-3 text-sm text-[#A4B0BE] leading-relaxed">
                   Every estimator maintains their own spreadsheet template with broken formulas. Machine hour rates, raw material surcharges, and tool wear allowances are rarely applied uniformly.
                 </p>
-                <div className="mt-5 pt-3 border-t border-[#2A3B50]/60 text-xs text-[#A4B0BE] flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
-                  Estimated margin variance: 8% to 15% per batch
+                <div className="mt-6 pt-4 border-t border-[#2A3B50]/60 text-xs text-[#A4B0BE] flex items-center justify-between font-mono">
+                  <span>Margin Variance:</span>
+                  <span className="text-amber-400 font-semibold">8% to 15% Error / Batch</span>
                 </div>
               </div>
 
               {/* Problem 3 */}
-              <div className="p-7 rounded-xl bg-[#0B111B] border border-[#2A3B50] relative group hover:border-[#F0B33E]/40 transition-colors">
-                <div className="w-12 h-12 rounded-lg bg-[#F0B33E]/10 border border-[#F0B33E]/20 text-[#F0B33E] flex items-center justify-center mb-5">
+              <div className="p-8 rounded-2xl glass-panel-luxury glass-panel-hover relative group">
+                <div className="w-13 h-13 rounded-xl bg-[#F0B33E]/10 border border-[#F0B33E]/30 text-[#F0B33E] flex items-center justify-center mb-6 shadow-md">
                   <AlertTriangle className="w-6 h-6" />
                 </div>
-                <div className="text-xs font-mono uppercase tracking-wider text-[#F0B33E] mb-1">
-                  Bottleneck 03
+                <div className="text-xs font-mono uppercase tracking-wider text-[#F0B33E] font-bold mb-1.5 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#F0B33E] animate-ping" />
+                  Bottleneck 03 • Commercial Blindspot
                 </div>
-                <h3 className="text-lg font-bold text-[#F5F3ED]">
+                <h3 className="text-xl font-bold text-[#F5F3ED] tracking-tight">
                   Blind Follow-ups & Broken Handoffs
                 </h3>
-                <p className="mt-2.5 text-sm text-[#A4B0BE] leading-relaxed">
+                <p className="mt-3 text-sm text-[#A4B0BE] leading-relaxed">
                   Management cannot see which high-value quotes require immediate commercial follow-up. When purchase orders arrive, transferring technical specs to the production floor is fraught with errors.
                 </p>
-                <div className="mt-5 pt-3 border-t border-[#2A3B50]/60 text-xs text-[#A4B0BE] flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#F0B33E]" />
-                  Over 30% of quotes go cold without structured follow-up
+                <div className="mt-6 pt-4 border-t border-[#2A3B50]/60 text-xs text-[#A4B0BE] flex items-center justify-between font-mono">
+                  <span>Lost Tenders:</span>
+                  <span className="text-[#F0B33E] font-semibold">&gt;30% Lost to Delays</span>
                 </div>
               </div>
             </div>
 
             {/* The Connected KanchanFlow Solution Card */}
-            <div className="mt-12 p-8 rounded-2xl bg-[#16263A] border border-[#F0B33E]/40 shadow-xl relative overflow-hidden">
+            <div className="mt-14 p-8 sm:p-10 rounded-3xl glass-panel-luxury border-2 border-[#F0B33E]/50 shadow-2xl relative overflow-hidden gold-glow-card">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div className="lg:col-span-8 space-y-3">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#36C98F]/15 border border-[#36C98F]/30 text-xs font-semibold uppercase tracking-wider text-[#36C98F]">
@@ -364,29 +367,29 @@ export default function HomePage() {
               {workflowSteps.map((item, index) => (
                 <div
                   key={item.step}
-                  className="relative z-10 flex flex-col justify-between p-6 rounded-xl bg-[#0B111B] border border-[#2A3B50] hover:border-[#F0B33E]/50 transition-all duration-200"
+                  className="relative z-10 flex flex-col justify-between p-7 rounded-2xl glass-panel-luxury glass-panel-hover transition-all duration-300"
                 >
                   <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="w-9 h-9 rounded-lg bg-[#16263A] border border-[#2A3B50] font-mono text-sm font-bold text-[#F0B33E] flex items-center justify-center">
+                    <div className="flex items-center justify-between mb-5">
+                      <span className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#16263A] to-[#0B111B] border border-[#2A3B50] font-mono text-sm font-black text-[#F0B33E] flex items-center justify-center shadow-md">
                         {item.step}
                       </span>
-                      <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-[#16263A] border border-[#2A3B50] text-[#A4B0BE]">
+                      <span className="text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded bg-[#16263A] border border-[#2A3B50] text-[#F0B33E]">
                         {item.badge}
                       </span>
                     </div>
 
-                    <h3 className="text-base font-bold text-[#F5F3ED] tracking-tight">
+                    <h3 className="text-lg font-bold text-[#F5F3ED] tracking-tight">
                       {item.title}
                     </h3>
-                    <p className="mt-2 text-xs sm:text-sm text-[#A4B0BE] leading-relaxed">
+                    <p className="mt-2.5 text-xs sm:text-sm text-[#A4B0BE] leading-relaxed">
                       {item.description}
                     </p>
                   </div>
 
-                  <div className="mt-6 pt-3 border-t border-[#2A3B50]/40 flex items-center gap-1.5 text-xs text-[#36C98F]">
+                  <div className="mt-6 pt-4 border-t border-[#2A3B50]/60 flex items-center gap-2 text-xs text-[#36C98F] font-mono">
                     <CheckCircle2 className="w-3.5 h-3.5" />
-                    <span>Automated Audit Trail</span>
+                    <span>Automated Audit Gate</span>
                   </div>
                 </div>
               ))}
@@ -407,25 +410,28 @@ export default function HomePage() {
               {industries.map((ind) => (
                 <div
                   key={ind.name}
-                  className="p-6 rounded-xl bg-[#111B29] border border-[#2A3B50] hover:border-[#F0B33E]/40 transition-colors flex flex-col justify-between"
+                  className="p-7 rounded-2xl glass-panel-luxury glass-panel-hover flex flex-col justify-between"
                 >
                   <div>
-                    <div className="w-11 h-11 rounded-lg bg-[#16263A] border border-[#2A3B50] flex items-center justify-center mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#16263A] to-[#0B111B] border border-[#2A3B50] flex items-center justify-center mb-5 text-[#F0B33E] shadow-md">
                       {ind.icon}
                     </div>
-                    <h3 className="text-base font-bold text-[#F5F3ED] tracking-tight">
+                    <h3 className="text-lg font-bold text-[#F5F3ED] tracking-tight">
                       {ind.name}
                     </h3>
-                    <p className="mt-2 text-xs sm:text-sm text-[#A4B0BE] leading-relaxed">
+                    <p className="mt-2.5 text-xs sm:text-sm text-[#A4B0BE] leading-relaxed">
                       {ind.desc}
                     </p>
                   </div>
 
-                  <div className="mt-5 pt-3 border-t border-[#2A3B50]/50 flex items-center justify-between text-xs text-[#A4B0BE]">
-                    <span className="text-[#F0B33E] font-medium flex items-center gap-1">
-                      Ready Templates <ArrowRight className="w-3 h-3" />
+                  <div className="mt-6 pt-4 border-t border-[#2A3B50]/60 flex items-center justify-between text-xs">
+                    <span className="text-[#F0B33E] font-medium flex items-center gap-1.5 hover:underline cursor-pointer">
+                      <span>Ready Templates</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
                     </span>
-                    <span className="font-mono text-[11px]">ISO 9001 / IATF</span>
+                    <span className="font-mono text-[10px] text-[#A4B0BE]/70">
+                      ISO 9001 / IATF
+                    </span>
                   </div>
                 </div>
               ))}

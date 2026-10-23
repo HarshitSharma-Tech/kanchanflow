@@ -25,7 +25,7 @@ import {
 // Mockup 1: RFQ & Central Intake
 export function RFQManagementMockup() {
   return (
-    <div className="rounded-xl border border-[#2A3B50] bg-[#111B29] p-4 sm:p-5 shadow-xl text-xs font-sans">
+    <div className="rounded-2xl glass-panel-luxury glass-panel-hover gold-glow-card p-5 sm:p-6 shadow-2xl text-xs font-sans">
       <div className="flex items-center justify-between pb-3 border-b border-[#2A3B50]/60">
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-[#36C98F]" />
@@ -85,7 +85,7 @@ export function RevisionTrackingMockup() {
   const [activeRev, setActiveRev] = useState<"Rev A" | "Rev B">("Rev B");
 
   return (
-    <div className="rounded-xl border border-[#2A3B50] bg-[#111B29] p-4 sm:p-5 shadow-xl text-xs font-sans">
+    <div className="rounded-2xl glass-panel-luxury glass-panel-hover gold-glow-card p-5 sm:p-6 shadow-2xl text-xs font-sans">
       <div className="flex items-center justify-between pb-3 border-b border-[#2A3B50]/60">
         <div className="flex items-center gap-2">
           <GitBranch className="w-4 h-4 text-[#F0B33E]" />
@@ -157,7 +157,7 @@ export function RevisionTrackingMockup() {
 // Mockup 3: BOM Component Costing
 export function BOMCostingMockup() {
   return (
-    <div className="rounded-xl border border-[#2A3B50] bg-[#111B29] p-4 sm:p-5 shadow-xl text-xs font-sans">
+    <div className="rounded-2xl glass-panel-luxury glass-panel-hover gold-glow-card p-5 sm:p-6 shadow-2xl text-xs font-sans">
       <div className="flex items-center justify-between pb-3 border-b border-[#2A3B50]/60">
         <div className="flex items-center gap-2">
           <Layers className="w-4 h-4 text-[#36C98F]" />
@@ -217,7 +217,7 @@ export function BOMCostingMockup() {
 // Mockup 4: Sales Pipeline & Follow-Ups
 export function SalesPipelineMockup() {
   return (
-    <div className="rounded-xl border border-[#2A3B50] bg-[#111B29] p-4 sm:p-5 shadow-xl text-xs font-sans">
+    <div className="rounded-2xl glass-panel-luxury glass-panel-hover gold-glow-card p-5 sm:p-6 shadow-2xl text-xs font-sans">
       <div className="flex items-center justify-between pb-3 border-b border-[#2A3B50]/60">
         <div className="flex items-center gap-2">
           <TrendingUp className="w-4 h-4 text-[#F0B33E]" />
@@ -285,7 +285,7 @@ export function SalesPipelineMockup() {
 // Mockup 5: PO Capture & Order Handoff
 export function OrderHandoffMockup() {
   return (
-    <div className="rounded-xl border border-[#2A3B50] bg-[#111B29] p-4 sm:p-5 shadow-xl text-xs font-sans">
+    <div className="rounded-2xl glass-panel-luxury glass-panel-hover gold-glow-card p-5 sm:p-6 shadow-2xl text-xs font-sans">
       <div className="flex items-center justify-between pb-3 border-b border-[#2A3B50]/60">
         <div className="flex items-center gap-2">
           <FileCheck2 className="w-4 h-4 text-[#36C98F]" />
@@ -343,7 +343,7 @@ export function OrderHandoffMockup() {
 // Mockup 6: Reporting & Mobile Telemetry
 export function ReportingMobileMockup() {
   return (
-    <div className="rounded-xl border border-[#2A3B50] bg-[#111B29] p-4 sm:p-5 shadow-xl text-xs font-sans">
+    <div className="rounded-2xl glass-panel-luxury glass-panel-hover gold-glow-card p-5 sm:p-6 shadow-2xl text-xs font-sans">
       <div className="flex items-center justify-between pb-3 border-b border-[#2A3B50]/60">
         <div className="flex items-center gap-2">
           <Smartphone className="w-4 h-4 text-[#F0B33E]" />

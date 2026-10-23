@@ -32,18 +32,18 @@ export function SectionCTA({
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#F0B33E]/10 blur-[130px] rounded-full pointer-events-none" />
 
       <Container>
-        <div className="relative z-10 max-w-4xl mx-auto rounded-2xl bg-gradient-to-b from-[#16263A] to-[#111B29] border border-[#2A3B50] p-8 sm:p-12 lg:p-16 text-center shadow-2xl gold-glow-card">
+        <div className="relative z-10 max-w-4xl mx-auto rounded-3xl glass-panel-luxury border-2 border-[#F0B33E]/50 p-8 sm:p-12 lg:p-16 text-center shadow-2xl gold-glow-card">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F0B33E]/15 border border-[#F0B33E]/30 text-xs font-semibold uppercase tracking-wider text-[#F0B33E] mb-6">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#F0B33E]/20 via-[#16263A] to-[#F0B33E]/10 border border-[#F0B33E]/40 text-xs font-semibold uppercase tracking-wider text-[#F0B33E] mb-6 shadow-[0_0_15px_rgba(240,179,62,0.15)]">
             <Factory className="w-3.5 h-3.5" />
             <span>Modernise Your Plant Commercial Operations</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#F5F3ED] tracking-tight leading-tight">
-            {heading}
+            Bring clarity to <span className="gold-gradient-text">every quotation.</span>
           </h2>
 
-          <p className="mt-4 text-base sm:text-lg text-[#A4B0BE] max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-[#A4B0BE] max-w-2xl mx-auto leading-relaxed font-normal">
             {copy}
           </p>
 

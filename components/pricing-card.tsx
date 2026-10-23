@@ -37,15 +37,15 @@ export function PricingCard({
 
   return (
     <div
-      className={`relative h-full flex flex-col justify-between p-7 sm:p-8 rounded-2xl transition-all duration-300 ${
+      className={`relative h-full flex flex-col justify-between p-8 sm:p-9 rounded-3xl glass-panel-luxury glass-panel-hover transition-all duration-300 ${
         plan.popular
-          ? "bg-[#16263A] border-2 border-[#F0B33E] shadow-2xl gold-glow-card"
-          : "bg-[#111B29] border border-[#2A3B50] hover:border-[#F0B33E]/40"
+          ? "border-2 border-[#F0B33E] shadow-2xl gold-glow-card lg:scale-[1.03] z-10"
+          : "border border-[#2A3B50]"
       }`}
     >
       {/* Popular tag */}
       {plan.popular && (
-        <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3.5 py-1 rounded-full bg-[#F0B33E] text-[#0B111B] text-xs font-bold uppercase tracking-wider shadow-md flex items-center gap-1.5">
+        <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#FFD875] via-[#F0B33E] to-[#C98B19] text-[#0B111B] text-xs font-black uppercase tracking-wider shadow-lg flex items-center gap-1.5">
           <Sparkles className="w-3.5 h-3.5" />
           <span>Recommended For Most Plants</span>
         </div>
@@ -54,14 +54,14 @@ export function PricingCard({
       <div>
         {/* Plan Header */}
         <div className="flex items-center justify-between">
-          <h3 className="text-xl font-bold text-[#F5F3ED] tracking-tight">
+          <h3 className="text-2xl font-bold text-[#F5F3ED] tracking-tight">
             {plan.name}
           </h3>
           {plan.badge && (
             <span
-              className={`text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded ${
+              className={`text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded-md ${
                 plan.popular
-                  ? "bg-[#F0B33E]/20 text-[#F0B33E] border border-[#F0B33E]/40"
+                  ? "bg-[#F0B33E]/20 text-[#F0B33E] border border-[#F0B33E]/50 font-bold"
                   : "bg-[#16263A] text-[#A4B0BE] border border-[#2A3B50]"
               }`}
             >
@@ -70,16 +70,20 @@ export function PricingCard({
           )}
         </div>
 
-        <p className="mt-2 text-xs sm:text-sm text-[#A4B0BE] leading-relaxed min-h-[40px]">
+        <p className="mt-2.5 text-xs sm:text-sm text-[#A4B0BE] leading-relaxed min-h-[40px]">
           {plan.description}
         </p>
 
         {/* Price Display */}
-        <div className="my-6 py-4 border-y border-[#2A3B50]/60">
+        <div className="my-6 py-5 border-y border-[#2A3B50]/60">
           {!isCustom ? (
             <div>
               <div className="flex items-baseline gap-1.5">
-                <span className="text-3xl sm:text-4xl font-extrabold text-[#F5F3ED] font-mono tracking-tight">
+                <span
+                  className={`text-4xl sm:text-5xl font-black font-mono tracking-tight ${
+                    plan.popular ? "gold-gradient-text" : "text-[#F5F3ED]"
+                  }`}
+                >
                   ₹{currentPrice?.toLocaleString("en-IN")}
                 </span>
                 <span className="text-xs text-[#A4B0BE]">/ plant / month</span>

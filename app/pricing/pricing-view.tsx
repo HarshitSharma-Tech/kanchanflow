@@ -196,10 +196,10 @@ export function PricingView() {
 
             <h1 className="text-3xl sm:text-5xl font-extrabold text-[#F5F3ED] tracking-tight leading-tight">
               A clearer way to manage your{" "}
-              <span className="text-[#F0B33E]">sales workflow.</span>
+              <span className="gold-gradient-text">sales workflow.</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-[#A4B0BE] leading-relaxed">
+            <p className="text-base sm:text-lg text-[#A4B0BE] leading-relaxed font-normal">
               Explore a plan structure designed around the real needs of machine shops, fabrication units, and industrial manufacturing enterprises.
             </p>
 
@@ -208,7 +208,7 @@ export function PricingView() {
               <div
                 role="radiogroup"
                 aria-label="Billing interval"
-                className="inline-flex items-center p-1.5 rounded-xl bg-[#16263A] border border-[#2A3B50] shadow-inner"
+                className="inline-flex items-center p-1.5 rounded-2xl glass-panel-luxury border-2 border-[#F0B33E]/30 shadow-2xl gold-glow-card"
               >
                 <button
                   type="button"
@@ -281,7 +281,7 @@ export function PricingView() {
       {/* DEMO ENQUIRY INTERACTIVE FORM */}
       <section id="demo-form" className="relative py-12">
         <Container>
-          <div className="max-w-3xl mx-auto rounded-2xl bg-[#111B29] border border-[#2A3B50] p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+          <div className="max-w-3xl mx-auto rounded-3xl glass-panel-luxury border-2 border-[#F0B33E]/50 p-6 sm:p-10 shadow-2xl relative overflow-hidden gold-glow-card">
             {/* Top gold bar */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#F0B33E] to-transparent" />
 
@@ -296,8 +296,8 @@ export function PricingView() {
                   </span>
                 </div>
 
-                <h2 className="text-2xl sm:text-3xl font-bold text-[#F5F3ED] tracking-tight">
-                  Request a Tailored Demo & Pricing Proposal
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-[#F5F3ED] tracking-tight">
+                  Request a Tailored <span className="gold-gradient-text">Demo & Pricing Proposal</span>
                 </h2>
                 <p className="mt-1.5 text-sm text-[#A4B0BE]">
                   Let us demonstrate KanchanFlow with your component drawings and configure a tailored proposal for your manufacturing unit.
