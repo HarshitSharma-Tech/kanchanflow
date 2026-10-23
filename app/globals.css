@@ -135,6 +135,26 @@ body {
   animation: fadeInSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+/* Continuous Conveyor Belt Marquee for Workflow Steps */
+@keyframes workflowMarquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-workflow-marquee {
+  animation: workflowMarquee 30s linear infinite;
+  will-change: transform;
+}
+
+.animate-workflow-marquee:hover,
+.animate-workflow-marquee:focus-within {
+  animation-play-state: paused;
+}
+
 /* Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
@@ -142,5 +162,10 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .animate-workflow-marquee {
+    animation: none !important;
+    transform: none !important;
   }
 }
