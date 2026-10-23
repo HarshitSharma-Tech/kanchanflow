@@ -171,7 +171,7 @@ export default function HomePage() {
         {/* SECTION 4: PROBLEM & SOLUTION */}
         <section
           id="problem-solution"
-          className="py-20 lg:py-24 bg-[#0A0C10] border-y border-[#222633] relative overflow-hidden"
+          className="py-20 lg:py-24 bg-[#0A0C10] border-y border-[#222633] relative overflow-hidden content-visibility-auto"
         >
           <div className="absolute inset-0 bg-dot-industrial opacity-15 pointer-events-none" />
           <div
@@ -305,7 +305,7 @@ export default function HomePage() {
                 title="Quote-to-Order"
                 badge="Core Flow"
                 metrics="48h Turnaround"
-                image="/images/capability-cad-drawing.jpg"
+                image="/images/capability-cad-drawing.webp"
                 href="/features#quote-to-order"
                 description="Log customer enquiries, create professional quotes, track revisions, and convert accepted quotes into shop orders."
               />
@@ -316,7 +316,7 @@ export default function HomePage() {
                 title="Bill of Materials (BOM)"
                 badge="Costing"
                 metrics="Accurate Margins"
-                image="/images/capability-bom-costing.jpg"
+                image="/images/capability-bom-costing.webp"
                 href="/features#bom-costing"
                 description="Break down raw materials, machine hourly rates, and labor into a structured BOM that protects your margins."
               />
@@ -327,7 +327,7 @@ export default function HomePage() {
                 title="Sales Pipeline"
                 badge="Tracking"
                 metrics="+32% Win Rate"
-                image="/images/capability-sales-pipeline.jpg"
+                image="/images/capability-sales-pipeline.webp"
                 href="/features#pipeline"
                 description="See every active deal at a glance, prioritize high-value tenders, and know which quotes need a follow-up today."
               />
@@ -338,7 +338,7 @@ export default function HomePage() {
                 title="WhatsApp Updates"
                 badge="Messaging"
                 metrics="Instant Delivery"
-                image="/images/capability-mobile-approval.jpg"
+                image="/images/capability-mobile-approval.webp"
                 href="/features#whatsapp"
                 description="Keep customer chats tied to the quote. Send instant quote links and dispatch notifications directly on WhatsApp."
               />
@@ -349,7 +349,7 @@ export default function HomePage() {
                 title="Reports & Insights"
                 badge="Analytics"
                 metrics="Clear Visibility"
-                image="/images/capability-revision-audit.jpg"
+                image="/images/capability-revision-audit.webp"
                 href="/features#reporting"
                 description="Track quote conversion rates, see which parts generate the most profit, and measure estimator turnaround velocity."
               />
@@ -360,7 +360,7 @@ export default function HomePage() {
                 title="Mobile Access"
                 badge="On the Move"
                 metrics="Any Device"
-                image="/images/capability-order-handoff.jpg"
+                image="/images/capability-order-handoff.webp"
                 href="/features#mobile"
                 description="Review customer history, active drawings, and quotation statuses on any smartphone or tablet while on the shop floor."
               />
@@ -432,7 +432,7 @@ export default function HomePage() {
         </section>
 
         {/* SECTION 5: INDUSTRIES */}
-        <section id="industries" className="py-20 lg:py-24 bg-[#08090C] relative">
+        <section id="industries" className="py-20 lg:py-24 bg-[#08090C] relative content-visibility-auto">
           <Container>
             <SectionHeading
               eyebrow="Specialized Verticals"
@@ -476,7 +476,7 @@ export default function HomePage() {
         {/* SECTION 6: PRICING TEASER */}
         <section
           id="pricing-preview"
-          className="py-20 lg:py-24 bg-[#0C0E14] border-y border-[#222633] relative"
+          className="py-20 lg:py-24 bg-[#0C0E14] border-y border-[#222633] relative content-visibility-auto"
         >
           <div className="absolute inset-0 bg-dot-industrial opacity-20 pointer-events-none" />
 
@@ -621,7 +621,7 @@ export default function HomePage() {
         </section>
 
         {/* SECTION 7: FAQ ACCORDION */}
-        <section id="faq" className="py-20 lg:py-24 bg-[#08090C] relative">
+        <section id="faq" className="py-20 lg:py-24 bg-[#08090C] relative content-visibility-auto">
           <Container>
             <SectionHeading
               eyebrow="Frequently Asked Questions"

@@ -169,3 +169,16 @@ body {
     transform: none !important;
   }
 }
+
+/* Modern rendering optimizations for below-the-fold sections */
+.content-visibility-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 700px;
+}
+
+@media (max-width: 640px) {
+  .glass-panel-luxury {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+}

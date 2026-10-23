@@ -11,10 +11,15 @@ import {
   Mail,
   MapPin,
 } from "lucide-react";
+import dynamic from "next/dynamic";
 import { Container } from "./container";
 import { BrandLogo } from "./brand-logo";
 import { Button } from "./button";
-import { DemoModal } from "./demo-modal";
+
+const DemoModal = dynamic(
+  () => import("./demo-modal").then((mod) => mod.DemoModal),
+  { ssr: false }
+);
 
 export function Footer() {
   const [demoModalOpen, setDemoModalOpen] = useState(false);
@@ -297,10 +302,12 @@ export function Footer() {
       </footer>
 
       {/* Global Book a Demo Modal */}
-      <DemoModal
-        isOpen={demoModalOpen}
-        onClose={() => setDemoModalOpen(false)}
-      />
+      {demoModalOpen && (
+        <DemoModal
+          isOpen={demoModalOpen}
+          onClose={() => setDemoModalOpen(false)}
+        />
+      )}
     </>
   );
 }

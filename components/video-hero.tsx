@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useRef } from "react";
-import Link from "next/link";
+import React, { useState, useRef, useEffect } from "react";
+import dynamic from "next/dynamic";
 import {
   ArrowRight,
   Zap,
@@ -15,13 +15,36 @@ import {
 } from "lucide-react";
 import { Container } from "./container";
 import { Button } from "./button";
-import { DemoModal } from "./demo-modal";
+
+// Code splitting: dynamically import DemoModal so it does not block critical bundle
+const DemoModal = dynamic(
+  () => import("./demo-modal").then((mod) => mod.DemoModal),
+  { ssr: false }
+);
 
 export function VideoHero() {
   const [demoModalOpen, setDemoModalOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isCinemaOpen, setIsCinemaOpen] = useState(false);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  // Defer video stream until after initial render paint to guarantee 90+ LCP
+  useEffect(() => {
+    // Check reduced motion preference
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    // On mobile or reduced-motion, defer or let user control
+    if (!prefersReducedMotion) {
+      // Small timeout lets browser finish critical layout and fonts
+      const timer = setTimeout(() => {
+        setShouldLoadVideo(true);
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
   const togglePlay = () => {
     if (videoRef.current) {
@@ -38,19 +61,26 @@ export function VideoHero() {
     <>
       <section className="relative min-h-[92vh] flex items-center pt-10 pb-16 lg:pt-16 lg:pb-24 overflow-hidden bg-[#08090C]">
         {/* ========================================================= */}
-        {/* FULL BACKGROUND VIDEO: Subtle Precision Manufacturing (MUTED) */}
+        {/* FULL BACKGROUND VIDEO / POSTER: Subtle Precision Manufacturing */}
         {/* ========================================================= */}
         <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none select-none z-0">
           <video
             ref={videoRef}
-            src="/videos/subtle-precision-manufacturing.mp4"
+            poster="/videos/hero-poster.webp"
             autoPlay
             loop
             muted
             playsInline
-            preload="auto"
-            className="w-full h-full object-cover object-center scale-105 filter contrast-[1.08] brightness-[0.85] opacity-90 transition-opacity duration-1000"
-          />
+            preload={shouldLoadVideo ? "metadata" : "none"}
+            className="w-full h-full object-cover object-center scale-[1.02] filter contrast-[1.06] brightness-[0.88] opacity-90 transition-opacity duration-700"
+          >
+            {shouldLoadVideo && (
+              <>
+                <source src="/videos/hero-subtle-opt.webm" type="video/webm" />
+                <source src="/videos/hero-subtle-opt.mp4" type="video/mp4" />
+              </>
+            )}
+          </video>
 
           {/* Left Gradient so text has 100% solid contrast on all devices */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#08090C]/95 via-[#08090C]/75 via-45% to-[#08090C]/35 z-10" />
@@ -65,7 +95,7 @@ export function VideoHero() {
           <div className="absolute inset-0 bg-[#08090C]/20 mix-blend-multiply z-10 pointer-events-none" />
         </div>
 
-        {/* Ambient Golden Wave Ribbon */}
+        {/* Ambient Golden Wave Ribbon - GPU Accelerated */}
         <div
           aria-hidden="true"
           className="absolute inset-0 pointer-events-none z-10 overflow-hidden"
@@ -107,7 +137,7 @@ export function VideoHero() {
         {/* Hero Content Container */}
         <Container size="wide" className="relative z-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Left Content Column (Strictly matching reference design) */}
+            {/* Left Content Column */}
             <div className="lg:col-span-8 xl:col-span-7 text-left space-y-6">
               {/* Eyebrow Pill */}
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#F0B33E]/40 bg-[#070B12]/85 backdrop-blur-md text-xs font-semibold uppercase tracking-wider text-[#F0B33E] shadow-sm">
@@ -150,7 +180,7 @@ export function VideoHero() {
                 </Button>
               </div>
 
-              {/* Three Value Bullets (Strictly matching reference design) */}
+              {/* Three Value Bullets */}
               <div className="pt-8 border-t border-[#2A3F5E]/60 grid grid-cols-1 sm:grid-cols-3 gap-6 text-left max-w-2xl">
                 {/* 1. Fast Quotes */}
                 <div className="flex items-start gap-3">
@@ -199,9 +229,8 @@ export function VideoHero() {
               </div>
             </div>
 
-            {/* Right Side: Unobstructed View of the Cinematic Robotic Milling Video with Floating Video Controller Badge */}
+            {/* Right Side: Unobstructed View with Floating Video Controller Badge */}
             <div className="lg:col-span-4 xl:col-span-5 flex flex-col items-start lg:items-end justify-end">
-              {/* Subtle Floating Video Badge & Cinema Button */}
               <div className="flex items-center gap-2 p-1.5 rounded-full bg-[#08090C]/85 backdrop-blur-md border border-[#262B38] shadow-xl text-xs">
                 <div className="flex items-center gap-2 px-3 py-1">
                   <span className="w-2 h-2 rounded-full bg-[#36C98F] animate-pulse" />
@@ -237,11 +266,13 @@ export function VideoHero() {
           </div>
         </Container>
 
-        {/* Demo Modal */}
-        <DemoModal
-          isOpen={demoModalOpen}
-          onClose={() => setDemoModalOpen(false)}
-        />
+        {/* Demo Modal (Loaded on Demand) */}
+        {demoModalOpen && (
+          <DemoModal
+            isOpen={demoModalOpen}
+            onClose={() => setDemoModalOpen(false)}
+          />
+        )}
       </section>
 
       {/* FULL SCREEN CINEMA MODAL */}
@@ -278,11 +309,14 @@ export function VideoHero() {
             {/* Video Viewport */}
             <div className="relative aspect-video w-full bg-black">
               <video
-                src="/videos/subtle-precision-manufacturing.mp4"
+                poster="/videos/hero-poster.webp"
                 controls
                 autoPlay
                 className="w-full h-full object-contain filter contrast-[1.08] brightness-[0.92]"
-              />
+              >
+                <source src="/videos/hero-subtle-opt.webm" type="video/webm" />
+                <source src="/videos/hero-subtle-opt.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>

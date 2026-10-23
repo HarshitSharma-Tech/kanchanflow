@@ -16,28 +16,28 @@ const steps: WorkflowStepItem[] = [
   {
     step: "01",
     title: "Customer Enquiry",
-    image: "/images/step-01-enquiry.jpg",
+    image: "/images/step-01-enquiry.webp",
     description: "Capture and manage enquiries in one place.",
     alt: "Customer RFQ drawing and precision manifold block on workbench",
   },
   {
     step: "02",
     title: "Quotation & Costing",
-    image: "/images/step-02-costing.jpg",
+    image: "/images/step-02-costing.webp",
     description: "Prepare accurate quotations with real costing.",
     alt: "Laptop displaying KanchanFlow manufacturing CRM costing dashboard",
   },
   {
     step: "03",
     title: "Follow-ups & Insights",
-    image: "/images/step-03-followup.jpg",
+    image: "/images/step-03-followup.webp",
     description: "Track follow-ups and get complete visibility.",
     alt: "Mobile device tracking active sales pipeline and quotation status",
   },
   {
     step: "04",
     title: "Confirmed Order",
-    image: "/images/step-04-order.jpg",
+    image: "/images/step-04-order.webp",
     description: "Convert to order and handoff to production seamlessly.",
     alt: "5-axis CNC machining center milling precision component for confirmed order",
   },
@@ -69,6 +69,7 @@ function WorkflowCard({
           alt={isDuplicate ? "" : item.alt}
           fill
           sizes="(max-width: 640px) 260px, 280px"
+          loading="lazy"
           className="object-cover group-hover/card:scale-105 transition-transform duration-500"
         />
       </div>

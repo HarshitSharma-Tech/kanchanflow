@@ -4,11 +4,20 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, ArrowRight } from "lucide-react";
+import dynamic from "next/dynamic";
 import { Container } from "./container";
 import { BrandLogo } from "./brand-logo";
 import { Button } from "./button";
-import { MobileMenu } from "./mobile-menu";
-import { DemoModal } from "./demo-modal";
+
+const MobileMenu = dynamic(
+  () => import("./mobile-menu").then((mod) => mod.MobileMenu),
+  { ssr: false }
+);
+
+const DemoModal = dynamic(
+  () => import("./demo-modal").then((mod) => mod.DemoModal),
+  { ssr: false }
+);
 
 export function Navbar() {
   const pathname = usePathname();
@@ -96,19 +105,23 @@ export function Navbar() {
         </Container>
       </header>
 
-      {/* Mobile Drawer */}
-      <MobileMenu
-        isOpen={mobileMenuOpen}
-        onClose={() => setMobileMenuOpen(false)}
-        links={processedLinks}
-        onOpenDemo={() => setDemoModalOpen(true)}
-      />
+      {/* Mobile Drawer (Only mounted when opened) */}
+      {mobileMenuOpen && (
+        <MobileMenu
+          isOpen={mobileMenuOpen}
+          onClose={() => setMobileMenuOpen(false)}
+          links={processedLinks}
+          onOpenDemo={() => setDemoModalOpen(true)}
+        />
+      )}
 
-      {/* Global Book a Demo Modal */}
-      <DemoModal
-        isOpen={demoModalOpen}
-        onClose={() => setDemoModalOpen(false)}
-      />
+      {/* Global Book a Demo Modal (Only mounted when opened) */}
+      {demoModalOpen && (
+        <DemoModal
+          isOpen={demoModalOpen}
+          onClose={() => setDemoModalOpen(false)}
+        />
+      )}
     </>
   );
 }

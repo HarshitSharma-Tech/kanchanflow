@@ -1,10 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
+import dynamic from "next/dynamic";
 import { ArrowRight, Factory, Shield, Sparkles } from "lucide-react";
 import { Container } from "./container";
 import { Button } from "./button";
-import { DemoModal } from "./demo-modal";
+
+const DemoModal = dynamic(
+  () => import("./demo-modal").then((mod) => mod.DemoModal),
+  { ssr: false }
+);
 
 interface SectionCTAProps {
   heading?: string;
@@ -87,10 +92,12 @@ export function SectionCTA({
         </div>
       </Container>
 
-      <DemoModal
-        isOpen={demoModalOpen}
-        onClose={() => setDemoModalOpen(false)}
-      />
+      {demoModalOpen && (
+        <DemoModal
+          isOpen={demoModalOpen}
+          onClose={() => setDemoModalOpen(false)}
+        />
+      )}
     </section>
   );
 }

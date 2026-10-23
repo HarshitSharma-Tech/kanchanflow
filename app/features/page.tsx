@@ -204,10 +204,11 @@ export default function FeaturesPage() {
                   <div className="rounded-2xl bg-[#12151D] border border-[#262B38] overflow-hidden shadow-2xl">
                     <div className="relative aspect-[16/9] w-full overflow-hidden border-b border-[#262B38]">
                       <Image
-                        src="/images/capability-cad-drawing.jpg"
+                        src="/images/capability-cad-drawing.webp"
                         alt="Centralized RFQ CAD Drawings & Inspection"
                         fill
                         sizes="(max-width: 1024px) 100vw, 50vw"
+                        loading="lazy"
                         className="object-cover filter contrast-[1.06] brightness-[0.95]"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#12151D] via-transparent to-black/30" />
@@ -256,7 +257,7 @@ export default function FeaturesPage() {
           </section>
 
           {/* CAPABILITY 2: Quotation & BOM Costing (Alternating: Visual Left, Text Right) */}
-          <section id="bom-costing" className="py-16 lg:py-20 border-b border-[#222633] bg-[#08090C] relative overflow-hidden">
+          <section id="bom-costing" className="py-16 lg:py-20 border-b border-[#222633] bg-[#08090C] relative overflow-hidden content-visibility-auto">
             <Container size="wide">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
                 {/* Visual on Left */}
@@ -264,10 +265,11 @@ export default function FeaturesPage() {
                   <div className="rounded-2xl bg-[#12151D] border border-[#262B38] overflow-hidden shadow-2xl">
                     <div className="relative aspect-[16/9] w-full overflow-hidden border-b border-[#262B38]">
                       <Image
-                        src="/images/capability-bom-costing.jpg"
+                        src="/images/capability-bom-costing.webp"
                         alt="Machined Brass and Copper Manifold BOM Costing"
                         fill
                         sizes="(max-width: 1024px) 100vw, 50vw"
+                        loading="lazy"
                         className="object-cover filter contrast-[1.06] brightness-[0.95]"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#12151D] via-transparent to-black/30" />
@@ -381,7 +383,7 @@ export default function FeaturesPage() {
           </section>
 
           {/* CAPABILITY 3: Revision Governance (Text Left, Visual Right) */}
-          <section className="py-16 lg:py-20 border-b border-[#222633] bg-[#0C0E14] relative overflow-hidden">
+          <section className="py-16 lg:py-20 border-b border-[#222633] bg-[#0C0E14] relative overflow-hidden content-visibility-auto">
             <Container size="wide">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
                 {/* Text Content */}
@@ -438,10 +440,11 @@ export default function FeaturesPage() {
                   <div className="rounded-2xl bg-[#12151D] border border-[#262B38] overflow-hidden shadow-2xl">
                     <div className="relative aspect-[16/9] w-full overflow-hidden border-b border-[#262B38]">
                       <Image
-                        src="/images/capability-revision-audit.jpg"
+                        src="/images/capability-revision-audit.webp"
                         alt="Optical CMM Laser Metrology Inspection"
                         fill
                         sizes="(max-width: 1024px) 100vw, 50vw"
+                        loading="lazy"
                         className="object-cover filter contrast-[1.06] brightness-[0.95]"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#12151D] via-transparent to-black/30" />
@@ -496,7 +499,7 @@ export default function FeaturesPage() {
           </section>
 
           {/* CAPABILITY 4: Order Handoff & Production Release (Visual Left, Text Right) */}
-          <section id="order-handoff" className="py-16 lg:py-20 border-b border-[#222633] bg-[#08090C] relative overflow-hidden">
+          <section id="order-handoff" className="py-16 lg:py-20 border-b border-[#222633] bg-[#08090C] relative overflow-hidden content-visibility-auto">
             <Container size="wide">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
                 {/* Visual on Left */}
@@ -504,10 +507,11 @@ export default function FeaturesPage() {
                   <div className="rounded-2xl bg-[#12151D] border border-[#262B38] overflow-hidden shadow-2xl">
                     <div className="relative aspect-[16/9] w-full overflow-hidden border-b border-[#262B38]">
                       <Image
-                        src="/images/capability-order-handoff.jpg"
+                        src="/images/capability-order-handoff.webp"
                         alt="5-Axis Robotic Automation Shop Floor Handoff"
                         fill
                         sizes="(max-width: 1024px) 100vw, 50vw"
+                        loading="lazy"
                         className="object-cover filter contrast-[1.06] brightness-[0.95]"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#12151D] via-transparent to-black/30" />
