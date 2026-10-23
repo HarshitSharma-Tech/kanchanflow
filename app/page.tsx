@@ -163,9 +163,13 @@ export default function HomePage() {
         {/* SECTION 4: PROBLEM & SOLUTION */}
         <section
           id="problem-solution"
-          className="py-20 lg:py-24 bg-[#111B29] border-y border-[#2A3B50] relative overflow-hidden"
+          className="py-20 lg:py-24 bg-[#0A121E] border-y border-[#1E2E42] relative overflow-hidden"
         >
-          <div className="absolute inset-0 bg-dot-industrial opacity-20 pointer-events-none" />
+          <div className="absolute inset-0 bg-dot-industrial opacity-15 pointer-events-none" />
+          <div
+            aria-hidden="true"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[350px] bg-rose-500/5 blur-[140px] rounded-full pointer-events-none -z-0"
+          />
 
           <Container>
             <SectionHeading
@@ -174,81 +178,81 @@ export default function HomePage() {
               description="When enquiries arrive by email and costing lives in disconnected Excel files, quotes take days to send and costly errors slip into production."
             />
 
-            {/* Three Problems Grid */}
+            {/* Three Problems Grid - Distinct Color Coding */}
             <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Problem 1 */}
-              <div className="p-7 rounded-2xl glass-panel-luxury glass-panel-hover relative group">
-                <div className="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 flex items-center justify-center mb-5">
+              {/* Problem 1: Red Rose Theme */}
+              <div className="p-7 rounded-2xl bg-gradient-to-b from-[#1C1217] to-[#120B0F] border border-rose-500/30 hover:border-rose-500/60 transition-all duration-300 shadow-xl group">
+                <div className="w-12 h-12 rounded-xl bg-rose-500/20 border border-rose-500/40 text-rose-400 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
                   <Mail className="w-6 h-6" />
                 </div>
-                <div className="text-xs font-mono uppercase tracking-wider text-red-400 font-semibold mb-1">
-                  Problem 01
+                <div className="text-xs font-mono uppercase tracking-wider text-rose-400 font-semibold mb-1">
+                  Problem 01 • Inbox Clutter
                 </div>
                 <h3 className="text-lg font-bold text-white tracking-tight">
                   Quotes Get Lost in Email Threads
                 </h3>
-                <p className="mt-2.5 text-sm text-[#A4B0BE] leading-relaxed">
+                <p className="mt-2.5 text-sm text-[#94A3B8] leading-relaxed">
                   Customer enquiries and drawing revisions get buried in inboxes. Quotations take days to prepare, and estimators risk pricing old drawing versions.
                 </p>
-                <div className="mt-6 pt-3 border-t border-[#2A3B50]/60 text-xs text-[#A4B0BE] flex items-center justify-between">
+                <div className="mt-6 pt-3 border-t border-rose-500/20 text-xs text-[#94A3B8] flex items-center justify-between">
                   <span>Typical delay:</span>
-                  <span className="text-red-400 font-medium">4 to 7 days per quote</span>
+                  <span className="text-rose-400 font-bold font-mono">4 to 7 days lost</span>
                 </div>
               </div>
 
-              {/* Problem 2 */}
-              <div className="p-7 rounded-2xl glass-panel-luxury glass-panel-hover relative group">
-                <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-5">
+              {/* Problem 2: Amber Bronze Theme */}
+              <div className="p-7 rounded-2xl bg-gradient-to-b from-[#1E170F] to-[#130E09] border border-amber-500/30 hover:border-amber-500/60 transition-all duration-300 shadow-xl group">
+                <div className="w-12 h-12 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-400 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
                   <FileSpreadsheet className="w-6 h-6" />
                 </div>
                 <div className="text-xs font-mono uppercase tracking-wider text-amber-400 font-semibold mb-1">
-                  Problem 02
+                  Problem 02 • Estimating Drift
                 </div>
                 <h3 className="text-lg font-bold text-white tracking-tight">
                   Inconsistent Costing in Spreadsheets
                 </h3>
-                <p className="mt-2.5 text-sm text-[#A4B0BE] leading-relaxed">
+                <p className="mt-2.5 text-sm text-[#94A3B8] leading-relaxed">
                   Every estimator maintains their own template. Machine hourly rates, material markups, and scrap allowances are applied inconsistently.
                 </p>
-                <div className="mt-6 pt-3 border-t border-[#2A3B50]/60 text-xs text-[#A4B0BE] flex items-center justify-between">
+                <div className="mt-6 pt-3 border-t border-amber-500/20 text-xs text-[#94A3B8] flex items-center justify-between">
                   <span>Margin risk:</span>
-                  <span className="text-amber-400 font-medium">Unpredictable job profits</span>
+                  <span className="text-amber-400 font-bold font-mono">Unpredictable job profits</span>
                 </div>
               </div>
 
-              {/* Problem 3 */}
-              <div className="p-7 rounded-2xl glass-panel-luxury glass-panel-hover relative group">
-                <div className="w-12 h-12 rounded-xl bg-[#F0B33E]/10 border border-[#F0B33E]/20 text-[#F0B33E] flex items-center justify-center mb-5">
+              {/* Problem 3: Sky Cyan Theme */}
+              <div className="p-7 rounded-2xl bg-gradient-to-b from-[#0F1B29] to-[#091018] border border-sky-500/30 hover:border-sky-500/60 transition-all duration-300 shadow-xl group">
+                <div className="w-12 h-12 rounded-xl bg-sky-500/20 border border-sky-500/40 text-sky-400 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
                   <AlertTriangle className="w-6 h-6" />
                 </div>
-                <div className="text-xs font-mono uppercase tracking-wider text-[#F0B33E] font-semibold mb-1">
-                  Problem 03
+                <div className="text-xs font-mono uppercase tracking-wider text-sky-400 font-semibold mb-1">
+                  Problem 03 • Shop Floor Gaps
                 </div>
                 <h3 className="text-lg font-bold text-white tracking-tight">
                   Missed Follow-Ups & Handoff Errors
                 </h3>
-                <p className="mt-2.5 text-sm text-[#A4B0BE] leading-relaxed">
+                <p className="mt-2.5 text-sm text-[#94A3B8] leading-relaxed">
                   Sales teams don&apos;t know which quotations need a call today. When an order arrives, passing drawings to the shop floor causes misunderstandings.
                 </p>
-                <div className="mt-6 pt-3 border-t border-[#2A3B50]/60 text-xs text-[#A4B0BE] flex items-center justify-between">
+                <div className="mt-6 pt-3 border-t border-sky-500/20 text-xs text-[#94A3B8] flex items-center justify-between">
                   <span>Lost opportunities:</span>
-                  <span className="text-[#F0B33E] font-medium">Quotes go cold without calls</span>
+                  <span className="text-sky-400 font-bold font-mono">Quotes go cold</span>
                 </div>
               </div>
             </div>
 
-            {/* The Connected KanchanFlow Solution Card */}
-            <div className="mt-12 p-8 rounded-2xl glass-panel-luxury border border-[#F0B33E]/40 shadow-xl relative overflow-hidden">
+            {/* The Connected KanchanFlow Solution Banner */}
+            <div className="mt-12 p-8 sm:p-10 rounded-2xl bg-gradient-to-r from-[#0B251F] via-[#0F1F33] to-[#1C160B] border-2 border-[#36C98F]/50 shadow-2xl relative overflow-hidden">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div className="lg:col-span-8 space-y-3">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#36C98F]/15 border border-[#36C98F]/30 text-xs font-semibold uppercase tracking-wider text-[#36C98F]">
+                <div className="lg:col-span-8 space-y-3.5">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#36C98F]/20 border border-[#36C98F]/40 text-xs font-semibold uppercase tracking-wider text-[#36C98F]">
                     <CheckCircle2 className="w-3.5 h-3.5" />
                     The Connected Solution
                   </div>
-                  <h3 className="text-2xl font-bold text-white">
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
                     One connected workflow from customer enquiry to shop release
                   </h3>
-                  <p className="text-sm sm:text-base text-[#A4B0BE] leading-relaxed">
+                  <p className="text-sm sm:text-base text-[#CBD5E1] leading-relaxed font-normal">
                     KanchanFlow connects estimation, commercial quoting, and production handoffs. Your team always works from the latest drawing and verified cost formulas.
                   </p>
                 </div>
@@ -258,7 +262,7 @@ export default function HomePage() {
                     href="/features"
                     variant="primary"
                     size="md"
-                    className="w-full justify-center"
+                    className="w-full justify-center shadow-lg shadow-[#F0B33E]/20"
                     icon={<ArrowRight className="w-4 h-4" />}
                   >
                     Explore Connected Features
@@ -267,7 +271,7 @@ export default function HomePage() {
                     href="/pricing"
                     variant="secondary"
                     size="md"
-                    className="w-full justify-center"
+                    className="w-full justify-center bg-[#16263A] border-[#2A3F5E] text-white hover:border-[#F0B33E]/50"
                   >
                     Compare Pricing & ROI
                   </Button>
