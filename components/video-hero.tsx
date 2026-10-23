@@ -36,7 +36,7 @@ export function VideoHero() {
             muted
             playsInline
             preload="auto"
-            className="w-full h-full object-cover object-center scale-[1.01] filter brightness-[1.26] contrast-[1.08] saturate-[1.25] transition-opacity duration-700"
+            className="w-full h-full object-cover object-center scale-[1.01] filter brightness-[0.90] contrast-[1.06] saturate-[1.10] transition-opacity duration-700"
           >
             <source
               src="/videos/factory-precision-walkthrough.mp4"
@@ -48,17 +48,20 @@ export function VideoHero() {
             />
           </video>
 
-          {/* Soft Left Reading Gradient: keeps text legible while leaving the total factory walkway bright & open */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#07090E]/80 via-[#07090E]/30 via-35% to-transparent z-10 pointer-events-none" />
+          {/* Sleek Dark Vignette Overlay: provides cinematic depth and comfortable contrast */}
+          <div className="absolute inset-0 bg-[#07090E]/35 pointer-events-none z-10" />
+
+          {/* Left Reading Gradient: keeps headline and copy razor-sharp */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#07090E]/88 via-[#07090E]/45 via-40% to-transparent z-10 pointer-events-none" />
 
           {/* Top & Bottom seamless edge blend for header and next section */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#07090E]/35 via-transparent via-15% to-[#08090C]/65 z-10 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#07090E]/55 via-transparent via-15% to-[#08090C]/75 z-10 pointer-events-none" />
 
           {/* Luminous Warm Sunlight Glow enhancing the factory aisle lighting */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(240,179,62,0.24),transparent_65%)] pointer-events-none z-10" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(240,179,62,0.18),transparent_65%)] pointer-events-none z-10" />
 
           {/* Subtle warm floor reflection sheen */}
-          <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-[#08090C]/65 via-transparent to-transparent pointer-events-none z-10" />
+          <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-[#08090C]/75 via-transparent to-transparent pointer-events-none z-10" />
         </div>
 
         {/* Ambient Golden Wave Ribbon - GPU Accelerated */}
