@@ -28,6 +28,8 @@ import { Footer } from "@/components/footer";
 import { Container } from "@/components/container";
 import { SectionHeading } from "@/components/section-heading";
 import { VideoHero } from "@/components/video-hero";
+import { HowItWorksReference } from "@/components/how-it-works-reference";
+import { BuiltForManufacturing } from "@/components/built-for-manufacturing";
 import { FeatureCard } from "@/components/feature-card";
 import { FAQAccordion, FAQItem } from "@/components/faq-accordion";
 import { SectionCTA } from "@/components/section-cta";
@@ -152,7 +154,13 @@ export default function HomePage() {
         {/* SECTION 1: HERO */}
         <VideoHero />
 
-        {/* SECTION 2: PROBLEM & SOLUTION */}
+        {/* SECTION 2: HOW KANCHANFLOW WORKS (Reference Light/Cream Section) */}
+        <HowItWorksReference />
+
+        {/* SECTION 3: BUILT FOR MANUFACTURING (Reference Dark Feature Grid) */}
+        <BuiltForManufacturing />
+
+        {/* SECTION 4: PROBLEM & SOLUTION */}
         <section
           id="problem-solution"
           className="py-20 lg:py-24 bg-[#111B29] border-y border-[#2A3B50] relative overflow-hidden"
