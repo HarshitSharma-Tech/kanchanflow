@@ -34,6 +34,7 @@ import { FeatureCard } from "@/components/feature-card";
 import { FAQAccordion, FAQItem } from "@/components/faq-accordion";
 import { SectionCTA } from "@/components/section-cta";
 import { Button } from "@/components/button";
+import { WorkflowTimeline } from "@/components/workflow-timeline";
 
 export const metadata: Metadata = {
   title: "KanchanFlow | Connected Manufacturing CRM & Quote-to-Order Platform",
@@ -79,45 +80,6 @@ export default function HomePage() {
       answer:
         "Yes. The responsive mobile interface allows technical sales engineers visiting client facilities to check drawing revisions, verify quotation statuses, update pipeline notes, and log approvals directly from smartphones and tablets without lag.",
       category: "Mobile Access",
-    },
-  ];
-
-  const workflowSteps = [
-    {
-      step: "01",
-      title: "Enquiry Capture & RFQ",
-      description:
-        "Log customer RFQs, 2D/3D CAD drawings, specifications, and delivery target dates in a single central repository.",
-      badge: "Intake",
-      telemetry: "Multi-CAD 3D Link",
-      gate: "Locked to Rev C Specimen",
-    },
-    {
-      step: "02",
-      title: "Costing & BOM Calculation",
-      description:
-        "Break down raw materials, machine cycle times, tooling overheads, and target profit margins with automated formula guards.",
-      badge: "Engineering",
-      telemetry: "Dynamic Spindle Rate",
-      gate: "Protected Margin Guard",
-    },
-    {
-      step: "03",
-      title: "Quotation & Customer Approval",
-      description:
-        "Generate branded, audit-ready PDF quotes with clear revision tags. Track customer opens, questions, and approvals.",
-      badge: "Commercial",
-      telemetry: "Instant WhatsApp Alert",
-      gate: "ISO 9001 Compliance Stamp",
-    },
-    {
-      step: "04",
-      title: "Order Handoff to Production",
-      description:
-        "Convert approved quotes into verified production job cards and BOM releases for the shop floor without email misunderstandings.",
-      badge: "Shop Floor",
-      telemetry: "Direct CAM Release",
-      gate: "1-Click ERP & Shop Traveler",
     },
   ];
 
@@ -368,68 +330,8 @@ export default function HomePage() {
           </Container>
         </section>
 
-        {/* SECTION 4: WORKFLOW TIMELINE */}
-        <section
-          id="workflow"
-          className="py-20 lg:py-24 bg-[#0C0E14] border-y border-[#222633] relative overflow-hidden"
-        >
-          <div className="absolute inset-0 bg-grid-industrial opacity-20 pointer-events-none" />
-          <div
-            aria-hidden="true"
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[320px] bg-[#F0B33E]/5 blur-[120px] rounded-full pointer-events-none -z-0"
-          />
-
-          <Container>
-            <SectionHeading
-              eyebrow="Precision Process"
-              title="Four connected steps from enquiry to shop release."
-              description="A clear, repeatable cadence designed to eliminate confusion between customer communication, commercial estimation, and factory execution."
-            />
-
-            {/* Desktop Horizontal Timeline / Mobile Stack */}
-            <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-6 relative">
-              {/* Connector line for desktop */}
-              <div className="hidden md:block absolute top-[52px] left-12 right-12 h-0.5 bg-gradient-to-r from-[#F0B33E]/20 via-[#F0B33E]/70 to-[#F0B33E]/20 z-0" />
-
-              {workflowSteps.map((item) => (
-                <div
-                  key={item.step}
-                  className="relative z-10 flex flex-col justify-between p-6 sm:p-7 rounded-2xl bg-[#12151D] border border-[#262B38] hover:border-[#F0B33E]/60 transition-all duration-300 shadow-xl hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.8),0_0_20px_rgba(240,179,62,0.15)] group overflow-hidden"
-                >
-                  {/* Subtle top gold rim beam on hover */}
-                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#F0B33E]/0 to-transparent group-hover:via-[#F0B33E] transition-all duration-500" />
-
-                  <div>
-                    <div className="flex items-center justify-between mb-5">
-                      <span className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#1E2330] to-[#0F1118] border border-[#F0B33E]/40 font-mono text-sm font-black text-[#F0B33E] flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
-                        {item.step}
-                      </span>
-                      <span className="text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded-md bg-[#181C26] border border-[#2A3142] text-[#CBD5E1] font-semibold group-hover:border-[#F0B33E]/40 group-hover:text-[#F0B33E] transition-colors">
-                        {item.badge}
-                      </span>
-                    </div>
-
-                    <div className="inline-block text-[10px] font-mono font-medium text-[#F0B33E] bg-[#F0B33E]/10 border border-[#F0B33E]/20 px-2 py-0.5 rounded mb-2">
-                      {item.telemetry}
-                    </div>
-
-                    <h3 className="text-lg font-bold text-white group-hover:text-[#F0B33E] transition-colors tracking-tight">
-                      {item.title}
-                    </h3>
-                    <p className="mt-2.5 text-xs sm:text-sm text-[#94A3B8] leading-relaxed font-normal">
-                      {item.description}
-                    </p>
-                  </div>
-
-                  <div className="mt-6 pt-4 border-t border-[#262B38] flex items-center gap-2 text-xs text-[#36C98F] font-mono">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#36C98F] animate-pulse" />
-                    <span className="truncate">{item.gate}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Container>
-        </section>
+        {/* SECTION 4: WORKFLOW TIMELINE WITH SEQUENTIAL HIGHLIGHTING */}
+        <WorkflowTimeline />
 
         {/* SECTION 5: INDUSTRIES */}
         <section id="industries" className="py-20 lg:py-24 bg-[#08090C] relative content-visibility-auto">

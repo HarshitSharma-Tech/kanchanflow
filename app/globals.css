@@ -155,6 +155,20 @@ body {
   animation-play-state: paused;
 }
 
+/* Sequential Step Progress Bar */
+@keyframes stepProgress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-progress {
+  animation: stepProgress linear forwards;
+}
+
 /* Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
