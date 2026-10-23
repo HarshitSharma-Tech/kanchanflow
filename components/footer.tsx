@@ -21,12 +21,12 @@ export function Footer() {
 
   return (
     <>
-      <footer className="relative border-t border-[#2A3B50] bg-[#0B111B] text-[#A4B0BE] overflow-hidden">
+      <footer className="relative border-t border-[#242836] bg-[#08090C] text-[#A4B0BE] overflow-hidden">
         {/* Subtle engineering line background */}
         <div className="absolute inset-0 bg-grid-industrial opacity-40 pointer-events-none" />
 
         {/* Top CTA banner inside footer */}
-        <div className="relative border-b border-[#2A3B50]/60 bg-gradient-to-r from-[#111B29] via-[#16263A] to-[#111B29] py-12">
+        <div className="relative border-b border-[#242836] bg-gradient-to-r from-[#0C0E14] via-[#151822] to-[#0C0E14] py-12">
           <Container>
             <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
               <div>
@@ -90,7 +90,7 @@ export function Footer() {
                 </div>
 
                 {/* Trust badge */}
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-[#16263A] border border-[#2A3B50] text-xs text-[#F5F3ED] mt-3">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-[#141722] border border-[#242836] text-xs text-[#F5F3ED] mt-3">
                   <Shield className="w-4 h-4 text-[#36C98F]" />
                   <span>ISO 27001 & SOC-2 Aligned Data Security</span>
                 </div>
@@ -266,7 +266,7 @@ export function Footer() {
             </div>
 
             {/* Bottom Bar */}
-            <div className="mt-12 pt-8 border-t border-[#2A3B50]/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#A4B0BE]">
+            <div className="mt-12 pt-8 border-t border-[#242836] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#A4B0BE]">
               <p>
                 © 2026 KanchanFlow Inc. All rights reserved. Precision manufacturing CRM platform.
               </p>

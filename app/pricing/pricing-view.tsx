@@ -183,7 +183,7 @@ export function PricingView() {
   return (
     <div className="space-y-20 lg:space-y-28">
       {/* HERO SECTION */}
-      <section className="relative pt-16 pb-12 lg:pt-20 lg:pb-16 bg-[#0B111B] text-center overflow-hidden">
+      <section className="relative pt-16 pb-12 lg:pt-20 lg:pb-16 bg-[#08090C] text-center overflow-hidden">
         <div className="absolute inset-0 bg-grid-industrial opacity-25 pointer-events-none" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#F0B33E]/5 blur-[120px] rounded-full pointer-events-none" />
 
@@ -217,7 +217,7 @@ export function PricingView() {
                   onClick={() => setIsAnnual(false)}
                   className={`px-5 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0B33E] ${
                     !isAnnual
-                      ? "bg-[#0B111B] text-[#F0B33E] shadow-sm"
+                      ? "bg-[#08090C] text-[#F0B33E] shadow-sm"
                       : "text-[#A4B0BE] hover:text-[#F5F3ED]"
                   }`}
                 >
@@ -231,7 +231,7 @@ export function PricingView() {
                   onClick={() => setIsAnnual(true)}
                   className={`relative px-5 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0B33E] flex items-center gap-2 ${
                     isAnnual
-                      ? "bg-[#0B111B] text-[#F0B33E] shadow-sm"
+                      ? "bg-[#08090C] text-[#F0B33E] shadow-sm"
                       : "text-[#A4B0BE] hover:text-[#F5F3ED]"
                   }`}
                 >
@@ -267,7 +267,7 @@ export function PricingView() {
             ))}
           </div>
 
-          <div className="mt-8 p-4 rounded-xl bg-[#111B29]/60 border border-[#2A3B50]/60 max-w-3xl mx-auto text-center text-xs text-[#A4B0BE] space-y-1">
+          <div className="mt-8 p-4 rounded-xl bg-[#12151D] border border-[#262B38] max-w-3xl mx-auto text-center text-xs text-[#A4B0BE] space-y-1">
             <p className="font-semibold text-[#F5F3ED]">
               Illustrative Pricing Transparency Notice
             </p>
@@ -322,8 +322,8 @@ export function PricingView() {
                           if (formErrors.name)
                             setFormErrors({ ...formErrors, name: "" });
                         }}
-                        className={`w-full px-3.5 py-2.5 rounded-md bg-[#16263A] border text-sm text-[#F5F3ED] placeholder-[#A4B0BE]/50 focus:outline-none focus:ring-2 focus:ring-[#F0B33E] transition-all ${
-                          formErrors.name ? "border-red-500" : "border-[#2A3B50]"
+                        className={`w-full px-3.5 py-2.5 rounded-md bg-[#12151D] border text-sm text-[#F5F3ED] placeholder-[#A4B0BE]/50 focus:outline-none focus:ring-2 focus:ring-[#F0B33E] transition-all ${
+                          formErrors.name ? "border-red-500" : "border-[#262B38]"
                         }`}
                       />
                       {formErrors.name && (
@@ -350,8 +350,8 @@ export function PricingView() {
                           if (formErrors.email)
                             setFormErrors({ ...formErrors, email: "" });
                         }}
-                        className={`w-full px-3.5 py-2.5 rounded-md bg-[#16263A] border text-sm text-[#F5F3ED] placeholder-[#A4B0BE]/50 focus:outline-none focus:ring-2 focus:ring-[#F0B33E] transition-all ${
-                          formErrors.email ? "border-red-500" : "border-[#2A3B50]"
+                        className={`w-full px-3.5 py-2.5 rounded-md bg-[#12151D] border text-sm text-[#F5F3ED] placeholder-[#A4B0BE]/50 focus:outline-none focus:ring-2 focus:ring-[#F0B33E] transition-all ${
+                          formErrors.email ? "border-red-500" : "border-[#262B38]"
                         }`}
                       />
                       {formErrors.email && (
@@ -380,10 +380,10 @@ export function PricingView() {
                           if (formErrors.company)
                             setFormErrors({ ...formErrors, company: "" });
                         }}
-                        className={`w-full px-3.5 py-2.5 rounded-md bg-[#16263A] border text-sm text-[#F5F3ED] placeholder-[#A4B0BE]/50 focus:outline-none focus:ring-2 focus:ring-[#F0B33E] transition-all ${
+                        className={`w-full px-3.5 py-2.5 rounded-md bg-[#12151D] border text-sm text-[#F5F3ED] placeholder-[#A4B0BE]/50 focus:outline-none focus:ring-2 focus:ring-[#F0B33E] transition-all ${
                           formErrors.company
                             ? "border-red-500"
-                            : "border-[#2A3B50]"
+                            : "border-[#262B38]"
                         }`}
                       />
                       {formErrors.company && (
@@ -406,7 +406,7 @@ export function PricingView() {
                         onChange={(e) =>
                           setFormData({ ...formData, plan: e.target.value })
                         }
-                        className="w-full px-3.5 py-2.5 rounded-md bg-[#16263A] border border-[#2A3B50] text-sm text-[#F5F3ED] focus:outline-none focus:ring-2 focus:ring-[#F0B33E] transition-all"
+                        className="w-full px-3.5 py-2.5 rounded-md bg-[#12151D] border border-[#262B38] text-sm text-[#F5F3ED] focus:outline-none focus:ring-2 focus:ring-[#F0B33E] transition-all"
                       >
                         <option value="Starter Plan">Starter Plan (Small Job Shop)</option>
                         <option value="Growth Plan (Recommended)">Growth Plan (Standard Plant)</option>
@@ -429,7 +429,7 @@ export function PricingView() {
                         onChange={(e) =>
                           setFormData({ ...formData, teamSize: e.target.value })
                         }
-                        className="w-full px-3.5 py-2.5 rounded-md bg-[#16263A] border border-[#2A3B50] text-sm text-[#F5F3ED] focus:outline-none focus:ring-2 focus:ring-[#F0B33E] transition-all"
+                        className="w-full px-3.5 py-2.5 rounded-md bg-[#12151D] border border-[#262B38] text-sm text-[#F5F3ED] focus:outline-none focus:ring-2 focus:ring-[#F0B33E] transition-all"
                       >
                         <option value="1-10">1 – 10 (Sales & Estimators)</option>
                         <option value="10-50">10 – 50 staff</option>
@@ -454,7 +454,7 @@ export function PricingView() {
                             manufacturingType: e.target.value,
                           })
                         }
-                        className="w-full px-3.5 py-2.5 rounded-md bg-[#16263A] border border-[#2A3B50] text-sm text-[#F5F3ED] focus:outline-none focus:ring-2 focus:ring-[#F0B33E] transition-all"
+                        className="w-full px-3.5 py-2.5 rounded-md bg-[#12151D] border border-[#262B38] text-sm text-[#F5F3ED] focus:outline-none focus:ring-2 focus:ring-[#F0B33E] transition-all"
                       >
                         <option value="Precision Engineering & CNC">Precision CNC & Machining</option>
                         <option value="Sheet Metal Fabrication">Sheet Metal & Welding</option>
@@ -481,7 +481,7 @@ export function PricingView() {
                       onChange={(e) =>
                         setFormData({ ...formData, notes: e.target.value })
                       }
-                      className="w-full px-3.5 py-2.5 rounded-md bg-[#16263A] border border-[#2A3B50] text-sm text-[#F5F3ED] placeholder-[#A4B0BE]/50 focus:outline-none focus:ring-2 focus:ring-[#F0B33E] transition-all resize-none"
+                      className="w-full px-3.5 py-2.5 rounded-md bg-[#12151D] border border-[#262B38] text-sm text-[#F5F3ED] placeholder-[#A4B0BE]/50 focus:outline-none focus:ring-2 focus:ring-[#F0B33E] transition-all resize-none"
                     />
                   </div>
 
@@ -523,7 +523,7 @@ export function PricingView() {
                   Thank you, <span className="text-[#F5F3ED] font-semibold">{formData.name}</span>! Our industrial sales engineer has received your enquiry for <span className="text-[#F0B33E] font-medium">{formData.company}</span>.
                 </p>
 
-                <div className="mt-6 p-5 rounded-xl bg-[#16263A] border border-[#2A3B50] text-left text-xs text-[#A4B0BE] space-y-2 max-w-md mx-auto">
+                <div className="mt-6 p-5 rounded-xl bg-[#12151D] border border-[#262B38] text-left text-xs text-[#A4B0BE] space-y-2 max-w-md mx-auto">
                   <div className="font-semibold text-[#F5F3ED] uppercase tracking-wider text-[11px] mb-2 text-center">
                     Enquiry Details
                   </div>
@@ -543,7 +543,7 @@ export function PricingView() {
                     <span>Contact Email:</span>
                     <span className="text-[#F5F3ED]">{formData.email}</span>
                   </div>
-                  <div className="flex justify-between pt-1 border-t border-[#2A3B50]/50">
+                  <div className="flex justify-between pt-1 border-t border-[#262B38]">
                     <span>Status:</span>
                     <span className="text-[#36C98F] font-semibold flex items-center gap-1">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#36C98F] animate-pulse" />

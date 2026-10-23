@@ -40,12 +40,12 @@ export function PricingCard({
       className={`relative h-full flex flex-col justify-between p-8 sm:p-9 rounded-3xl glass-panel-luxury glass-panel-hover transition-all duration-300 ${
         plan.popular
           ? "border-2 border-[#F0B33E] shadow-2xl gold-glow-card lg:scale-[1.03] z-10"
-          : "border border-[#2A3B50]"
+          : "border border-[#262B38]"
       }`}
     >
       {/* Popular tag */}
       {plan.popular && (
-        <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#FFD875] via-[#F0B33E] to-[#C98B19] text-[#0B111B] text-xs font-black uppercase tracking-wider shadow-lg flex items-center gap-1.5">
+        <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#FFD875] via-[#F0B33E] to-[#C98B19] text-[#08090C] text-xs font-black uppercase tracking-wider shadow-lg flex items-center gap-1.5">
           <Sparkles className="w-3.5 h-3.5" />
           <span>Recommended For Most Plants</span>
         </div>
@@ -62,7 +62,7 @@ export function PricingCard({
               className={`text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded-md ${
                 plan.popular
                   ? "bg-[#F0B33E]/20 text-[#F0B33E] border border-[#F0B33E]/50 font-bold"
-                  : "bg-[#16263A] text-[#A4B0BE] border border-[#2A3B50]"
+                  : "bg-[#181C26] text-[#A4B0BE] border border-[#262B38]"
               }`}
             >
               {plan.badge}
@@ -75,7 +75,7 @@ export function PricingCard({
         </p>
 
         {/* Price Display */}
-        <div className="my-6 py-5 border-y border-[#2A3B50]/60">
+        <div className="my-6 py-5 border-y border-[#262B38]">
           {!isCustom ? (
             <div>
               <div className="flex items-baseline gap-1.5">
@@ -135,7 +135,7 @@ export function PricingCard({
       </div>
 
       {/* Card Action */}
-      <div className="mt-8 pt-4 border-t border-[#2A3B50]/50">
+      <div className="mt-8 pt-4 border-t border-[#262B38]">
         <Button
           variant={plan.popular ? "primary" : "outline"}
           size="lg"

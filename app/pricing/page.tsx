@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 export default function PricingPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#0B111B] text-[#F5F3ED]">
+    <div className="flex flex-col min-h-screen bg-[#08090C] text-[#F5F3ED]">
       <Navbar />
 
       <main id="main-content" className="flex-1">

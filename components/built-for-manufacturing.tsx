@@ -68,7 +68,7 @@ export function BuiltForManufacturing() {
   return (
     <section
       id="manufacturing-essentials"
-      className="py-16 lg:py-22 bg-[#0C1420] text-[#F5F3ED] border-b border-[#1E2E42] relative overflow-hidden"
+      className="py-16 lg:py-22 bg-[#0C0E14] text-[#F5F3ED] border-b border-[#222633] relative overflow-hidden"
     >
       {/* Background Ambience */}
       <div
@@ -77,14 +77,14 @@ export function BuiltForManufacturing() {
       />
       <div
         aria-hidden="true"
-        className="absolute bottom-0 left-10 w-[400px] h-[250px] bg-sky-500/5 blur-[100px] rounded-full pointer-events-none -z-0"
+        className="absolute bottom-0 left-10 w-[400px] h-[250px] bg-amber-500/5 blur-[100px] rounded-full pointer-events-none -z-0"
       />
 
       <Container size="wide" className="relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div className="space-y-3.5 max-w-2xl">
             {/* Eyebrow Pill Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#F0B33E]/40 bg-[#16263A]/90 backdrop-blur-md text-xs font-semibold uppercase tracking-wider text-[#F0B33E]">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#F0B33E]/40 bg-[#181C26] backdrop-blur-md text-xs font-semibold uppercase tracking-wider text-[#F0B33E]">
               <Factory className="w-3.5 h-3.5 text-[#F0B33E]" />
               <span>BUILT FOR MANUFACTURING</span>
             </div>
@@ -107,7 +107,7 @@ export function BuiltForManufacturing() {
             <Link
               key={feat.title}
               href={feat.href}
-              className={`group p-6 rounded-2xl bg-[#101B2B] border border-[#23354C] transition-all duration-300 shadow-xl flex flex-col justify-between hover:-translate-y-1 ${feat.glowColor}`}
+              className={`group p-6 rounded-2xl bg-[#12151D] border border-[#262B38] transition-all duration-300 shadow-xl flex flex-col justify-between hover:-translate-y-1 ${feat.glowColor}`}
             >
               <div>
                 {/* Header with Tag & Icon */}
@@ -117,7 +117,7 @@ export function BuiltForManufacturing() {
                   >
                     {feat.icon}
                   </div>
-                  <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-[#16263A] text-[#94A3B8] border border-[#23354C]">
+                  <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-[#181C26] text-[#CBD5E1] border border-[#2E3547]">
                     {feat.tag}
                   </span>
                 </div>
@@ -134,7 +134,7 @@ export function BuiltForManufacturing() {
               </div>
 
               {/* Bottom Link Indicator */}
-              <div className="mt-6 pt-3.5 border-t border-[#1E2E42] flex items-center justify-between text-xs text-[#94A3B8] group-hover:text-white transition-colors">
+              <div className="mt-6 pt-3.5 border-t border-[#222633] flex items-center justify-between text-xs text-[#94A3B8] group-hover:text-white transition-colors">
                 <span className="font-medium">Explore capability</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform text-[#F0B33E]" />
               </div>

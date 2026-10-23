@@ -24,7 +24,7 @@ export function SectionCTA({
   const [demoModalOpen, setDemoModalOpen] = useState(false);
 
   return (
-    <section className="relative py-20 lg:py-24 bg-[#0B111B] overflow-hidden border-t border-[#2A3B50]">
+    <section className="relative py-20 lg:py-24 bg-[#08090C] overflow-hidden border-t border-[#242836]">
       {/* Precision grid pattern */}
       <div className="absolute inset-0 bg-grid-industrial opacity-30 pointer-events-none" />
 
@@ -34,7 +34,7 @@ export function SectionCTA({
       <Container>
         <div className="relative z-10 max-w-4xl mx-auto rounded-3xl glass-panel-luxury border-2 border-[#F0B33E]/50 p-8 sm:p-12 lg:p-16 text-center shadow-2xl gold-glow-card">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#F0B33E]/20 via-[#16263A] to-[#F0B33E]/10 border border-[#F0B33E]/40 text-xs font-semibold uppercase tracking-wider text-[#F0B33E] mb-6 shadow-[0_0_15px_rgba(240,179,62,0.15)]">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#F0B33E]/20 via-[#141722] to-[#F0B33E]/10 border border-[#F0B33E]/40 text-xs font-semibold uppercase tracking-wider text-[#F0B33E] mb-6 shadow-[0_0_15px_rgba(240,179,62,0.15)]">
             <Factory className="w-3.5 h-3.5" />
             <span>Modernise Your Plant Commercial Operations</span>
           </div>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   FileText,
   Layers,
@@ -9,12 +10,7 @@ import {
   XCircle,
   Factory,
   Boxes,
-  Compass,
-  Cpu,
   Clock,
-  TrendingUp,
-  FileSpreadsheet,
-  AlertTriangle,
   Zap,
 } from "lucide-react";
 import { Navbar } from "@/components/navbar";
@@ -62,14 +58,14 @@ export default function FeaturesPage() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#0B111B] text-[#F5F3ED]">
+    <div className="flex flex-col min-h-screen bg-[#08090C] text-[#F5F3ED]">
       <Navbar />
 
       <main id="main-content" className="flex-1">
         {/* ========================================================= */}
-        {/* SECTION 1: HERO (Concise, Benefit-Focused, Clean)         */}
+        {/* SECTION 1: HERO (Benefit-Focused, Warm Dark Aesthetic)    */}
         {/* ========================================================= */}
-        <section className="relative pt-12 pb-16 lg:pt-18 lg:pb-22 border-b border-[#1E2E42] overflow-hidden bg-[#0B111B]">
+        <section className="relative pt-12 pb-16 lg:pt-18 lg:pb-22 border-b border-[#222633] overflow-hidden bg-[#08090C]">
           {/* Subtle Golden Ambient Spotlight */}
           <div
             aria-hidden="true"
@@ -79,7 +75,7 @@ export default function FeaturesPage() {
           <Container>
             <div className="max-w-3xl mx-auto text-center space-y-5">
               {/* Eyebrow */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#16263A] border border-[#F0B33E]/30 text-xs font-semibold uppercase tracking-wider text-[#F0B33E] shadow-sm">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#181C26] border border-[#F0B33E]/30 text-xs font-semibold uppercase tracking-wider text-[#F0B33E] shadow-sm">
                 <Factory className="w-3.5 h-3.5" />
                 <span>PRECISION SALES FOR MANUFACTURING</span>
               </div>
@@ -104,7 +100,7 @@ export default function FeaturesPage() {
                   href="#capabilities"
                   variant="secondary"
                   size="lg"
-                  className="bg-[#16263A] border-[#2A3F5E] text-white hover:border-[#F0B33E]/50"
+                  className="bg-[#181C26] border-[#2E3547] text-white hover:border-[#F0B33E]/50"
                 >
                   Explore Capabilities
                 </Button>
@@ -112,7 +108,7 @@ export default function FeaturesPage() {
 
               {/* 3 Core Trust Pillars Banner */}
               <div className="pt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto text-left">
-                <div className="p-4 rounded-xl bg-[#101B2B] border border-[#23354C] flex items-center gap-3 shadow-md">
+                <div className="p-4 rounded-xl bg-[#12151D] border border-[#262B38] flex items-center gap-3 shadow-md">
                   <div className="w-9 h-9 rounded-lg bg-[#F0B33E]/15 border border-[#F0B33E]/30 flex items-center justify-center text-[#F0B33E] shrink-0">
                     <Zap className="w-4 h-4" />
                   </div>
@@ -122,7 +118,7 @@ export default function FeaturesPage() {
                   </div>
                 </div>
 
-                <div className="p-4 rounded-xl bg-[#101B2B] border border-[#23354C] flex items-center gap-3 shadow-md">
+                <div className="p-4 rounded-xl bg-[#12151D] border border-[#262B38] flex items-center gap-3 shadow-md">
                   <div className="w-9 h-9 rounded-lg bg-[#36C98F]/15 border border-[#36C98F]/30 flex items-center justify-center text-[#36C98F] shrink-0">
                     <ShieldCheck className="w-4 h-4" />
                   </div>
@@ -132,7 +128,7 @@ export default function FeaturesPage() {
                   </div>
                 </div>
 
-                <div className="p-4 rounded-xl bg-[#101B2B] border border-[#23354C] flex items-center gap-3 shadow-md">
+                <div className="p-4 rounded-xl bg-[#12151D] border border-[#262B38] flex items-center gap-3 shadow-md">
                   <div className="w-9 h-9 rounded-lg bg-[#38BDF8]/15 border border-[#38BDF8]/30 flex items-center justify-center text-[#38BDF8] shrink-0">
                     <LockIcon className="w-4 h-4" />
                   </div>
@@ -147,11 +143,11 @@ export default function FeaturesPage() {
         </section>
 
         {/* ========================================================= */}
-        {/* CORE CAPABILITIES: Alternating, Clean, 3 Benefits Each    */}
+        {/* CORE CAPABILITIES: Alternating, Rich Photography + UI     */}
         {/* ========================================================= */}
         <div id="capabilities" className="scroll-mt-20">
           {/* CAPABILITY 1: RFQ & Enquiry Intake */}
-          <section id="quote-to-order" className="py-16 lg:py-20 border-b border-[#1E2E42] bg-[#0C1422] relative overflow-hidden">
+          <section id="quote-to-order" className="py-16 lg:py-20 border-b border-[#222633] bg-[#0C0E14] relative overflow-hidden">
             <Container size="wide">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
                 {/* Text Content */}
@@ -169,7 +165,7 @@ export default function FeaturesPage() {
                     Customer RFQs arrive across emails, WhatsApp, and procurement portals. KanchanFlow captures every enquiry into a unified queue with technical 2D drawings and 3D CAD step files attached directly.
                   </p>
 
-                  {/* Exactly 3 Key Benefits */}
+                  {/* 3 Key Benefits */}
                   <div className="space-y-3.5 pt-2">
                     <div className="flex items-start gap-3">
                       <div className="w-5 h-5 rounded-full bg-[#36C98F]/20 text-[#36C98F] flex items-center justify-center shrink-0 mt-0.5">
@@ -203,39 +199,55 @@ export default function FeaturesPage() {
                   </div>
                 </div>
 
-                {/* Simplified, High-Contrast UI Visual */}
+                {/* Rich Photo + Live UI Visual */}
                 <div className="lg:col-span-6">
-                  <div className="rounded-2xl bg-[#101B2B] border border-[#23354C] p-6 shadow-2xl space-y-4">
-                    <div className="flex items-center justify-between pb-3.5 border-b border-[#1E2E42]">
-                      <div className="flex items-center gap-2.5">
-                        <span className="w-2.5 h-2.5 rounded-full bg-[#36C98F]" />
-                        <span className="font-mono text-sm font-bold text-[#F0B33E]">RFQ #9042</span>
-                        <span className="text-sm font-semibold text-white">Mahindra Aerospace</span>
+                  <div className="rounded-2xl bg-[#12151D] border border-[#262B38] overflow-hidden shadow-2xl">
+                    <div className="relative aspect-[16/9] w-full overflow-hidden border-b border-[#262B38]">
+                      <Image
+                        src="/images/capability-cad-drawing.jpg"
+                        alt="Centralized RFQ CAD Drawings & Inspection"
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        className="object-cover filter contrast-[1.06] brightness-[0.95]"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#12151D] via-transparent to-black/30" />
+                      <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-[#08090C]/90 backdrop-blur-md border border-[#F0B33E]/40 text-[#F0B33E] text-xs font-mono font-bold">
+                        3D CAD Turbine Specimen Linked
                       </div>
-                      <span className="text-xs font-mono px-2 py-0.5 rounded bg-[#16263A] text-[#94A3B8] border border-[#2A3F5E]">
-                        Target: 5 Days
-                      </span>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-3">
-                      <div className="p-3.5 rounded-xl bg-[#080E17] border border-[#1E2E42]">
-                        <span className="text-[10px] text-[#94A3B8] uppercase font-mono">Drawing Asset</span>
-                        <div className="text-xs font-bold text-white mt-1 truncate">DWG-TITAN-PIN-REV-C.step</div>
-                        <span className="inline-flex items-center gap-1 text-[11px] text-[#36C98F] mt-1.5 font-medium">
-                          <CheckCircle2 className="w-3 h-3" /> CAD Specimen Linked
+                    <div className="p-5 sm:p-6 space-y-4">
+                      <div className="flex items-center justify-between pb-3.5 border-b border-[#222633]">
+                        <div className="flex items-center gap-2.5">
+                          <span className="w-2.5 h-2.5 rounded-full bg-[#36C98F]" />
+                          <span className="font-mono text-sm font-bold text-[#F0B33E]">RFQ #9042</span>
+                          <span className="text-sm font-semibold text-white">Mahindra Aerospace</span>
+                        </div>
+                        <span className="text-xs font-mono px-2 py-0.5 rounded bg-[#181C26] text-[#94A3B8] border border-[#2E3547]">
+                          Target: 5 Days
                         </span>
                       </div>
 
-                      <div className="p-3.5 rounded-xl bg-[#080E17] border border-[#1E2E42]">
-                        <span className="text-[10px] text-[#94A3B8] uppercase font-mono">Volume Tiers</span>
-                        <div className="text-xs font-bold text-white mt-1">150 / 500 / 1,000 pcs</div>
-                        <span className="text-[11px] text-[#F0B33E] mt-1.5 block font-medium">Automated Price Breaks</span>
-                      </div>
-                    </div>
+                      <div className="grid grid-cols-2 gap-3">
+                        <div className="p-3.5 rounded-xl bg-[#08090C] border border-[#222633]">
+                          <span className="text-[10px] text-[#94A3B8] uppercase font-mono">Drawing Asset</span>
+                          <div className="text-xs font-bold text-white mt-1 truncate">DWG-TITAN-PIN-REV-C.step</div>
+                          <span className="inline-flex items-center gap-1 text-[11px] text-[#36C98F] mt-1.5 font-medium">
+                            <CheckCircle2 className="w-3 h-3" /> CAD Specimen Linked
+                          </span>
+                        </div>
 
-                    <div className="p-3 rounded-xl bg-[#16263A]/80 border border-[#23354C] flex items-center justify-between text-xs">
-                      <span className="text-[#94A3B8]">Assigned Estimator: <strong className="text-white">Senior Tooling Lead</strong></span>
-                      <span className="text-[#36C98F] font-semibold">Triage Ready →</span>
+                        <div className="p-3.5 rounded-xl bg-[#08090C] border border-[#222633]">
+                          <span className="text-[10px] text-[#94A3B8] uppercase font-mono">Volume Tiers</span>
+                          <div className="text-xs font-bold text-white mt-1">150 / 500 / 1,000 pcs</div>
+                          <span className="text-[11px] text-[#F0B33E] mt-1.5 block font-medium">Automated Price Breaks</span>
+                        </div>
+                      </div>
+
+                      <div className="p-3 rounded-xl bg-[#181C26] border border-[#2E3547] flex items-center justify-between text-xs">
+                        <span className="text-[#94A3B8]">Assigned Estimator: <strong className="text-white">Senior Tooling Lead</strong></span>
+                        <span className="text-[#36C98F] font-semibold">Triage Ready →</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -244,58 +256,74 @@ export default function FeaturesPage() {
           </section>
 
           {/* CAPABILITY 2: Quotation & BOM Costing (Alternating: Visual Left, Text Right) */}
-          <section id="bom-costing" className="py-16 lg:py-20 border-b border-[#1E2E42] bg-[#0B111B] relative overflow-hidden">
+          <section id="bom-costing" className="py-16 lg:py-20 border-b border-[#222633] bg-[#08090C] relative overflow-hidden">
             <Container size="wide">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-                {/* Simplified Visual on Left */}
+                {/* Visual on Left */}
                 <div className="lg:col-span-6 lg:order-1">
-                  <div className="rounded-2xl bg-[#101B2B] border border-[#23354C] p-6 shadow-2xl space-y-4">
-                    <div className="flex items-center justify-between pb-3.5 border-b border-[#1E2E42]">
-                      <div className="flex items-center gap-2">
-                        <Layers className="w-4 h-4 text-[#36C98F]" />
-                        <span className="text-sm font-bold text-white">Cost Breakdown • 5-Axis Impeller</span>
-                      </div>
-                      <span className="text-xs font-mono font-bold text-[#36C98F] px-2 py-0.5 rounded bg-[#36C98F]/15 border border-[#36C98F]/30">
-                        Margin: 28%
-                      </span>
-                    </div>
-
-                    {/* Cost Structure Bars */}
-                    <div className="space-y-2.5 text-xs">
-                      <div className="flex justify-between items-center">
-                        <span className="text-[#94A3B8]">Forged Stainless Steel 316L:</span>
-                        <span className="font-mono font-semibold text-white">₹2,10,000</span>
-                      </div>
-                      <div className="w-full h-1.5 rounded-full bg-[#16263A] overflow-hidden">
-                        <div className="h-full bg-[#F0B33E] rounded-full w-[45%]" />
-                      </div>
-
-                      <div className="flex justify-between items-center pt-1">
-                        <span className="text-[#94A3B8]">5-Axis Machining (Spindle Rate):</span>
-                        <span className="font-mono font-semibold text-white">₹1,42,000</span>
-                      </div>
-                      <div className="w-full h-1.5 rounded-full bg-[#16263A] overflow-hidden">
-                        <div className="h-full bg-[#36C98F] rounded-full w-[35%]" />
-                      </div>
-
-                      <div className="flex justify-between items-center pt-1">
-                        <span className="text-[#94A3B8]">Plating & Heat Treatment:</span>
-                        <span className="font-mono font-semibold text-white">₹60,000</span>
-                      </div>
-                      <div className="w-full h-1.5 rounded-full bg-[#16263A] overflow-hidden">
-                        <div className="h-full bg-[#38BDF8] rounded-full w-[20%]" />
+                  <div className="rounded-2xl bg-[#12151D] border border-[#262B38] overflow-hidden shadow-2xl">
+                    <div className="relative aspect-[16/9] w-full overflow-hidden border-b border-[#262B38]">
+                      <Image
+                        src="/images/capability-bom-costing.jpg"
+                        alt="Machined Brass and Copper Manifold BOM Costing"
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        className="object-cover filter contrast-[1.06] brightness-[0.95]"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#12151D] via-transparent to-black/30" />
+                      <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-[#08090C]/90 backdrop-blur-md border border-[#36C98F]/40 text-[#36C98F] text-xs font-mono font-bold">
+                        Billet Materials & Spindle Time Engine
                       </div>
                     </div>
 
-                    {/* Bottom Price Summary */}
-                    <div className="p-3.5 rounded-xl bg-[#080E17] border border-[#F0B33E]/40 flex items-center justify-between">
-                      <div>
-                        <span className="text-[10px] text-[#94A3B8] uppercase block">Quoted Price (250 pcs)</span>
-                        <span className="text-lg font-black text-[#F0B33E] font-mono">₹5,27,360</span>
+                    <div className="p-5 sm:p-6 space-y-4">
+                      <div className="flex items-center justify-between pb-3.5 border-b border-[#222633]">
+                        <div className="flex items-center gap-2">
+                          <Layers className="w-4 h-4 text-[#36C98F]" />
+                          <span className="text-sm font-bold text-white">Cost Breakdown • 5-Axis Impeller</span>
+                        </div>
+                        <span className="text-xs font-mono font-bold text-[#36C98F] px-2 py-0.5 rounded bg-[#36C98F]/15 border border-[#36C98F]/30">
+                          Margin: 28%
+                        </span>
                       </div>
-                      <span className="text-xs font-semibold text-[#36C98F] flex items-center gap-1">
-                        <CheckCircle2 className="w-3.5 h-3.5" /> Formula Locked
-                      </span>
+
+                      {/* Cost Structure Bars */}
+                      <div className="space-y-2.5 text-xs">
+                        <div className="flex justify-between items-center">
+                          <span className="text-[#94A3B8]">Forged Stainless Steel 316L:</span>
+                          <span className="font-mono font-semibold text-white">₹2,10,000</span>
+                        </div>
+                        <div className="w-full h-1.5 rounded-full bg-[#181C26] overflow-hidden">
+                          <div className="h-full bg-[#F0B33E] rounded-full w-[45%]" />
+                        </div>
+
+                        <div className="flex justify-between items-center pt-1">
+                          <span className="text-[#94A3B8]">5-Axis Machining (Spindle Rate):</span>
+                          <span className="font-mono font-semibold text-white">₹1,42,000</span>
+                        </div>
+                        <div className="w-full h-1.5 rounded-full bg-[#181C26] overflow-hidden">
+                          <div className="h-full bg-[#36C98F] rounded-full w-[35%]" />
+                        </div>
+
+                        <div className="flex justify-between items-center pt-1">
+                          <span className="text-[#94A3B8]">Plating & Heat Treatment:</span>
+                          <span className="font-mono font-semibold text-white">₹60,000</span>
+                        </div>
+                        <div className="w-full h-1.5 rounded-full bg-[#181C26] overflow-hidden">
+                          <div className="h-full bg-[#38BDF8] rounded-full w-[20%]" />
+                        </div>
+                      </div>
+
+                      {/* Bottom Price Summary */}
+                      <div className="p-3.5 rounded-xl bg-[#08090C] border border-[#F0B33E]/40 flex items-center justify-between">
+                        <div>
+                          <span className="text-[10px] text-[#94A3B8] uppercase block">Quoted Price (250 pcs)</span>
+                          <span className="text-lg font-black text-[#F0B33E] font-mono">₹5,27,360</span>
+                        </div>
+                        <span className="text-xs font-semibold text-[#36C98F] flex items-center gap-1">
+                          <CheckCircle2 className="w-3.5 h-3.5" /> Formula Locked
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -315,7 +343,7 @@ export default function FeaturesPage() {
                     Say goodbye to broken spreadsheet formulas. KanchanFlow combines raw material weights, machine hourly rates, and subcontracting vendor fees in one unified, auditable calculation tree.
                   </p>
 
-                  {/* Exactly 3 Key Benefits */}
+                  {/* 3 Key Benefits */}
                   <div className="space-y-3.5 pt-2">
                     <div className="flex items-start gap-3">
                       <div className="w-5 h-5 rounded-full bg-[#36C98F]/20 text-[#36C98F] flex items-center justify-center shrink-0 mt-0.5">
@@ -353,7 +381,7 @@ export default function FeaturesPage() {
           </section>
 
           {/* CAPABILITY 3: Revision Governance (Text Left, Visual Right) */}
-          <section className="py-16 lg:py-20 border-b border-[#1E2E42] bg-[#0C1422] relative overflow-hidden">
+          <section className="py-16 lg:py-20 border-b border-[#222633] bg-[#0C0E14] relative overflow-hidden">
             <Container size="wide">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
                 {/* Text Content */}
@@ -371,7 +399,7 @@ export default function FeaturesPage() {
                     When customers modify drawing tolerances or switch alloys, clone previous costing with one click. KanchanFlow isolates the cost deltas and ensures only customer-approved revisions reach the shop floor.
                   </p>
 
-                  {/* Exactly 3 Key Benefits */}
+                  {/* 3 Key Benefits */}
                   <div className="space-y-3.5 pt-2">
                     <div className="flex items-start gap-3">
                       <div className="w-5 h-5 rounded-full bg-[#36C98F]/20 text-[#36C98F] flex items-center justify-center shrink-0 mt-0.5">
@@ -405,45 +433,61 @@ export default function FeaturesPage() {
                   </div>
                 </div>
 
-                {/* Simplified Visual: Revision Delta Inspector */}
+                {/* Rich Photo + Revision Delta Inspector */}
                 <div className="lg:col-span-6">
-                  <div className="rounded-2xl bg-[#101B2B] border border-[#23354C] p-6 shadow-2xl space-y-4">
-                    <div className="flex items-center justify-between pb-3.5 border-b border-[#1E2E42]">
-                      <div className="flex items-center gap-2">
-                        <span className="w-2.5 h-2.5 rounded-full bg-[#38BDF8]" />
-                        <span className="text-sm font-bold text-white">Revision Comparison</span>
+                  <div className="rounded-2xl bg-[#12151D] border border-[#262B38] overflow-hidden shadow-2xl">
+                    <div className="relative aspect-[16/9] w-full overflow-hidden border-b border-[#262B38]">
+                      <Image
+                        src="/images/capability-revision-audit.jpg"
+                        alt="Optical CMM Laser Metrology Inspection"
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        className="object-cover filter contrast-[1.06] brightness-[0.95]"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#12151D] via-transparent to-black/30" />
+                      <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-[#08090C]/90 backdrop-blur-md border border-[#38BDF8]/40 text-[#38BDF8] text-xs font-mono font-bold">
+                        CMM Laser Metrology • Tolerance Audit
                       </div>
-                      <span className="text-xs font-mono px-2 py-0.5 rounded bg-[#16263A] text-[#F0B33E] border border-[#F0B33E]/30">
-                        Rev A ➔ Rev B
-                      </span>
                     </div>
 
-                    {/* Side-by-Side Comparison */}
-                    <div className="grid grid-cols-2 gap-3">
-                      <div className="p-3.5 rounded-xl bg-[#080E17] border border-[#1E2E42] opacity-75">
-                        <div className="flex items-center justify-between text-xs text-[#94A3B8]">
-                          <span>Drawing Rev A</span>
-                          <span className="line-through">₹4,85,000</span>
+                    <div className="p-5 sm:p-6 space-y-4">
+                      <div className="flex items-center justify-between pb-3.5 border-b border-[#222633]">
+                        <div className="flex items-center gap-2">
+                          <span className="w-2.5 h-2.5 rounded-full bg-[#38BDF8]" />
+                          <span className="text-sm font-bold text-white">Revision Comparison</span>
                         </div>
-                        <div className="text-xs text-[#94A3B8] mt-1">Base Spec (No Heat Treat)</div>
-                        <span className="text-[10px] text-[#94A3B8] mt-2 block font-mono">Superseded</span>
-                      </div>
-
-                      <div className="p-3.5 rounded-xl bg-[#16263A] border-2 border-[#36C98F]/40 shadow-sm">
-                        <div className="flex items-center justify-between text-xs font-bold text-white">
-                          <span>Drawing Rev B</span>
-                          <span className="text-[#36C98F]">₹5,27,360</span>
-                        </div>
-                        <div className="text-xs text-white mt-1">Heat Treat Added</div>
-                        <span className="text-[10px] text-[#36C98F] font-bold mt-2 block font-mono">
-                          ✓ Customer Approved
+                        <span className="text-xs font-mono px-2 py-0.5 rounded bg-[#181C26] text-[#F0B33E] border border-[#F0B33E]/30">
+                          Rev A ➔ Rev B
                         </span>
                       </div>
-                    </div>
 
-                    <div className="p-3 rounded-xl bg-[#080E17] border border-[#1E2E42] flex items-center justify-between text-xs font-mono">
-                      <span className="text-[#94A3B8]">Delta: +₹42,360 (+8.7%)</span>
-                      <span className="text-[#36C98F]">✓ Locked For Production</span>
+                      {/* Side-by-Side Comparison */}
+                      <div className="grid grid-cols-2 gap-3">
+                        <div className="p-3.5 rounded-xl bg-[#08090C] border border-[#222633] opacity-75">
+                          <div className="flex items-center justify-between text-xs text-[#94A3B8]">
+                            <span>Drawing Rev A</span>
+                            <span className="line-through">₹4,85,000</span>
+                          </div>
+                          <div className="text-xs text-[#94A3B8] mt-1">Base Spec (No Heat Treat)</div>
+                          <span className="text-[10px] text-[#94A3B8] mt-2 block font-mono">Superseded</span>
+                        </div>
+
+                        <div className="p-3.5 rounded-xl bg-[#181C26] border-2 border-[#36C98F]/40 shadow-sm">
+                          <div className="flex items-center justify-between text-xs font-bold text-white">
+                            <span>Drawing Rev B</span>
+                            <span className="text-[#36C98F]">₹5,27,360</span>
+                          </div>
+                          <div className="text-xs text-white mt-1">Heat Treat Added</div>
+                          <span className="text-[10px] text-[#36C98F] font-bold mt-2 block font-mono">
+                            ✓ Customer Approved
+                          </span>
+                        </div>
+                      </div>
+
+                      <div className="p-3 rounded-xl bg-[#08090C] border border-[#222633] flex items-center justify-between text-xs font-mono">
+                        <span className="text-[#94A3B8]">Delta: +₹42,360 (+8.7%)</span>
+                        <span className="text-[#36C98F]">✓ Locked For Production</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -452,47 +496,63 @@ export default function FeaturesPage() {
           </section>
 
           {/* CAPABILITY 4: Order Handoff & Production Release (Visual Left, Text Right) */}
-          <section id="order-handoff" className="py-16 lg:py-20 border-b border-[#1E2E42] bg-[#0B111B] relative overflow-hidden">
+          <section id="order-handoff" className="py-16 lg:py-20 border-b border-[#222633] bg-[#08090C] relative overflow-hidden">
             <Container size="wide">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-                {/* Simplified Visual on Left */}
+                {/* Visual on Left */}
                 <div className="lg:col-span-6 lg:order-1">
-                  <div className="rounded-2xl bg-[#101B2B] border border-[#23354C] p-6 shadow-2xl space-y-4">
-                    <div className="flex items-center justify-between pb-3.5 border-b border-[#1E2E42]">
-                      <div className="flex items-center gap-2">
-                        <Boxes className="w-4 h-4 text-[#A855F7]" />
-                        <span className="text-sm font-bold text-white">Purchase Order ➔ Job Release</span>
-                      </div>
-                      <span className="text-xs font-mono font-bold text-[#36C98F] px-2 py-0.5 rounded bg-[#36C98F]/15 border border-[#36C98F]/30">
-                        100% Rate Match
-                      </span>
-                    </div>
-
-                    <div className="p-3.5 rounded-xl bg-[#080E17] border border-[#1E2E42] space-y-2">
-                      <div className="flex items-center justify-between text-xs">
-                        <span className="text-[#94A3B8]">Client PO #PO-9842:</span>
-                        <span className="font-mono text-white font-semibold">Verified against Quote #QT-8421</span>
-                      </div>
-                      <div className="flex items-center justify-between text-xs pt-1 border-t border-[#1E2E42]">
-                        <span className="text-[#94A3B8]">Drawing Revision:</span>
-                        <span className="font-mono text-[#36C98F] font-semibold">Rev B (Customer Approved)</span>
+                  <div className="rounded-2xl bg-[#12151D] border border-[#262B38] overflow-hidden shadow-2xl">
+                    <div className="relative aspect-[16/9] w-full overflow-hidden border-b border-[#262B38]">
+                      <Image
+                        src="/images/capability-order-handoff.jpg"
+                        alt="5-Axis Robotic Automation Shop Floor Handoff"
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        className="object-cover filter contrast-[1.06] brightness-[0.95]"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#12151D] via-transparent to-black/30" />
+                      <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-[#08090C]/90 backdrop-blur-md border border-[#A855F7]/40 text-[#A855F7] text-xs font-mono font-bold">
+                        5-Axis Robotic Cell • Production Handoff
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-3 text-xs">
-                      <div className="p-3 rounded-lg bg-[#16263A] border border-[#23354C]">
-                        <span className="text-[10px] text-[#94A3B8] uppercase block">Shop Traveler</span>
-                        <span className="font-bold text-white mt-0.5 block">Job Card #JC-104</span>
+                    <div className="p-5 sm:p-6 space-y-4">
+                      <div className="flex items-center justify-between pb-3.5 border-b border-[#222633]">
+                        <div className="flex items-center gap-2">
+                          <Boxes className="w-4 h-4 text-[#A855F7]" />
+                          <span className="text-sm font-bold text-white">Purchase Order ➔ Job Release</span>
+                        </div>
+                        <span className="text-xs font-mono font-bold text-[#36C98F] px-2 py-0.5 rounded bg-[#36C98F]/15 border border-[#36C98F]/30">
+                          100% Rate Match
+                        </span>
                       </div>
-                      <div className="p-3 rounded-lg bg-[#16263A] border border-[#23354C]">
-                        <span className="text-[10px] text-[#94A3B8] uppercase block">ERP Sync</span>
-                        <span className="font-bold text-[#36C98F] mt-0.5 block">Exported to Tally</span>
-                      </div>
-                    </div>
 
-                    <div className="p-3 rounded-xl bg-[#36C98F]/10 border border-[#36C98F]/30 flex items-center justify-between text-xs">
-                      <span className="text-white font-medium">Released to CNC Spindles</span>
-                      <span className="text-[#36C98F] font-bold">Plant 01 Operating</span>
+                      <div className="p-3.5 rounded-xl bg-[#08090C] border border-[#222633] space-y-2">
+                        <div className="flex items-center justify-between text-xs">
+                          <span className="text-[#94A3B8]">Client PO #PO-9842:</span>
+                          <span className="font-mono text-white font-semibold">Verified against Quote #QT-8421</span>
+                        </div>
+                        <div className="flex items-center justify-between text-xs pt-1 border-t border-[#222633]">
+                          <span className="text-[#94A3B8]">Drawing Revision:</span>
+                          <span className="font-mono text-[#36C98F] font-semibold">Rev B (Customer Approved)</span>
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-3 text-xs">
+                        <div className="p-3 rounded-lg bg-[#181C26] border border-[#2E3547]">
+                          <span className="text-[10px] text-[#94A3B8] uppercase block">Shop Traveler</span>
+                          <span className="font-bold text-white mt-0.5 block">Job Card #JC-104</span>
+                        </div>
+                        <div className="p-3 rounded-lg bg-[#181C26] border border-[#2E3547]">
+                          <span className="text-[10px] text-[#94A3B8] uppercase block">ERP Sync</span>
+                          <span className="font-bold text-[#36C98F] mt-0.5 block">Exported to Tally</span>
+                        </div>
+                      </div>
+
+                      <div className="p-3 rounded-xl bg-[#36C98F]/10 border border-[#36C98F]/30 flex items-center justify-between text-xs">
+                        <span className="text-white font-medium">Released to CNC Spindles</span>
+                        <span className="text-[#36C98F] font-bold">Plant 01 Operating</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -512,7 +572,7 @@ export default function FeaturesPage() {
                     When the customer sends a purchase order, KanchanFlow automatically validates unit prices and tax codes against the approved quote. With one click, release verified job travelers directly to machine operators.
                   </p>
 
-                  {/* Exactly 3 Key Benefits */}
+                  {/* 3 Key Benefits */}
                   <div className="space-y-3.5 pt-2">
                     <div className="flex items-start gap-3">
                       <div className="w-5 h-5 rounded-full bg-[#36C98F]/20 text-[#36C98F] flex items-center justify-center shrink-0 mt-0.5">
@@ -553,7 +613,7 @@ export default function FeaturesPage() {
         {/* ========================================================= */}
         {/* SECTION 5: HOW IT WORKS (Compact 4-Step Narrative Flow)  */}
         {/* ========================================================= */}
-        <section id="workflow" className="py-16 lg:py-20 border-b border-[#1E2E42] bg-[#0C1422] relative scroll-mt-20">
+        <section id="workflow" className="py-16 lg:py-20 border-b border-[#222633] bg-[#0C0E14] relative scroll-mt-20">
           <Container>
             <SectionHeading
               eyebrow="CONNECTED CADENCE"
@@ -563,7 +623,7 @@ export default function FeaturesPage() {
 
             <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {/* Step 1 */}
-              <div className="p-6 rounded-2xl bg-[#101B2B] border border-[#23354C] hover:border-[#F0B33E]/50 transition-all shadow-lg flex flex-col justify-between">
+              <div className="p-6 rounded-2xl bg-[#12151D] border border-[#262B38] hover:border-[#F0B33E]/50 transition-all shadow-lg flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <span className="w-9 h-9 rounded-xl bg-[#F0B33E]/15 border border-[#F0B33E]/30 text-[#F0B33E] font-mono font-bold text-sm flex items-center justify-center">
@@ -576,13 +636,13 @@ export default function FeaturesPage() {
                     Log customer RFQs, 2D/3D CAD drawings, specifications, and delivery target dates in one shared queue.
                   </p>
                 </div>
-                <div className="mt-5 pt-3 border-t border-[#1E2E42] text-[11px] text-[#36C98F] font-mono flex items-center gap-1.5">
+                <div className="mt-5 pt-3 border-t border-[#222633] text-[11px] text-[#36C98F] font-mono flex items-center gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5" /> Centralized Asset Storage
                 </div>
               </div>
 
               {/* Step 2 */}
-              <div className="p-6 rounded-2xl bg-[#101B2B] border border-[#23354C] hover:border-[#36C98F]/50 transition-all shadow-lg flex flex-col justify-between">
+              <div className="p-6 rounded-2xl bg-[#12151D] border border-[#262B38] hover:border-[#36C98F]/50 transition-all shadow-lg flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <span className="w-9 h-9 rounded-xl bg-[#36C98F]/15 border border-[#36C98F]/30 text-[#36C98F] font-mono font-bold text-sm flex items-center justify-center">
@@ -595,13 +655,13 @@ export default function FeaturesPage() {
                     Calculate raw material weights, machine cycle times, tooling overheads, and target profit margins.
                   </p>
                 </div>
-                <div className="mt-5 pt-3 border-t border-[#1E2E42] text-[11px] text-[#36C98F] font-mono flex items-center gap-1.5">
+                <div className="mt-5 pt-3 border-t border-[#222633] text-[11px] text-[#36C98F] font-mono flex items-center gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5" /> Spindle Rate Governance
                 </div>
               </div>
 
               {/* Step 3 */}
-              <div className="p-6 rounded-2xl bg-[#101B2B] border border-[#23354C] hover:border-[#38BDF8]/50 transition-all shadow-lg flex flex-col justify-between">
+              <div className="p-6 rounded-2xl bg-[#12151D] border border-[#262B38] hover:border-[#38BDF8]/50 transition-all shadow-lg flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <span className="w-9 h-9 rounded-xl bg-[#38BDF8]/15 border border-[#38BDF8]/30 text-[#38BDF8] font-mono font-bold text-sm flex items-center justify-center">
@@ -614,13 +674,13 @@ export default function FeaturesPage() {
                     Issue branded quotes with immutable revision tags. Track cost deltas, customer opens, and final approvals.
                   </p>
                 </div>
-                <div className="mt-5 pt-3 border-t border-[#1E2E42] text-[11px] text-[#36C98F] font-mono flex items-center gap-1.5">
+                <div className="mt-5 pt-3 border-t border-[#222633] text-[11px] text-[#36C98F] font-mono flex items-center gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5" /> Immutable Version Log
                 </div>
               </div>
 
               {/* Step 4 */}
-              <div className="p-6 rounded-2xl bg-[#101B2B] border border-[#23354C] hover:border-[#A855F7]/50 transition-all shadow-lg flex flex-col justify-between">
+              <div className="p-6 rounded-2xl bg-[#12151D] border border-[#262B38] hover:border-[#A855F7]/50 transition-all shadow-lg flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <span className="w-9 h-9 rounded-xl bg-[#A855F7]/15 border border-[#A855F7]/30 text-[#A855F7] font-mono font-bold text-sm flex items-center justify-center">
@@ -633,7 +693,7 @@ export default function FeaturesPage() {
                     Convert approved quotes into verified production job travelers and BOM releases for the shop floor.
                   </p>
                 </div>
-                <div className="mt-5 pt-3 border-t border-[#1E2E42] text-[11px] text-[#36C98F] font-mono flex items-center gap-1.5">
+                <div className="mt-5 pt-3 border-t border-[#222633] text-[11px] text-[#36C98F] font-mono flex items-center gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5" /> 1-Click Shop Release
                 </div>
               </div>
@@ -642,9 +702,9 @@ export default function FeaturesPage() {
         </section>
 
         {/* ========================================================= */}
-        {/* SECTION 6: BUSINESS OUTCOMES (Why Trust KanchanFlow)       */}
+        {/* SECTION 6: BUSINESS OUTCOMES (Measurable Impact)          */}
         {/* ========================================================= */}
-        <section className="py-16 lg:py-20 border-b border-[#1E2E42] bg-[#0B111B] relative">
+        <section className="py-16 lg:py-20 border-b border-[#222633] bg-[#08090C] relative">
           <Container>
             <SectionHeading
               eyebrow="MEASURABLE IMPACT"
@@ -654,7 +714,7 @@ export default function FeaturesPage() {
 
             <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Outcome 1 */}
-              <div className="p-7 rounded-2xl bg-[#101B2B] border border-[#23354C] space-y-4 shadow-xl hover:-translate-y-1 transition-transform">
+              <div className="p-7 rounded-2xl bg-[#12151D] border border-[#262B38] space-y-4 shadow-xl hover:-translate-y-1 transition-transform">
                 <div className="w-12 h-12 rounded-xl bg-[#F0B33E]/15 border border-[#F0B33E]/30 text-[#F0B33E] flex items-center justify-center font-bold text-lg font-mono">
                   3x
                 </div>
@@ -662,13 +722,13 @@ export default function FeaturesPage() {
                 <p className="text-xs sm:text-sm text-[#94A3B8] leading-relaxed">
                   Cut estimation turnaround from 5–7 days to under 48 hours. Send accurate, professional quotes before your competitors finish their initial spreadsheet.
                 </p>
-                <div className="pt-3 border-t border-[#1E2E42] text-xs text-[#36C98F] font-mono font-medium">
+                <div className="pt-3 border-t border-[#222633] text-xs text-[#36C98F] font-mono font-medium">
                   Result: +32% Win Rate on High-Value RFQs
                 </div>
               </div>
 
               {/* Outcome 2 */}
-              <div className="p-7 rounded-2xl bg-[#101B2B] border border-[#23354C] space-y-4 shadow-xl hover:-translate-y-1 transition-transform">
+              <div className="p-7 rounded-2xl bg-[#12151D] border border-[#262B38] space-y-4 shadow-xl hover:-translate-y-1 transition-transform">
                 <div className="w-12 h-12 rounded-xl bg-[#36C98F]/15 border border-[#36C98F]/30 text-[#36C98F] flex items-center justify-center font-bold text-lg font-mono">
                   100%
                 </div>
@@ -676,13 +736,13 @@ export default function FeaturesPage() {
                 <p className="text-xs sm:text-sm text-[#94A3B8] leading-relaxed">
                   Lock machine hourly rates, scrap recovery factors, and minimum margin approval gates so estimators never commit to unprofitable jobs.
                 </p>
-                <div className="pt-3 border-t border-[#1E2E42] text-xs text-[#36C98F] font-mono font-medium">
+                <div className="pt-3 border-t border-[#222633] text-xs text-[#36C98F] font-mono font-medium">
                   Result: Zero Negative-Margin Jobs Released
                 </div>
               </div>
 
               {/* Outcome 3 */}
-              <div className="p-7 rounded-2xl bg-[#101B2B] border border-[#23354C] space-y-4 shadow-xl hover:-translate-y-1 transition-transform">
+              <div className="p-7 rounded-2xl bg-[#12151D] border border-[#262B38] space-y-4 shadow-xl hover:-translate-y-1 transition-transform">
                 <div className="w-12 h-12 rounded-xl bg-[#38BDF8]/15 border border-[#38BDF8]/30 text-[#38BDF8] flex items-center justify-center font-bold text-lg font-mono">
                   0%
                 </div>
@@ -690,7 +750,7 @@ export default function FeaturesPage() {
                 <p className="text-xs sm:text-sm text-[#94A3B8] leading-relaxed">
                   Every quotation is version-locked to the customer-approved CAD drawing. Production operators always receive verified, approved drawing revisions.
                 </p>
-                <div className="pt-3 border-t border-[#1E2E42] text-xs text-[#36C98F] font-mono font-medium">
+                <div className="pt-3 border-t border-[#222633] text-xs text-[#36C98F] font-mono font-medium">
                   Result: Complete Elimination of Scrap Rework
                 </div>
               </div>
@@ -701,7 +761,7 @@ export default function FeaturesPage() {
         {/* ========================================================= */}
         {/* SECTION 7: STREAMLINED COMPARISON TABLE                    */}
         {/* ========================================================= */}
-        <section className="py-16 lg:py-20 border-b border-[#1E2E42] bg-[#0C1422] relative">
+        <section className="py-16 lg:py-20 border-b border-[#222633] bg-[#0C0E14] relative">
           <Container>
             <SectionHeading
               eyebrow="CAPABILITY COMPARISON"
@@ -710,20 +770,20 @@ export default function FeaturesPage() {
             />
 
             {/* Desktop Clean Table */}
-            <div className="mt-12 hidden md:block rounded-2xl border border-[#23354C] bg-[#101B2B] overflow-hidden shadow-2xl">
+            <div className="mt-12 hidden md:block rounded-2xl border border-[#262B38] bg-[#12151D] overflow-hidden shadow-2xl">
               <table className="w-full text-left border-collapse">
                 <thead>
-                  <tr className="border-b border-[#1E2E42] bg-[#16263A] text-xs font-semibold text-white">
+                  <tr className="border-b border-[#222633] bg-[#181C26] text-xs font-semibold text-white">
                     <th className="py-4 px-6 w-1/4">Operational Phase</th>
                     <th className="py-4 px-6 w-3/8 text-rose-400">Traditional Excel & Email Process</th>
                     <th className="py-4 px-6 w-3/8 text-[#F0B33E]">KanchanFlow Connected Platform</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-[#1E2E42] text-xs sm:text-sm">
+                <tbody className="divide-y divide-[#222633] text-xs sm:text-sm">
                   {comparisonItems.map((item, idx) => (
                     <tr
                       key={item.dimension}
-                      className={idx % 2 === 0 ? "bg-[#101B2B]" : "bg-[#0E1725]"}
+                      className={idx % 2 === 0 ? "bg-[#12151D]" : "bg-[#0E1017]"}
                     >
                       <td className="py-4 px-6 font-bold text-white align-top">{item.dimension}</td>
                       <td className="py-4 px-6 text-[#94A3B8] align-top leading-relaxed">
@@ -747,7 +807,7 @@ export default function FeaturesPage() {
             {/* Mobile Stacked Cards */}
             <div className="mt-8 md:hidden space-y-4">
               {comparisonItems.map((item) => (
-                <div key={item.dimension} className="p-5 rounded-xl bg-[#101B2B] border border-[#23354C] space-y-3">
+                <div key={item.dimension} className="p-5 rounded-xl bg-[#12151D] border border-[#262B38] space-y-3">
                   <h3 className="font-bold text-white text-sm">{item.dimension}</h3>
                   <div className="p-3 rounded-lg bg-rose-500/10 border border-rose-500/25 text-xs text-[#94A3B8] space-y-1">
                     <span className="text-rose-400 font-semibold block">Traditional Process:</span>

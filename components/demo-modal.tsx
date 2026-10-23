@@ -92,10 +92,10 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
       role="dialog"
       aria-modal="true"
       aria-labelledby="demo-modal-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0B111B]/80 backdrop-blur-md animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#08090C]/85 backdrop-blur-md animate-in fade-in duration-200"
     >
       <div
-        className="relative w-full max-w-lg bg-[#111B29] border border-[#2A3B50] rounded-xl shadow-2xl p-6 sm:p-8 overflow-hidden"
+        className="relative w-full max-w-lg bg-[#12151D] border border-[#262B38] rounded-xl shadow-2xl p-6 sm:p-8 overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Subtle top gold accent bar */}
@@ -105,7 +105,7 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
         <button
           onClick={onClose}
           aria-label="Close demo booking modal"
-          className="absolute top-5 right-5 text-[#A4B0BE] hover:text-[#F5F3ED] hover:bg-[#16263A] p-1.5 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0B33E]"
+          className="absolute top-5 right-5 text-[#A4B0BE] hover:text-[#F5F3ED] hover:bg-[#181C26] p-1.5 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0B33E]"
         >
           <X className="w-5 h-5" />
         </button>
@@ -149,8 +149,8 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
                       setFormData({ ...formData, name: e.target.value });
                       if (errors.name) setErrors({ ...errors, name: "" });
                     }}
-                    className={`w-full px-3.5 py-2.5 rounded-md bg-[#16263A] border text-sm text-[#F5F3ED] placeholder-[#A4B0BE]/50 focus:outline-none focus:ring-2 focus:ring-[#F0B33E] transition-all ${
-                      errors.name ? "border-red-500" : "border-[#2A3B50]"
+                    className={`w-full px-3.5 py-2.5 rounded-md bg-[#181C26] border text-sm text-[#F5F3ED] placeholder-[#A4B0BE]/50 focus:outline-none focus:ring-2 focus:ring-[#F0B33E] transition-all ${
+                      errors.name ? "border-red-500" : "border-[#2E3547]"
                     }`}
                   />
                   {errors.name && (
@@ -174,8 +174,8 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
                       setFormData({ ...formData, email: e.target.value });
                       if (errors.email) setErrors({ ...errors, email: "" });
                     }}
-                    className={`w-full px-3.5 py-2.5 rounded-md bg-[#16263A] border text-sm text-[#F5F3ED] placeholder-[#A4B0BE]/50 focus:outline-none focus:ring-2 focus:ring-[#F0B33E] transition-all ${
-                      errors.email ? "border-red-500" : "border-[#2A3B50]"
+                    className={`w-full px-3.5 py-2.5 rounded-md bg-[#181C26] border text-sm text-[#F5F3ED] placeholder-[#A4B0BE]/50 focus:outline-none focus:ring-2 focus:ring-[#F0B33E] transition-all ${
+                      errors.email ? "border-red-500" : "border-[#2E3547]"
                     }`}
                   />
                   {errors.email && (
@@ -201,8 +201,8 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
                       setFormData({ ...formData, company: e.target.value });
                       if (errors.company) setErrors({ ...errors, company: "" });
                     }}
-                    className={`w-full px-3.5 py-2.5 rounded-md bg-[#16263A] border text-sm text-[#F5F3ED] placeholder-[#A4B0BE]/50 focus:outline-none focus:ring-2 focus:ring-[#F0B33E] transition-all ${
-                      errors.company ? "border-red-500" : "border-[#2A3B50]"
+                    className={`w-full px-3.5 py-2.5 rounded-md bg-[#181C26] border text-sm text-[#F5F3ED] placeholder-[#A4B0BE]/50 focus:outline-none focus:ring-2 focus:ring-[#F0B33E] transition-all ${
+                      errors.company ? "border-red-500" : "border-[#2E3547]"
                     }`}
                   />
                   {errors.company && (
@@ -223,7 +223,7 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
                     onChange={(e) =>
                       setFormData({ ...formData, teamSize: e.target.value })
                     }
-                    className="w-full px-3.5 py-2.5 rounded-md bg-[#16263A] border border-[#2A3B50] text-sm text-[#F5F3ED] focus:outline-none focus:ring-2 focus:ring-[#F0B33E] transition-all"
+                    className="w-full px-3.5 py-2.5 rounded-md bg-[#181C26] border border-[#2E3547] text-sm text-[#F5F3ED] focus:outline-none focus:ring-2 focus:ring-[#F0B33E] transition-all"
                   >
                     <option value="1-10">1 – 10 engineers / staff</option>
                     <option value="10-50">10 – 50 staff</option>
@@ -249,7 +249,7 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
                       manufacturingType: e.target.value,
                     })
                   }
-                  className="w-full px-3.5 py-2.5 rounded-md bg-[#16263A] border border-[#2A3B50] text-sm text-[#F5F3ED] focus:outline-none focus:ring-2 focus:ring-[#F0B33E] transition-all"
+                  className="w-full px-3.5 py-2.5 rounded-md bg-[#181C26] border border-[#2E3547] text-sm text-[#F5F3ED] focus:outline-none focus:ring-2 focus:ring-[#F0B33E] transition-all"
                 >
                   <option value="Precision Engineering">Precision Engineering & CNC</option>
                   <option value="Metal Fabrication">Sheet Metal Fabrication & Welding</option>
@@ -296,7 +296,7 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
               Thank you, <span className="text-[#F5F3ED] font-medium">{formData.name}</span>! Our manufacturing solution specialist will reach out to <span className="text-[#F0B33E]">{formData.email}</span> within 2 business hours to confirm your custom walkthrough for <span className="text-[#F5F3ED]">{formData.company}</span>.
             </p>
 
-            <div className="mt-6 p-4 rounded-lg bg-[#16263A] border border-[#2A3B50] text-left text-xs text-[#A4B0BE] space-y-1.5">
+            <div className="mt-6 p-4 rounded-lg bg-[#181C26] border border-[#2E3547] text-left text-xs text-[#A4B0BE] space-y-1.5">
               <div className="font-semibold text-[#F5F3ED] uppercase tracking-wider text-[11px] mb-2 text-center">
                 Demo Booking Summary
               </div>

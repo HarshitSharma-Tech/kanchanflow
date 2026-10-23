@@ -16,7 +16,7 @@ export function StatCard({
   icon,
 }: StatCardProps) {
   return (
-    <div className="relative p-5 sm:p-6 rounded-xl bg-[#111B29] border border-[#2A3B50] hover:border-[#F0B33E]/40 transition-colors">
+    <div className="relative p-5 sm:p-6 rounded-xl bg-[#12151D] border border-[#262B38] hover:border-[#F0B33E]/40 transition-colors">
       <div className="flex items-center justify-between">
         <span className="text-xs uppercase tracking-wider font-semibold text-[#A4B0BE]">
           {label}

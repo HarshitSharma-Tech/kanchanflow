@@ -36,8 +36,8 @@ export function FAQAccordion({
             key={item.question}
             className={`rounded-xl border transition-all duration-200 overflow-hidden ${
               isOpen
-                ? "bg-[#111B29] border-[#F0B33E]/50 shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
-                : "bg-[#111B29]/60 border-[#2A3B50] hover:border-[#2A3B50]/90 hover:bg-[#111B29]"
+                ? "bg-[#151822] border-[#F0B33E]/60 shadow-[0_4px_25px_rgba(0,0,0,0.5)]"
+                : "bg-[#10121A] border-[#242836] hover:border-[#F0B33E]/30 hover:bg-[#141722]"
             }`}
           >
             <h3>
@@ -53,8 +53,8 @@ export function FAQAccordion({
                   <span
                     className={`w-6 h-6 rounded flex items-center justify-center text-xs shrink-0 font-mono transition-colors ${
                       isOpen
-                        ? "bg-[#F0B33E] text-[#0B111B] font-bold"
-                        : "bg-[#16263A] text-[#A4B0BE]"
+                        ? "bg-[#F0B33E] text-[#08090C] font-bold"
+                        : "bg-[#1D212D] text-[#A4B0BE]"
                     }`}
                   >
                     0{index + 1}
@@ -75,7 +75,7 @@ export function FAQAccordion({
               role="region"
               aria-labelledby={headingId}
               hidden={!isOpen}
-              className={`px-5 pb-5 pt-1 text-sm text-[#A4B0BE] leading-relaxed border-t border-[#2A3B50]/40 transition-all duration-200 ${
+              className={`px-5 pb-5 pt-1 text-sm text-[#A4B0BE] leading-relaxed border-t border-[#242836] transition-all duration-200 ${
                 isOpen ? "block animate-in fade-in" : "hidden"
               }`}
             >

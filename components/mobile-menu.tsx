@@ -55,17 +55,17 @@ export function MobileMenu({
       role="dialog"
       aria-modal="true"
       aria-label="Mobile Navigation Menu"
-      className="fixed inset-0 z-50 md:hidden bg-[#0B111B]/95 backdrop-blur-xl animate-in fade-in duration-200 flex flex-col"
+      className="fixed inset-0 z-50 md:hidden bg-[#08090C]/95 backdrop-blur-xl animate-in fade-in duration-200 flex flex-col"
     >
       {/* Top bar with logo and close button */}
-      <div className="flex items-center justify-between px-6 py-5 border-b border-[#2A3B50]/60">
+      <div className="flex items-center justify-between px-6 py-5 border-b border-[#242836]">
         <div onClick={onClose}>
           <BrandLogo />
         </div>
         <button
           onClick={onClose}
           aria-label="Close navigation menu"
-          className="p-2 text-[#A4B0BE] hover:text-[#F5F3ED] hover:bg-[#16263A] rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0B33E]"
+          className="p-2 text-[#A4B0BE] hover:text-[#F5F3ED] hover:bg-[#181C26] rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0B33E]"
         >
           <X className="w-6 h-6" />
         </button>
@@ -83,8 +83,8 @@ export function MobileMenu({
             onClick={onClose}
             className={`flex items-center justify-between p-3.5 rounded-lg text-base font-medium transition-all ${
               link.isActive
-                ? "bg-[#16263A] text-[#F0B33E] border border-[#F0B33E]/30"
-                : "text-[#F5F3ED] hover:bg-[#111B29] hover:text-[#F0B33E]"
+                ? "bg-[#181C26] text-[#F0B33E] border border-[#F0B33E]/30"
+                : "text-[#F5F3ED] hover:bg-[#12151D] hover:text-[#F0B33E]"
             }`}
           >
             <span>{link.label}</span>
@@ -96,8 +96,8 @@ export function MobileMenu({
           </Link>
         ))}
 
-        <div className="pt-6 mt-6 border-t border-[#2A3B50]">
-          <div className="p-4 rounded-lg bg-[#111B29] border border-[#2A3B50]/80 mb-6">
+        <div className="pt-6 mt-6 border-t border-[#242836]">
+          <div className="p-4 rounded-lg bg-[#12151D] border border-[#262B38] mb-6">
             <div className="flex items-center gap-2 text-xs font-semibold text-[#36C98F] mb-1">
               <ShieldCheck className="w-4 h-4" /> Built for Precision Manufacturing
             </div>

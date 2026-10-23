@@ -89,6 +89,8 @@ export default function HomePage() {
       description:
         "Log customer RFQs, 2D/3D CAD drawings, specifications, and delivery target dates in a single central repository.",
       badge: "Intake",
+      telemetry: "Multi-CAD 3D Link",
+      gate: "Locked to Rev C Specimen",
     },
     {
       step: "02",
@@ -96,6 +98,8 @@ export default function HomePage() {
       description:
         "Break down raw materials, machine cycle times, tooling overheads, and target profit margins with automated formula guards.",
       badge: "Engineering",
+      telemetry: "Dynamic Spindle Rate",
+      gate: "Protected Margin Guard",
     },
     {
       step: "03",
@@ -103,6 +107,8 @@ export default function HomePage() {
       description:
         "Generate branded, audit-ready PDF quotes with clear revision tags. Track customer opens, questions, and approvals.",
       badge: "Commercial",
+      telemetry: "Instant WhatsApp Alert",
+      gate: "ISO 9001 Compliance Stamp",
     },
     {
       step: "04",
@@ -110,6 +116,8 @@ export default function HomePage() {
       description:
         "Convert approved quotes into verified production job cards and BOM releases for the shop floor without email misunderstandings.",
       badge: "Shop Floor",
+      telemetry: "Direct CAM Release",
+      gate: "1-Click ERP & Shop Traveler",
     },
   ];
 
@@ -147,7 +155,7 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#0B111B] text-[#F5F3ED]">
+    <div className="flex flex-col min-h-screen bg-[#08090C] text-[#F5F3ED]">
       <Navbar />
 
       <main id="main-content" className="flex-1">
@@ -163,7 +171,7 @@ export default function HomePage() {
         {/* SECTION 4: PROBLEM & SOLUTION */}
         <section
           id="problem-solution"
-          className="py-20 lg:py-24 bg-[#0A121E] border-y border-[#1E2E42] relative overflow-hidden"
+          className="py-20 lg:py-24 bg-[#0A0C10] border-y border-[#222633] relative overflow-hidden"
         >
           <div className="absolute inset-0 bg-dot-industrial opacity-15 pointer-events-none" />
           <div
@@ -221,7 +229,7 @@ export default function HomePage() {
               </div>
 
               {/* Problem 3: Sky Cyan Theme */}
-              <div className="p-7 rounded-2xl bg-gradient-to-b from-[#0F1B29] to-[#091018] border border-sky-500/30 hover:border-sky-500/60 transition-all duration-300 shadow-xl group">
+              <div className="p-7 rounded-2xl bg-gradient-to-b from-[#111922] to-[#0A0D14] border border-sky-500/30 hover:border-sky-500/60 transition-all duration-300 shadow-xl group">
                 <div className="w-12 h-12 rounded-xl bg-sky-500/20 border border-sky-500/40 text-sky-400 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
                   <AlertTriangle className="w-6 h-6" />
                 </div>
@@ -242,7 +250,7 @@ export default function HomePage() {
             </div>
 
             {/* The Connected KanchanFlow Solution Banner */}
-            <div className="mt-12 p-8 sm:p-10 rounded-2xl bg-gradient-to-r from-[#0B251F] via-[#0F1F33] to-[#1C160B] border-2 border-[#36C98F]/50 shadow-2xl relative overflow-hidden">
+            <div className="mt-12 p-8 sm:p-10 rounded-2xl bg-gradient-to-r from-[#0C1E18] via-[#151922] to-[#1C160B] border-2 border-[#36C98F]/50 shadow-2xl relative overflow-hidden">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div className="lg:col-span-8 space-y-3.5">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#36C98F]/20 border border-[#36C98F]/40 text-xs font-semibold uppercase tracking-wider text-[#36C98F]">
@@ -271,7 +279,7 @@ export default function HomePage() {
                     href="/pricing"
                     variant="secondary"
                     size="md"
-                    className="w-full justify-center bg-[#16263A] border-[#2A3F5E] text-white hover:border-[#F0B33E]/50"
+                    className="w-full justify-center bg-[#181C26] border-[#2E3547] text-white hover:border-[#F0B33E]/50"
                   >
                     Compare Pricing & ROI
                   </Button>
@@ -282,7 +290,7 @@ export default function HomePage() {
         </section>
 
         {/* SECTION 3: SIX FEATURE CARDS */}
-        <section id="features" className="py-20 lg:py-24 bg-[#0B111B] relative">
+        <section id="features" className="py-20 lg:py-24 bg-[#08090C] relative">
           <Container>
             <SectionHeading
               eyebrow="Core Capabilities"
@@ -297,6 +305,7 @@ export default function HomePage() {
                 title="Quote-to-Order"
                 badge="Core Flow"
                 metrics="48h Turnaround"
+                image="/images/capability-cad-drawing.jpg"
                 href="/features#quote-to-order"
                 description="Log customer enquiries, create professional quotes, track revisions, and convert accepted quotes into shop orders."
               />
@@ -307,6 +316,7 @@ export default function HomePage() {
                 title="Bill of Materials (BOM)"
                 badge="Costing"
                 metrics="Accurate Margins"
+                image="/images/capability-bom-costing.jpg"
                 href="/features#bom-costing"
                 description="Break down raw materials, machine hourly rates, and labor into a structured BOM that protects your margins."
               />
@@ -317,6 +327,7 @@ export default function HomePage() {
                 title="Sales Pipeline"
                 badge="Tracking"
                 metrics="+32% Win Rate"
+                image="/images/capability-sales-pipeline.jpg"
                 href="/features#pipeline"
                 description="See every active deal at a glance, prioritize high-value tenders, and know which quotes need a follow-up today."
               />
@@ -327,6 +338,7 @@ export default function HomePage() {
                 title="WhatsApp Updates"
                 badge="Messaging"
                 metrics="Instant Delivery"
+                image="/images/capability-mobile-approval.jpg"
                 href="/features#whatsapp"
                 description="Keep customer chats tied to the quote. Send instant quote links and dispatch notifications directly on WhatsApp."
               />
@@ -337,6 +349,7 @@ export default function HomePage() {
                 title="Reports & Insights"
                 badge="Analytics"
                 metrics="Clear Visibility"
+                image="/images/capability-revision-audit.jpg"
                 href="/features#reporting"
                 description="Track quote conversion rates, see which parts generate the most profit, and measure estimator turnaround velocity."
               />
@@ -347,6 +360,7 @@ export default function HomePage() {
                 title="Mobile Access"
                 badge="On the Move"
                 metrics="Any Device"
+                image="/images/capability-order-handoff.jpg"
                 href="/features#mobile"
                 description="Review customer history, active drawings, and quotation statuses on any smartphone or tablet while on the shop floor."
               />
@@ -357,9 +371,13 @@ export default function HomePage() {
         {/* SECTION 4: WORKFLOW TIMELINE */}
         <section
           id="workflow"
-          className="py-20 lg:py-24 bg-[#111B29] border-y border-[#2A3B50] relative"
+          className="py-20 lg:py-24 bg-[#0C0E14] border-y border-[#222633] relative overflow-hidden"
         >
-          <div className="absolute inset-0 bg-grid-industrial opacity-25 pointer-events-none" />
+          <div className="absolute inset-0 bg-grid-industrial opacity-20 pointer-events-none" />
+          <div
+            aria-hidden="true"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[320px] bg-[#F0B33E]/5 blur-[120px] rounded-full pointer-events-none -z-0"
+          />
 
           <Container>
             <SectionHeading
@@ -371,34 +389,41 @@ export default function HomePage() {
             {/* Desktop Horizontal Timeline / Mobile Stack */}
             <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-6 relative">
               {/* Connector line for desktop */}
-              <div className="hidden md:block absolute top-1/4 left-12 right-12 h-0.5 bg-gradient-to-r from-[#F0B33E]/20 via-[#F0B33E]/60 to-[#F0B33E]/20 -z-0" />
+              <div className="hidden md:block absolute top-[52px] left-12 right-12 h-0.5 bg-gradient-to-r from-[#F0B33E]/20 via-[#F0B33E]/70 to-[#F0B33E]/20 z-0" />
 
-              {workflowSteps.map((item, index) => (
+              {workflowSteps.map((item) => (
                 <div
                   key={item.step}
-                  className="relative z-10 flex flex-col justify-between p-7 rounded-2xl glass-panel-luxury glass-panel-hover transition-all duration-300"
+                  className="relative z-10 flex flex-col justify-between p-6 sm:p-7 rounded-2xl bg-[#12151D] border border-[#262B38] hover:border-[#F0B33E]/60 transition-all duration-300 shadow-xl hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.8),0_0_20px_rgba(240,179,62,0.15)] group overflow-hidden"
                 >
+                  {/* Subtle top gold rim beam on hover */}
+                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#F0B33E]/0 to-transparent group-hover:via-[#F0B33E] transition-all duration-500" />
+
                   <div>
                     <div className="flex items-center justify-between mb-5">
-                      <span className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#16263A] to-[#0B111B] border border-[#2A3B50] font-mono text-sm font-black text-[#F0B33E] flex items-center justify-center shadow-md">
+                      <span className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#1E2330] to-[#0F1118] border border-[#F0B33E]/40 font-mono text-sm font-black text-[#F0B33E] flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
                         {item.step}
                       </span>
-                      <span className="text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded bg-[#16263A] border border-[#2A3B50] text-[#F0B33E]">
+                      <span className="text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded-md bg-[#181C26] border border-[#2A3142] text-[#CBD5E1] font-semibold group-hover:border-[#F0B33E]/40 group-hover:text-[#F0B33E] transition-colors">
                         {item.badge}
                       </span>
                     </div>
 
-                    <h3 className="text-lg font-bold text-[#F5F3ED] tracking-tight">
+                    <div className="inline-block text-[10px] font-mono font-medium text-[#F0B33E] bg-[#F0B33E]/10 border border-[#F0B33E]/20 px-2 py-0.5 rounded mb-2">
+                      {item.telemetry}
+                    </div>
+
+                    <h3 className="text-lg font-bold text-white group-hover:text-[#F0B33E] transition-colors tracking-tight">
                       {item.title}
                     </h3>
-                    <p className="mt-2.5 text-xs sm:text-sm text-[#A4B0BE] leading-relaxed">
+                    <p className="mt-2.5 text-xs sm:text-sm text-[#94A3B8] leading-relaxed font-normal">
                       {item.description}
                     </p>
                   </div>
 
-                  <div className="mt-6 pt-4 border-t border-[#2A3B50]/60 flex items-center gap-2 text-xs text-[#36C98F] font-mono">
-                    <CheckCircle2 className="w-3.5 h-3.5" />
-                    <span>Automated Audit Gate</span>
+                  <div className="mt-6 pt-4 border-t border-[#262B38] flex items-center gap-2 text-xs text-[#36C98F] font-mono">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#36C98F] animate-pulse" />
+                    <span className="truncate">{item.gate}</span>
                   </div>
                 </div>
               ))}
@@ -407,7 +432,7 @@ export default function HomePage() {
         </section>
 
         {/* SECTION 5: INDUSTRIES */}
-        <section id="industries" className="py-20 lg:py-24 bg-[#0B111B] relative">
+        <section id="industries" className="py-20 lg:py-24 bg-[#08090C] relative">
           <Container>
             <SectionHeading
               eyebrow="Specialized Verticals"
@@ -419,26 +444,26 @@ export default function HomePage() {
               {industries.map((ind) => (
                 <div
                   key={ind.name}
-                  className="p-7 rounded-2xl glass-panel-luxury glass-panel-hover flex flex-col justify-between"
+                  className="p-7 rounded-2xl bg-[#12151D] border border-[#242936] hover:border-[#F0B33E]/50 transition-all duration-300 shadow-xl group hover:-translate-y-1 flex flex-col justify-between"
                 >
                   <div>
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#16263A] to-[#0B111B] border border-[#2A3B50] flex items-center justify-center mb-5 text-[#F0B33E] shadow-md">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#1C202C] to-[#11131A] border border-[#2E3547] flex items-center justify-center mb-5 text-[#F0B33E] shadow-md group-hover:border-[#F0B33E]/50 transition-colors">
                       {ind.icon}
                     </div>
-                    <h3 className="text-lg font-bold text-[#F5F3ED] tracking-tight">
+                    <h3 className="text-lg font-bold text-white group-hover:text-[#F0B33E] transition-colors tracking-tight">
                       {ind.name}
                     </h3>
-                    <p className="mt-2.5 text-xs sm:text-sm text-[#A4B0BE] leading-relaxed">
+                    <p className="mt-2.5 text-xs sm:text-sm text-[#94A3B8] leading-relaxed font-normal">
                       {ind.desc}
                     </p>
                   </div>
 
-                  <div className="mt-6 pt-4 border-t border-[#2A3B50]/60 flex items-center justify-between text-xs">
+                  <div className="mt-6 pt-4 border-t border-[#242836] flex items-center justify-between text-xs">
                     <span className="text-[#F0B33E] font-medium flex items-center gap-1.5 hover:underline cursor-pointer">
                       <span>Ready Templates</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </span>
-                    <span className="font-mono text-[10px] text-[#A4B0BE]/70">
+                    <span className="font-mono text-[10px] text-[#94A3B8]/70">
                       ISO 9001 / IATF
                     </span>
                   </div>
@@ -451,7 +476,7 @@ export default function HomePage() {
         {/* SECTION 6: PRICING TEASER */}
         <section
           id="pricing-preview"
-          className="py-20 lg:py-24 bg-[#111B29] border-y border-[#2A3B50] relative"
+          className="py-20 lg:py-24 bg-[#0C0E14] border-y border-[#222633] relative"
         >
           <div className="absolute inset-0 bg-dot-industrial opacity-20 pointer-events-none" />
 
@@ -465,25 +490,25 @@ export default function HomePage() {
             {/* Three plan teaser cards */}
             <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Starter */}
-              <div className="p-7 rounded-xl bg-[#0B111B] border border-[#2A3B50] flex flex-col justify-between hover:border-[#F0B33E]/30 transition-all">
+              <div className="p-7 rounded-2xl bg-[#12151D] border border-[#242936] flex flex-col justify-between hover:border-[#F0B33E]/40 transition-all shadow-xl">
                 <div>
-                  <span className="text-xs font-mono uppercase tracking-wider text-[#A4B0BE]">
+                  <span className="text-xs font-mono uppercase tracking-wider text-[#94A3B8]">
                     For Growing Job Shops
                   </span>
-                  <h3 className="text-xl font-bold text-[#F5F3ED] mt-1">Starter</h3>
-                  <p className="text-xs text-[#A4B0BE] mt-2 leading-relaxed">
+                  <h3 className="text-xl font-bold text-white mt-1">Starter</h3>
+                  <p className="text-xs text-[#94A3B8] mt-2 leading-relaxed">
                     Ideal for single-facility precision units moving away from spreadsheets and paper RFQ folders.
                   </p>
-                  <div className="my-6 py-4 border-y border-[#2A3B50]/60">
+                  <div className="my-6 py-4 border-y border-[#242836]">
                     <div className="flex items-baseline gap-1">
-                      <span className="text-3xl font-extrabold text-[#F5F3ED]">₹4,999</span>
-                      <span className="text-xs text-[#A4B0BE]">/ plant / month*</span>
+                      <span className="text-3xl font-extrabold text-white">₹4,999</span>
+                      <span className="text-xs text-[#94A3B8]">/ plant / month*</span>
                     </div>
-                    <span className="text-[10px] text-[#A4B0BE]/70 block mt-1">
+                    <span className="text-[10px] text-[#94A3B8]/70 block mt-1">
                       *Illustrative pricing billed annually
                     </span>
                   </div>
-                  <ul className="space-y-2.5 text-xs text-[#A4B0BE]">
+                  <ul className="space-y-2.5 text-xs text-[#94A3B8]">
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="w-3.5 h-3.5 text-[#36C98F]" /> Up to 3 Estimator Seats
                     </li>
@@ -504,8 +529,8 @@ export default function HomePage() {
               </div>
 
               {/* Growth - Featured */}
-              <div className="p-7 rounded-xl bg-[#16263A] border-2 border-[#F0B33E] flex flex-col justify-between shadow-xl relative gold-glow-card">
-                <div className="absolute -top-3 right-6 px-3 py-0.5 rounded-full bg-[#F0B33E] text-[#0B111B] text-[10px] font-bold uppercase tracking-wider">
+              <div className="p-7 rounded-2xl bg-gradient-to-b from-[#1E1B13] to-[#12100C] border-2 border-[#F0B33E] flex flex-col justify-between shadow-2xl relative gold-glow-card">
+                <div className="absolute -top-3 right-6 px-3 py-0.5 rounded-full bg-[#F0B33E] text-[#08090C] text-[10px] font-bold uppercase tracking-wider">
                   Most Popular
                 </div>
 
@@ -513,16 +538,16 @@ export default function HomePage() {
                   <span className="text-xs font-mono uppercase tracking-wider text-[#F0B33E]">
                     Standard Production Facility
                   </span>
-                  <h3 className="text-xl font-bold text-[#F5F3ED] mt-1">Growth</h3>
-                  <p className="text-xs text-[#A4B0BE] mt-2 leading-relaxed">
+                  <h3 className="text-xl font-bold text-white mt-1">Growth</h3>
+                  <p className="text-xs text-[#94A3B8] mt-2 leading-relaxed">
                     Comprehensive quote-to-order flow with multi-tier BOMs, revision governance, and mobile pipelines.
                   </p>
-                  <div className="my-6 py-4 border-y border-[#2A3B50]/80">
+                  <div className="my-6 py-4 border-y border-[#F0B33E]/30">
                     <div className="flex items-baseline gap-1">
                       <span className="text-3xl font-extrabold text-[#F0B33E]">₹12,499</span>
-                      <span className="text-xs text-[#A4B0BE]">/ plant / month*</span>
+                      <span className="text-xs text-[#94A3B8]">/ plant / month*</span>
                     </div>
-                    <span className="text-[10px] text-[#A4B0BE]/70 block mt-1">
+                    <span className="text-[10px] text-[#94A3B8]/70 block mt-1">
                       *Illustrative pricing billed annually
                     </span>
                   </div>
@@ -550,24 +575,24 @@ export default function HomePage() {
               </div>
 
               {/* Enterprise */}
-              <div className="p-7 rounded-xl bg-[#0B111B] border border-[#2A3B50] flex flex-col justify-between hover:border-[#F0B33E]/30 transition-all">
+              <div className="p-7 rounded-2xl bg-[#12151D] border border-[#242936] flex flex-col justify-between hover:border-[#F0B33E]/40 transition-all shadow-xl">
                 <div>
-                  <span className="text-xs font-mono uppercase tracking-wider text-[#A4B0BE]">
+                  <span className="text-xs font-mono uppercase tracking-wider text-[#94A3B8]">
                     Multi-Plant & Tier-1 OEMs
                   </span>
-                  <h3 className="text-xl font-bold text-[#F5F3ED] mt-1">Enterprise</h3>
-                  <p className="text-xs text-[#A4B0BE] mt-2 leading-relaxed">
+                  <h3 className="text-xl font-bold text-white mt-1">Enterprise</h3>
+                  <p className="text-xs text-[#94A3B8] mt-2 leading-relaxed">
                     For multi-facility manufacturing enterprises requiring custom ERP integration, SSO, and dedicated SLAs.
                   </p>
-                  <div className="my-6 py-4 border-y border-[#2A3B50]/60">
+                  <div className="my-6 py-4 border-y border-[#242836]">
                     <div className="flex items-baseline gap-1">
-                      <span className="text-2xl font-extrabold text-[#F5F3ED]">Custom Architecture</span>
+                      <span className="text-2xl font-extrabold text-white">Custom Architecture</span>
                     </div>
-                    <span className="text-[10px] text-[#A4B0BE]/70 block mt-1">
+                    <span className="text-[10px] text-[#94A3B8]/70 block mt-1">
                       Tailored to active machine centers & plants
                     </span>
                   </div>
-                  <ul className="space-y-2.5 text-xs text-[#A4B0BE]">
+                  <ul className="space-y-2.5 text-xs text-[#94A3B8]">
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="w-3.5 h-3.5 text-[#36C98F]" /> Unlimited Plant Sites & Seats
                     </li>
@@ -589,14 +614,14 @@ export default function HomePage() {
             </div>
 
             {/* Note on illustrative pricing */}
-            <p className="mt-8 text-center text-xs text-[#A4B0BE]/70">
+            <p className="mt-8 text-center text-xs text-[#94A3B8]/70">
               Note: Plan tiers and figures are indicative illustrations for demonstration purposes. Final enterprise quotes are tailored to specific machine units and workflow customization.
             </p>
           </Container>
         </section>
 
         {/* SECTION 7: FAQ ACCORDION */}
-        <section id="faq" className="py-20 lg:py-24 bg-[#0B111B] relative">
+        <section id="faq" className="py-20 lg:py-24 bg-[#08090C] relative">
           <Container>
             <SectionHeading
               eyebrow="Frequently Asked Questions"

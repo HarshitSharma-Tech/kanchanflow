@@ -33,7 +33,7 @@ export function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 w-full border-b border-[#2A3B50]/60 bg-[#0B111B]/85 backdrop-blur-md transition-all">
+      <header className="sticky top-0 z-40 w-full border-b border-[#242836] bg-[#08090C]/90 backdrop-blur-md transition-all">
         <Container size="wide">
           <div className="flex h-18 items-center justify-between">
             {/* Logo */}
@@ -52,7 +52,7 @@ export function Navbar() {
                     className={`relative px-3.5 py-1.5 text-sm font-medium rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0B33E] ${
                       link.isActive
                         ? "text-[#F0B33E]"
-                        : "text-[#A4B0BE] hover:text-[#F5F3ED] hover:bg-[#16263A]/40"
+                        : "text-[#A4B0BE] hover:text-[#F5F3ED] hover:bg-[#181C26]/60"
                     }`}
                   >
                     {link.label}

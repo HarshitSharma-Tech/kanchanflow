@@ -44,7 +44,7 @@ export function ScrollProgress() {
         <button
           onClick={scrollToTop}
           aria-label="Scroll back to top"
-          className="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-[#111B29]/90 border border-[#F0B33E]/50 text-[#F0B33E] shadow-2xl backdrop-blur-md hover:bg-[#F0B33E] hover:text-[#0B111B] transition-all duration-300 hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0B33E] animate-in fade-in zoom-in-75"
+          className="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-[#12151D]/90 border border-[#F0B33E]/50 text-[#F0B33E] shadow-2xl backdrop-blur-md hover:bg-[#F0B33E] hover:text-[#08090C] transition-all duration-300 hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0B33E] animate-in fade-in zoom-in-75"
         >
           <ArrowUp className="w-4 h-4 stroke-[2.5]" />
         </button>

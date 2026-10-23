@@ -17,7 +17,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#0B111B",
+  themeColor: "#08090C",
   width: "device-width",
   initialScale: 1,
 };
@@ -66,12 +66,12 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
       className={`${inter.variable} ${jetbrainsMono.variable} h-full antialiased dark`}
     >
-      <body className="min-h-full flex flex-col bg-[#0B111B] text-[#F5F3ED] font-sans selection:bg-[#F0B33E]/30 selection:text-[#F0B33E]">
+      <body className="min-h-full flex flex-col bg-[#08090C] text-[#F5F3ED] font-sans selection:bg-[#F0B33E]/30 selection:text-[#F0B33E]">
         <GoldenSparkles />
         <ScrollProgress />
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 px-4 py-2 bg-[#F0B33E] text-[#0B111B] font-bold rounded-md shadow-lg outline-none ring-2 ring-white"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 px-4 py-2 bg-[#F0B33E] text-[#08090C] font-bold rounded-md shadow-lg outline-none ring-2 ring-white"
         >
           Skip to main content
         </a>
