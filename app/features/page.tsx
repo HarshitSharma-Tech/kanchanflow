@@ -3,18 +3,19 @@ import Link from "next/link";
 import {
   FileText,
   Layers,
-  ShoppingBag,
-  TrendingUp,
-  Cpu,
-  Boxes,
-  CheckCircle2,
-  XCircle,
   ArrowRight,
   ShieldCheck,
-  Smartphone,
+  CheckCircle2,
+  XCircle,
   Factory,
-  Sparkles,
-  GitBranch,
+  Boxes,
+  Compass,
+  Cpu,
+  Clock,
+  TrendingUp,
+  FileSpreadsheet,
+  AlertTriangle,
+  Zap,
 } from "lucide-react";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
@@ -22,23 +23,15 @@ import { Container } from "@/components/container";
 import { SectionHeading } from "@/components/section-heading";
 import { SectionCTA } from "@/components/section-cta";
 import { Button } from "@/components/button";
-import {
-  RFQManagementMockup,
-  RevisionTrackingMockup,
-  BOMCostingMockup,
-  SalesPipelineMockup,
-  OrderHandoffMockup,
-  ReportingMobileMockup,
-} from "@/components/feature-interactive-mockups";
 
 export const metadata: Metadata = {
-  title: "Manufacturing CRM Features & Capabilities | KanchanFlow",
+  title: "KanchanFlow Features | Connected Manufacturing CRM & Quote-to-Order",
   description:
-    "Explore KanchanFlow's specialized modules: RFQ enquiry triage, multi-tier BOM costing, quotation revision control, shop floor order handoffs, and real-time plant analytics.",
+    "Explore how KanchanFlow connects enquiry triage, BOM costing, drawing revision control, and shop floor order handoffs for precision manufacturers.",
   openGraph: {
-    title: "KanchanFlow Features — The Workflow Behind Better Manufacturing Sales",
+    title: "KanchanFlow Features — The Connected Workflow for Manufacturing Sales",
     description:
-      "From the first enquiry to confirmed production release, keep every detail connected.",
+      "Replace scattered spreadsheets and lost email threads with a single connected platform for precision manufacturing.",
     type: "website",
     url: "https://kanchanflow.com/features",
   },
@@ -47,46 +40,24 @@ export const metadata: Metadata = {
 export default function FeaturesPage() {
   const comparisonItems = [
     {
-      dimension: "Quote Revision Tracking",
-      traditional:
-        "Estimators save multiple Excel versions (v1_final_final.xlsx) in personal folders; outdated drawings frequently get quoted or sent to production.",
-      kanchanflow:
-        "Every revision (Rev A, B, C) is version-locked with delta comparisons, preserving prior cycle times and highlighting CAD drawing changes.",
+      dimension: "Revision Governance",
+      traditional: "Multiple Excel versions saved in personal folders; outdated drawings frequently quoted.",
+      kanchanflow: "Version-locked Rev A, B, C with instant cost deltas and customer approval verification.",
     },
     {
-      dimension: "Opportunity & Pipeline Visibility",
-      traditional:
-        "Sales reps keep isolated email threads; leadership lacks real-time insight into pending RFQ values or which quotes require urgent follow-up.",
-      kanchanflow:
-        "Stage-based pipeline reflecting actual manufacturing phases (RFQ Triage, Costing, Negotiation, PO Received) with automated win-probability weighting.",
+      dimension: "BOM Costing & Rates",
+      traditional: "Fragile spreadsheet formulas with inconsistent machine hourly rates and manual scrap estimates.",
+      kanchanflow: "Structured BOM with machine rate cards, swarf recovery offsets, and protected margin thresholds.",
     },
     {
-      dimension: "BOM & Cost Breakdown Organisation",
-      traditional:
-        "Ad-hoc spreadsheet templates with fragile formulas; metal price fluctuations and machine hour rates are inconsistently applied.",
-      kanchanflow:
-        "Structured multi-tier BOM engine combining verified raw material index rates, machine center hourly rates, and subcontractor processes.",
+      dimension: "Sales Pipeline Visibility",
+      traditional: "Deals buried in sales rep email threads; no real-time visibility into quote status or follow-ups.",
+      kanchanflow: "Live pipeline with manufacturing stages (RFQ Intake, Costing, Negotiation, Shop Release).",
     },
     {
-      dimension: "Commercial Follow-Up Tracking",
-      traditional:
-        "Over 30% of sent quotations go cold because commercial teams rely on manual calendar reminders and handwritten notebooks.",
-      kanchanflow:
-        "Automated follow-up scheduling, customer quote view tracking, and instant alerts when high-value tenders require commercial touchpoints.",
-    },
-    {
-      dimension: "Order Handoff to Shop Floor",
-      traditional:
-        "Sales emails a scanned PO to production; critical engineering tolerances, heat-treat specs, and packaging notes get missed in transit.",
-      kanchanflow:
-        "1-click conversion from approved quote to verified production job card and bill of materials release, completely eliminating re-keying errors.",
-    },
-    {
-      dimension: "Margin Protection & Formula Governance",
-      traditional:
-        "Sales reps apply arbitrary discounts in spreadsheets without knowing true machine depreciation or scrap recovery offsets.",
-      kanchanflow:
-        "Locked minimum margin rules and supervisory approval gates prevent commercial teams from committing to loss-making production runs.",
+      dimension: "Shop Floor Handoff",
+      traditional: "Sales emails a scanned purchase order to production; critical drawing notes missed in transit.",
+      kanchanflow: "1-click conversion to digital job travelers with approved drawings and direct ERP/Tally sync.",
     },
   ];
 
@@ -95,99 +66,118 @@ export default function FeaturesPage() {
       <Navbar />
 
       <main id="main-content" className="flex-1">
-        {/* FEATURES HERO */}
-        <section className="relative pt-16 pb-20 lg:pt-24 lg:pb-28 bg-[#0B111B] border-b border-[#2A3B50] overflow-hidden">
-          <div className="absolute inset-0 bg-grid-industrial opacity-30 pointer-events-none" />
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[#F0B33E]/5 blur-[120px] rounded-full pointer-events-none" />
+        {/* ========================================================= */}
+        {/* SECTION 1: HERO (Concise, Benefit-Focused, Clean)         */}
+        {/* ========================================================= */}
+        <section className="relative pt-12 pb-16 lg:pt-18 lg:pb-22 border-b border-[#1E2E42] overflow-hidden bg-[#0B111B]">
+          {/* Subtle Golden Ambient Spotlight */}
+          <div
+            aria-hidden="true"
+            className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-[#F0B33E]/5 blur-[120px] rounded-full pointer-events-none -z-0"
+          />
 
           <Container>
             <div className="max-w-3xl mx-auto text-center space-y-5">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F0B33E]/10 border border-[#F0B33E]/30 text-xs font-semibold uppercase tracking-wider text-[#F0B33E]">
+              {/* Eyebrow */}
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#16263A] border border-[#F0B33E]/30 text-xs font-semibold uppercase tracking-wider text-[#F0B33E] shadow-sm">
                 <Factory className="w-3.5 h-3.5" />
-                <span>Purpose-Built Manufacturing Architecture</span>
+                <span>PRECISION SALES FOR MANUFACTURING</span>
               </div>
 
-              <h1 className="text-3xl sm:text-5xl font-extrabold text-[#F5F3ED] tracking-tight leading-tight">
-                The workflow behind{" "}
-                <span className="gold-gradient-text">better manufacturing sales.</span>
+              {/* Headline */}
+              <h1 className="text-3xl sm:text-5xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.15]">
+                The connected platform for{" "}
+                <span className="text-[#F0B33E]">modern manufacturing sales.</span>
               </h1>
 
-              <p className="text-base sm:text-lg text-[#A4B0BE] leading-relaxed font-normal">
-                From the first customer enquiry to the confirmed production order, keep engineering specs, costing formulas, and commercial handoffs tightly connected.
+              {/* Description */}
+              <p className="text-base sm:text-lg text-[#94A3B8] leading-relaxed font-normal max-w-2xl mx-auto">
+                Replace messy spreadsheets and buried email threads. KanchanFlow brings customer enquiries, BOM costing, drawing revisions, and shop floor handoffs into one connected workflow.
               </p>
 
-              <div className="pt-3 flex flex-wrap items-center justify-center gap-4">
-                <Button href="/pricing" variant="primary" size="lg">
-                  View Plan Options
+              {/* Action Buttons */}
+              <div className="pt-2 flex flex-wrap items-center justify-center gap-3.5">
+                <Button href="/pricing" variant="primary" size="lg" className="shadow-lg shadow-[#F0B33E]/20 font-bold">
+                  Book a Demo
                 </Button>
-                <Button href="#capabilities" variant="outline" size="lg">
-                  Explore Feature Matrix
+                <Button
+                  href="#capabilities"
+                  variant="secondary"
+                  size="lg"
+                  className="bg-[#16263A] border-[#2A3F5E] text-white hover:border-[#F0B33E]/50"
+                >
+                  Explore Capabilities
                 </Button>
               </div>
-            </div>
 
-            {/* Quick Metrics Bar */}
-            <div className="mt-14 max-w-4xl mx-auto p-6 rounded-2xl glass-panel-luxury border-2 border-[#F0B33E]/40 shadow-2xl gold-glow-card grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
-              <div>
-                <span className="block text-2xl font-bold text-[#F0B33E] font-mono">
-                  65%
-                </span>
-                <span className="text-xs text-[#A4B0BE]">Faster Quote Turnaround</span>
-              </div>
-              <div>
-                <span className="block text-2xl font-bold text-[#36C98F] font-mono">
-                  0%
-                </span>
-                <span className="text-xs text-[#A4B0BE]">Outdated Drawing Errors</span>
-              </div>
-              <div>
-                <span className="block text-2xl font-bold text-[#F5F3ED] font-mono">
-                  100%
-                </span>
-                <span className="text-xs text-[#A4B0BE]">Revision Traceability</span>
-              </div>
-              <div>
-                <span className="block text-2xl font-bold text-[#F0B33E] font-mono">
-                  14 Days
-                </span>
-                <span className="text-xs text-[#A4B0BE]">Average Plant Rollout</span>
+              {/* 3 Core Trust Pillars Banner */}
+              <div className="pt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto text-left">
+                <div className="p-4 rounded-xl bg-[#101B2B] border border-[#23354C] flex items-center gap-3 shadow-md">
+                  <div className="w-9 h-9 rounded-lg bg-[#F0B33E]/15 border border-[#F0B33E]/30 flex items-center justify-center text-[#F0B33E] shrink-0">
+                    <Zap className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <span className="block text-sm font-bold text-white">48h Turnaround</span>
+                    <span className="text-xs text-[#94A3B8]">Quote 3x faster</span>
+                  </div>
+                </div>
+
+                <div className="p-4 rounded-xl bg-[#101B2B] border border-[#23354C] flex items-center gap-3 shadow-md">
+                  <div className="w-9 h-9 rounded-lg bg-[#36C98F]/15 border border-[#36C98F]/30 flex items-center justify-center text-[#36C98F] shrink-0">
+                    <ShieldCheck className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <span className="block text-sm font-bold text-white">100% Traceability</span>
+                    <span className="text-xs text-[#94A3B8]">Zero revision errors</span>
+                  </div>
+                </div>
+
+                <div className="p-4 rounded-xl bg-[#101B2B] border border-[#23354C] flex items-center gap-3 shadow-md">
+                  <div className="w-9 h-9 rounded-lg bg-[#38BDF8]/15 border border-[#38BDF8]/30 flex items-center justify-center text-[#38BDF8] shrink-0">
+                    <LockIcon className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <span className="block text-sm font-bold text-white">Protected Margins</span>
+                    <span className="text-xs text-[#94A3B8]">Formula rate governance</span>
+                  </div>
+                </div>
               </div>
             </div>
           </Container>
         </section>
 
-        {/* ALTERNATING FEATURE SECTIONS */}
-        <div className="divide-y divide-[#2A3B50]/60">
-          {/* SECTION 1: RFQ & Enquiry Management */}
-          <section id="quote-to-order" className="py-20 lg:py-24 bg-[#111B29] relative">
-            <Container>
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        {/* ========================================================= */}
+        {/* CORE CAPABILITIES: Alternating, Clean, 3 Benefits Each    */}
+        {/* ========================================================= */}
+        <div id="capabilities" className="scroll-mt-20">
+          {/* CAPABILITY 1: RFQ & Enquiry Intake */}
+          <section id="quote-to-order" className="py-16 lg:py-20 border-b border-[#1E2E42] bg-[#0C1422] relative overflow-hidden">
+            <Container size="wide">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+                {/* Text Content */}
                 <div className="lg:col-span-6 space-y-5">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F0B33E]/10 border border-[#F0B33E]/30 text-xs font-semibold uppercase tracking-wider text-[#F0B33E]">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs font-semibold uppercase tracking-wider text-[#F0B33E]">
                     <FileText className="w-3.5 h-3.5" />
-                    <span>Centralized RFQ Triage</span>
+                    <span>CENTRALIZED RFQ TRIAGE</span>
                   </div>
 
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#F5F3ED] tracking-tight">
-                    Never lose an engineering RFQ or revised drawing again.
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-snug">
+                    Never lose an RFQ or revised drawing again.
                   </h2>
 
-                  <p className="text-sm sm:text-base text-[#A4B0BE] leading-relaxed">
-                    Customer RFQs arrive across emails, WhatsApp, and procurement portals. KanchanFlow brings them into a unified triage queue where 2D drawings, 3D CAD step files, target dates, and quantity tiers are immediately logged.
+                  <p className="text-sm sm:text-base text-[#94A3B8] leading-relaxed">
+                    Customer RFQs arrive across emails, WhatsApp, and procurement portals. KanchanFlow captures every enquiry into a unified queue with technical 2D drawings and 3D CAD step files attached directly.
                   </p>
 
-                  <div className="space-y-3 pt-2">
+                  {/* Exactly 3 Key Benefits */}
+                  <div className="space-y-3.5 pt-2">
                     <div className="flex items-start gap-3">
                       <div className="w-5 h-5 rounded-full bg-[#36C98F]/20 text-[#36C98F] flex items-center justify-center shrink-0 mt-0.5">
                         <CheckCircle2 className="w-3.5 h-3.5" />
                       </div>
                       <div>
-                        <strong className="text-xs sm:text-sm text-[#F5F3ED] block">
-                          Instant Drawing & CAD Association
-                        </strong>
-                        <span className="text-xs text-[#A4B0BE]">
-                          Keep Step, IGES, and PDF technical drawings linked directly to the quote record.
-                        </span>
+                        <strong className="text-sm font-bold text-white block">Centralized Drawing Attachment</strong>
+                        <span className="text-xs text-[#94A3B8]">Keep Step, IGES, and PDF technical drawings linked directly to the quote record.</span>
                       </div>
                     </div>
 
@@ -196,12 +186,8 @@ export default function FeaturesPage() {
                         <CheckCircle2 className="w-3.5 h-3.5" />
                       </div>
                       <div>
-                        <strong className="text-xs sm:text-sm text-[#F5F3ED] block">
-                          Automated Estimator Load Balancing
-                        </strong>
-                        <span className="text-xs text-[#A4B0BE]">
-                          Assign incoming RFQs to senior estimators based on material capability and current queue.
-                        </span>
+                        <strong className="text-sm font-bold text-white">Instant Prioritization</strong>
+                        <span className="text-xs text-[#94A3B8]">Filter by customer tier, target turnaround date, or volume before estimation begins.</span>
                       </div>
                     </div>
 
@@ -210,124 +196,134 @@ export default function FeaturesPage() {
                         <CheckCircle2 className="w-3.5 h-3.5" />
                       </div>
                       <div>
-                        <strong className="text-xs sm:text-sm text-[#F5F3ED] block">
-                          Multi-Quantity Price Breaks
-                        </strong>
-                        <span className="text-xs text-[#A4B0BE]">
-                          Quote batch volumes (e.g. 50, 250, 1000 pcs) without duplicating calculation effort.
-                        </span>
+                        <strong className="text-sm font-bold text-white">Multi-Quantity Price Breaks</strong>
+                        <span className="text-xs text-[#94A3B8]">Quote batch volumes (e.g. 50, 250, 1000 pcs) without duplicating calculation effort.</span>
                       </div>
                     </div>
                   </div>
                 </div>
 
+                {/* Simplified, High-Contrast UI Visual */}
                 <div className="lg:col-span-6">
-                  <RFQManagementMockup />
+                  <div className="rounded-2xl bg-[#101B2B] border border-[#23354C] p-6 shadow-2xl space-y-4">
+                    <div className="flex items-center justify-between pb-3.5 border-b border-[#1E2E42]">
+                      <div className="flex items-center gap-2.5">
+                        <span className="w-2.5 h-2.5 rounded-full bg-[#36C98F]" />
+                        <span className="font-mono text-sm font-bold text-[#F0B33E]">RFQ #9042</span>
+                        <span className="text-sm font-semibold text-white">Mahindra Aerospace</span>
+                      </div>
+                      <span className="text-xs font-mono px-2 py-0.5 rounded bg-[#16263A] text-[#94A3B8] border border-[#2A3F5E]">
+                        Target: 5 Days
+                      </span>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="p-3.5 rounded-xl bg-[#080E17] border border-[#1E2E42]">
+                        <span className="text-[10px] text-[#94A3B8] uppercase font-mono">Drawing Asset</span>
+                        <div className="text-xs font-bold text-white mt-1 truncate">DWG-TITAN-PIN-REV-C.step</div>
+                        <span className="inline-flex items-center gap-1 text-[11px] text-[#36C98F] mt-1.5 font-medium">
+                          <CheckCircle2 className="w-3 h-3" /> CAD Specimen Linked
+                        </span>
+                      </div>
+
+                      <div className="p-3.5 rounded-xl bg-[#080E17] border border-[#1E2E42]">
+                        <span className="text-[10px] text-[#94A3B8] uppercase font-mono">Volume Tiers</span>
+                        <div className="text-xs font-bold text-white mt-1">150 / 500 / 1,000 pcs</div>
+                        <span className="text-[11px] text-[#F0B33E] mt-1.5 block font-medium">Automated Price Breaks</span>
+                      </div>
+                    </div>
+
+                    <div className="p-3 rounded-xl bg-[#16263A]/80 border border-[#23354C] flex items-center justify-between text-xs">
+                      <span className="text-[#94A3B8]">Assigned Estimator: <strong className="text-white">Senior Tooling Lead</strong></span>
+                      <span className="text-[#36C98F] font-semibold">Triage Ready →</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </Container>
           </section>
 
-          {/* SECTION 2: Quotation Costing & Revisions */}
-          <section className="py-20 lg:py-24 bg-[#0B111B] relative">
-            <Container>
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div className="lg:col-span-6 lg:order-2 space-y-5">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F0B33E]/10 border border-[#F0B33E]/30 text-xs font-semibold uppercase tracking-wider text-[#F0B33E]">
-                    <GitBranch className="w-3.5 h-3.5" />
-                    <span>Revision Governance</span>
-                  </div>
-
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#F5F3ED] tracking-tight">
-                    Quote with total revision confidence across engineering iterations.
-                  </h2>
-
-                  <p className="text-sm sm:text-base text-[#A4B0BE] leading-relaxed">
-                    When customers modify a radius, change material grades, or request tighter GD&T tolerances, clone prior costing with one click. KanchanFlow isolates the deltas and ensures only customer-approved revisions proceed to production.
-                  </p>
-
-                  <div className="space-y-3 pt-2">
-                    <div className="flex items-start gap-3">
-                      <div className="w-5 h-5 rounded-full bg-[#36C98F]/20 text-[#36C98F] flex items-center justify-center shrink-0 mt-0.5">
-                        <CheckCircle2 className="w-3.5 h-3.5" />
-                      </div>
-                      <div>
-                        <strong className="text-xs sm:text-sm text-[#F5F3ED] block">
-                          Immutable Revision History (Rev A, B, C)
-                        </strong>
-                        <span className="text-xs text-[#A4B0BE]">
-                          Never overwrite prior pricing; maintain full auditability for client reviews and ISO audits.
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-3">
-                      <div className="w-5 h-5 rounded-full bg-[#36C98F]/20 text-[#36C98F] flex items-center justify-center shrink-0 mt-0.5">
-                        <CheckCircle2 className="w-3.5 h-3.5" />
-                      </div>
-                      <div>
-                        <strong className="text-xs sm:text-sm text-[#F5F3ED] block">
-                          Visual Cost Delta Inspector
-                        </strong>
-                        <span className="text-xs text-[#A4B0BE]">
-                          Inspect exactly how raw material surcharges or machine cycle adjustments affected the margin.
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-3">
-                      <div className="w-5 h-5 rounded-full bg-[#36C98F]/20 text-[#36C98F] flex items-center justify-center shrink-0 mt-0.5">
-                        <CheckCircle2 className="w-3.5 h-3.5" />
-                      </div>
-                      <div>
-                        <strong className="text-xs sm:text-sm text-[#F5F3ED] block">
-                          Supervisory Markup Locking
-                        </strong>
-                        <span className="text-xs text-[#A4B0BE]">
-                          Protect commercial margins with configurable approval thresholds for discount deviations.
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
+          {/* CAPABILITY 2: Quotation & BOM Costing (Alternating: Visual Left, Text Right) */}
+          <section id="bom-costing" className="py-16 lg:py-20 border-b border-[#1E2E42] bg-[#0B111B] relative overflow-hidden">
+            <Container size="wide">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+                {/* Simplified Visual on Left */}
                 <div className="lg:col-span-6 lg:order-1">
-                  <RevisionTrackingMockup />
-                </div>
-              </div>
-            </Container>
-          </section>
+                  <div className="rounded-2xl bg-[#101B2B] border border-[#23354C] p-6 shadow-2xl space-y-4">
+                    <div className="flex items-center justify-between pb-3.5 border-b border-[#1E2E42]">
+                      <div className="flex items-center gap-2">
+                        <Layers className="w-4 h-4 text-[#36C98F]" />
+                        <span className="text-sm font-bold text-white">Cost Breakdown • 5-Axis Impeller</span>
+                      </div>
+                      <span className="text-xs font-mono font-bold text-[#36C98F] px-2 py-0.5 rounded bg-[#36C98F]/15 border border-[#36C98F]/30">
+                        Margin: 28%
+                      </span>
+                    </div>
 
-          {/* SECTION 3: BOM and Component Costing */}
-          <section id="bom-costing" className="py-20 lg:py-24 bg-[#111B29] relative">
-            <Container>
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div className="lg:col-span-6 space-y-5">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#36C98F]/15 border border-[#36C98F]/30 text-xs font-semibold uppercase tracking-wider text-[#36C98F]">
+                    {/* Cost Structure Bars */}
+                    <div className="space-y-2.5 text-xs">
+                      <div className="flex justify-between items-center">
+                        <span className="text-[#94A3B8]">Forged Stainless Steel 316L:</span>
+                        <span className="font-mono font-semibold text-white">₹2,10,000</span>
+                      </div>
+                      <div className="w-full h-1.5 rounded-full bg-[#16263A] overflow-hidden">
+                        <div className="h-full bg-[#F0B33E] rounded-full w-[45%]" />
+                      </div>
+
+                      <div className="flex justify-between items-center pt-1">
+                        <span className="text-[#94A3B8]">5-Axis Machining (Spindle Rate):</span>
+                        <span className="font-mono font-semibold text-white">₹1,42,000</span>
+                      </div>
+                      <div className="w-full h-1.5 rounded-full bg-[#16263A] overflow-hidden">
+                        <div className="h-full bg-[#36C98F] rounded-full w-[35%]" />
+                      </div>
+
+                      <div className="flex justify-between items-center pt-1">
+                        <span className="text-[#94A3B8]">Plating & Heat Treatment:</span>
+                        <span className="font-mono font-semibold text-white">₹60,000</span>
+                      </div>
+                      <div className="w-full h-1.5 rounded-full bg-[#16263A] overflow-hidden">
+                        <div className="h-full bg-[#38BDF8] rounded-full w-[20%]" />
+                      </div>
+                    </div>
+
+                    {/* Bottom Price Summary */}
+                    <div className="p-3.5 rounded-xl bg-[#080E17] border border-[#F0B33E]/40 flex items-center justify-between">
+                      <div>
+                        <span className="text-[10px] text-[#94A3B8] uppercase block">Quoted Price (250 pcs)</span>
+                        <span className="text-lg font-black text-[#F0B33E] font-mono">₹5,27,360</span>
+                      </div>
+                      <span className="text-xs font-semibold text-[#36C98F] flex items-center gap-1">
+                        <CheckCircle2 className="w-3.5 h-3.5" /> Formula Locked
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Text Content on Right */}
+                <div className="lg:col-span-6 lg:order-2 space-y-5">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs font-semibold uppercase tracking-wider text-[#36C98F]">
                     <Layers className="w-3.5 h-3.5" />
-                    <span>Multi-Tier BOM Engine</span>
+                    <span>MULTI-TIER BOM ENGINE</span>
                   </div>
 
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#F5F3ED] tracking-tight">
-                    Precise component costing from raw material to surface treatment.
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-snug">
+                    Fast, accurate costing. Zero formula errors.
                   </h2>
 
-                  <p className="text-sm sm:text-base text-[#A4B0BE] leading-relaxed">
-                    Say goodbye to broken spreadsheet formulas. KanchanFlow incorporates verified metal density tables, scrap recovery values, hourly machining rates by machine center, and subcontracting vendor fees in one unified calculation tree.
+                  <p className="text-sm sm:text-base text-[#94A3B8] leading-relaxed">
+                    Say goodbye to broken spreadsheet formulas. KanchanFlow combines raw material weights, machine hourly rates, and subcontracting vendor fees in one unified, auditable calculation tree.
                   </p>
 
-                  <div className="space-y-3 pt-2">
+                  {/* Exactly 3 Key Benefits */}
+                  <div className="space-y-3.5 pt-2">
                     <div className="flex items-start gap-3">
                       <div className="w-5 h-5 rounded-full bg-[#36C98F]/20 text-[#36C98F] flex items-center justify-center shrink-0 mt-0.5">
                         <CheckCircle2 className="w-3.5 h-3.5" />
                       </div>
                       <div>
-                        <strong className="text-xs sm:text-sm text-[#F5F3ED] block">
-                          Machine Hour Rate (MHR) Cards
-                        </strong>
-                        <span className="text-xs text-[#A4B0BE]">
-                          Assign pre-set rates for 3-axis VMCs, 5-axis mill-turn centers, CNC press brakes, and wire EDMs.
-                        </span>
+                        <strong className="text-sm font-bold text-white block">Pre-Set Machine Hourly Rates</strong>
+                        <span className="text-xs text-[#94A3B8]">Assign hourly rate cards across 3-axis VMCs, 5-axis mill-turn centers, and wire EDMs.</span>
                       </div>
                     </div>
 
@@ -336,12 +332,8 @@ export default function FeaturesPage() {
                         <CheckCircle2 className="w-3.5 h-3.5" />
                       </div>
                       <div>
-                        <strong className="text-xs sm:text-sm text-[#F5F3ED] block">
-                          Raw Material & Scrap Offsets
-                        </strong>
-                        <span className="text-xs text-[#A4B0BE]">
-                          Automatically factor swarf and metal scrap recovery value into the net component cost.
-                        </span>
+                        <strong className="text-sm font-bold text-white">Scrap & Swarf Recovery Offsets</strong>
+                        <span className="text-xs text-[#94A3B8]">Automatically factor metal swarf recycling values to protect your competitive edge.</span>
                       </div>
                     </div>
 
@@ -350,124 +342,44 @@ export default function FeaturesPage() {
                         <CheckCircle2 className="w-3.5 h-3.5" />
                       </div>
                       <div>
-                        <strong className="text-xs sm:text-sm text-[#F5F3ED] block">
-                          Subcontracting & Special Processes
-                        </strong>
-                        <span className="text-xs text-[#A4B0BE]">
-                          Seamlessly calculate heat treatment, anodizing, plating, and laboratory certification tariffs.
-                        </span>
+                        <strong className="text-sm font-bold text-white">Locked Profit Margins</strong>
+                        <span className="text-xs text-[#94A3B8]">Enforce minimum margin approval thresholds before sales reps issue customer quotes.</span>
                       </div>
                     </div>
                   </div>
-                </div>
-
-                <div className="lg:col-span-6">
-                  <BOMCostingMockup />
                 </div>
               </div>
             </Container>
           </section>
 
-          {/* SECTION 4: Sales Pipeline & Follow-Ups */}
-          <section id="pipeline" className="py-20 lg:py-24 bg-[#0B111B] relative">
-            <Container>
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div className="lg:col-span-6 lg:order-2 space-y-5">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F0B33E]/10 border border-[#F0B33E]/30 text-xs font-semibold uppercase tracking-wider text-[#F0B33E]">
-                    <TrendingUp className="w-3.5 h-3.5" />
-                    <span>Shop Floor Pipeline</span>
-                  </div>
-
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#F5F3ED] tracking-tight">
-                    Track commercial opportunities through actual production stages.
-                  </h2>
-
-                  <p className="text-sm sm:text-base text-[#A4B0BE] leading-relaxed">
-                    Generic CRMs use software stages like &quot;lead&quot; and &quot;demo&quot;. KanchanFlow tracks opportunities through real manufacturing stages: RFQ Intake, BOM Costing, Negotiation, Customer Approval, and PO Released to Plant.
-                  </p>
-
-                  <div className="space-y-3 pt-2">
-                    <div className="flex items-start gap-3">
-                      <div className="w-5 h-5 rounded-full bg-[#36C98F]/20 text-[#36C98F] flex items-center justify-center shrink-0 mt-0.5">
-                        <CheckCircle2 className="w-3.5 h-3.5" />
-                      </div>
-                      <div>
-                        <strong className="text-xs sm:text-sm text-[#F5F3ED] block">
-                          High-Value Tender Follow-up Triggers
-                        </strong>
-                        <span className="text-xs text-[#A4B0BE]">
-                          Alert commercial teams when high-margin quotes remain uncontacted after 48 hours.
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-3">
-                      <div className="w-5 h-5 rounded-full bg-[#36C98F]/20 text-[#36C98F] flex items-center justify-center shrink-0 mt-0.5">
-                        <CheckCircle2 className="w-3.5 h-3.5" />
-                      </div>
-                      <div>
-                        <strong className="text-xs sm:text-sm text-[#F5F3ED] block">
-                          Capacity & Revenue Forecasting
-                        </strong>
-                        <span className="text-xs text-[#A4B0BE]">
-                          Forecast upcoming shop floor machine load before quotes are even confirmed.
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-3">
-                      <div className="w-5 h-5 rounded-full bg-[#36C98F]/20 text-[#36C98F] flex items-center justify-center shrink-0 mt-0.5">
-                        <CheckCircle2 className="w-3.5 h-3.5" />
-                      </div>
-                      <div>
-                        <strong className="text-xs sm:text-sm text-[#F5F3ED] block">
-                          Client Account Tiers
-                        </strong>
-                        <span className="text-xs text-[#A4B0BE]">
-                          Segment tier-1 automotive suppliers, defense contractors, and local OEMs for customized service.
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="lg:col-span-6 lg:order-1">
-                  <SalesPipelineMockup />
-                </div>
-              </div>
-            </Container>
-          </section>
-
-          {/* SECTION 5: Purchase Order Capture & Order Handoff */}
-          <section id="order-handoff" className="py-20 lg:py-24 bg-[#111B29] relative">
-            <Container>
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          {/* CAPABILITY 3: Revision Governance (Text Left, Visual Right) */}
+          <section className="py-16 lg:py-20 border-b border-[#1E2E42] bg-[#0C1422] relative overflow-hidden">
+            <Container size="wide">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+                {/* Text Content */}
                 <div className="lg:col-span-6 space-y-5">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#36C98F]/15 border border-[#36C98F]/30 text-xs font-semibold uppercase tracking-wider text-[#36C98F]">
-                    <Boxes className="w-3.5 h-3.5" />
-                    <span>Zero-Friction Shop Release</span>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-xs font-semibold uppercase tracking-wider text-[#38BDF8]">
+                    <Clock className="w-3.5 h-3.5" />
+                    <span>REVISION TRACEABILITY</span>
                   </div>
 
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#F5F3ED] tracking-tight">
-                    Turn confirmed purchase orders into production job cards without errors.
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-snug">
+                    Every revision. Every cost. Always traceable.
                   </h2>
 
-                  <p className="text-sm sm:text-base text-[#A4B0BE] leading-relaxed">
-                    When the client sends a PO, KanchanFlow automatically validates unit rates, terms, and tax codes against the approved quotation. With one click, release a verified job traveler to the shop floor.
+                  <p className="text-sm sm:text-base text-[#94A3B8] leading-relaxed">
+                    When customers modify drawing tolerances or switch alloys, clone previous costing with one click. KanchanFlow isolates the cost deltas and ensures only customer-approved revisions reach the shop floor.
                   </p>
 
-                  <div className="space-y-3 pt-2">
+                  {/* Exactly 3 Key Benefits */}
+                  <div className="space-y-3.5 pt-2">
                     <div className="flex items-start gap-3">
                       <div className="w-5 h-5 rounded-full bg-[#36C98F]/20 text-[#36C98F] flex items-center justify-center shrink-0 mt-0.5">
                         <CheckCircle2 className="w-3.5 h-3.5" />
                       </div>
                       <div>
-                        <strong className="text-xs sm:text-sm text-[#F5F3ED] block">
-                          Automated Rate & Specification Check
-                        </strong>
-                        <span className="text-xs text-[#A4B0BE]">
-                          Flag discrepancies between client PO line items and quoted figures before manufacturing starts.
-                        </span>
+                        <strong className="text-sm font-bold text-white block">Immutable Version History</strong>
+                        <span className="text-xs text-[#94A3B8]">Never overwrite prior pricing; retain complete audit logs for client and ISO reviews.</span>
                       </div>
                     </div>
 
@@ -476,12 +388,8 @@ export default function FeaturesPage() {
                         <CheckCircle2 className="w-3.5 h-3.5" />
                       </div>
                       <div>
-                        <strong className="text-xs sm:text-sm text-[#F5F3ED] block">
-                          Instant Shop Traveler / Job Card
-                        </strong>
-                        <span className="text-xs text-[#A4B0BE]">
-                          Print or push digital job cards with approved drawing links, routing sequence, and quality checklists.
-                        </span>
+                        <strong className="text-sm font-bold text-white">Visual Cost Deltas</strong>
+                        <span className="text-xs text-[#94A3B8]">See immediately how material surcharges or machine cycle adjustments shifted the price.</span>
                       </div>
                     </div>
 
@@ -490,142 +398,344 @@ export default function FeaturesPage() {
                         <CheckCircle2 className="w-3.5 h-3.5" />
                       </div>
                       <div>
-                        <strong className="text-xs sm:text-sm text-[#F5F3ED] block">
-                          ERP / Tally Export Gateway
-                        </strong>
-                        <span className="text-xs text-[#A4B0BE]">
-                          Export verified order headers and item masters into your ERP accounting ledger cleanly.
-                        </span>
+                        <strong className="text-sm font-bold text-white">Supervisory Approval Gates</strong>
+                        <span className="text-xs text-[#94A3B8]">Protect commercial margins with configurable approval limits on discount deviations.</span>
                       </div>
                     </div>
                   </div>
                 </div>
 
+                {/* Simplified Visual: Revision Delta Inspector */}
                 <div className="lg:col-span-6">
-                  <OrderHandoffMockup />
+                  <div className="rounded-2xl bg-[#101B2B] border border-[#23354C] p-6 shadow-2xl space-y-4">
+                    <div className="flex items-center justify-between pb-3.5 border-b border-[#1E2E42]">
+                      <div className="flex items-center gap-2">
+                        <span className="w-2.5 h-2.5 rounded-full bg-[#38BDF8]" />
+                        <span className="text-sm font-bold text-white">Revision Comparison</span>
+                      </div>
+                      <span className="text-xs font-mono px-2 py-0.5 rounded bg-[#16263A] text-[#F0B33E] border border-[#F0B33E]/30">
+                        Rev A ➔ Rev B
+                      </span>
+                    </div>
+
+                    {/* Side-by-Side Comparison */}
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="p-3.5 rounded-xl bg-[#080E17] border border-[#1E2E42] opacity-75">
+                        <div className="flex items-center justify-between text-xs text-[#94A3B8]">
+                          <span>Drawing Rev A</span>
+                          <span className="line-through">₹4,85,000</span>
+                        </div>
+                        <div className="text-xs text-[#94A3B8] mt-1">Base Spec (No Heat Treat)</div>
+                        <span className="text-[10px] text-[#94A3B8] mt-2 block font-mono">Superseded</span>
+                      </div>
+
+                      <div className="p-3.5 rounded-xl bg-[#16263A] border-2 border-[#36C98F]/40 shadow-sm">
+                        <div className="flex items-center justify-between text-xs font-bold text-white">
+                          <span>Drawing Rev B</span>
+                          <span className="text-[#36C98F]">₹5,27,360</span>
+                        </div>
+                        <div className="text-xs text-white mt-1">Heat Treat Added</div>
+                        <span className="text-[10px] text-[#36C98F] font-bold mt-2 block font-mono">
+                          ✓ Customer Approved
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="p-3 rounded-xl bg-[#080E17] border border-[#1E2E42] flex items-center justify-between text-xs font-mono">
+                      <span className="text-[#94A3B8]">Delta: +₹42,360 (+8.7%)</span>
+                      <span className="text-[#36C98F]">✓ Locked For Production</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </Container>
           </section>
 
-          {/* SECTION 6: Reporting and Mobile Access */}
-          <section id="reporting" className="py-20 lg:py-24 bg-[#0B111B] relative">
-            <Container>
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div className="lg:col-span-6 lg:order-2 space-y-5">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F0B33E]/10 border border-[#F0B33E]/30 text-xs font-semibold uppercase tracking-wider text-[#F0B33E]">
-                    <Smartphone className="w-3.5 h-3.5" />
-                    <span>Mobile & Shop Telemetry</span>
-                  </div>
-
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#F5F3ED] tracking-tight">
-                    Real-time commercial intelligence in the boardroom and on the go.
-                  </h2>
-
-                  <p className="text-sm sm:text-base text-[#A4B0BE] leading-relaxed">
-                    Equip field sales engineers and plant supervisors with fast mobile access. Check quote statuses while meeting procurement officers, review BOM drawings, and receive instant WhatsApp alerts when purchase orders are issued.
-                  </p>
-
-                  <div className="space-y-3 pt-2">
-                    <div className="flex items-start gap-3">
-                      <div className="w-5 h-5 rounded-full bg-[#36C98F]/20 text-[#36C98F] flex items-center justify-center shrink-0 mt-0.5">
-                        <CheckCircle2 className="w-3.5 h-3.5" />
+          {/* CAPABILITY 4: Order Handoff & Production Release (Visual Left, Text Right) */}
+          <section id="order-handoff" className="py-16 lg:py-20 border-b border-[#1E2E42] bg-[#0B111B] relative overflow-hidden">
+            <Container size="wide">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+                {/* Simplified Visual on Left */}
+                <div className="lg:col-span-6 lg:order-1">
+                  <div className="rounded-2xl bg-[#101B2B] border border-[#23354C] p-6 shadow-2xl space-y-4">
+                    <div className="flex items-center justify-between pb-3.5 border-b border-[#1E2E42]">
+                      <div className="flex items-center gap-2">
+                        <Boxes className="w-4 h-4 text-[#A855F7]" />
+                        <span className="text-sm font-bold text-white">Purchase Order ➔ Job Release</span>
                       </div>
-                      <div>
-                        <strong className="text-xs sm:text-sm text-[#F5F3ED] block">
-                          Live Estimator & Win-Rate Analytics
-                        </strong>
-                        <span className="text-xs text-[#A4B0BE]">
-                          Track quote conversion rate by customer, machine process, and quoting engineer.
-                        </span>
+                      <span className="text-xs font-mono font-bold text-[#36C98F] px-2 py-0.5 rounded bg-[#36C98F]/15 border border-[#36C98F]/30">
+                        100% Rate Match
+                      </span>
+                    </div>
+
+                    <div className="p-3.5 rounded-xl bg-[#080E17] border border-[#1E2E42] space-y-2">
+                      <div className="flex items-center justify-between text-xs">
+                        <span className="text-[#94A3B8]">Client PO #PO-9842:</span>
+                        <span className="font-mono text-white font-semibold">Verified against Quote #QT-8421</span>
+                      </div>
+                      <div className="flex items-center justify-between text-xs pt-1 border-t border-[#1E2E42]">
+                        <span className="text-[#94A3B8]">Drawing Revision:</span>
+                        <span className="font-mono text-[#36C98F] font-semibold">Rev B (Customer Approved)</span>
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3">
-                      <div className="w-5 h-5 rounded-full bg-[#36C98F]/20 text-[#36C98F] flex items-center justify-center shrink-0 mt-0.5">
-                        <CheckCircle2 className="w-3.5 h-3.5" />
+                    <div className="grid grid-cols-2 gap-3 text-xs">
+                      <div className="p-3 rounded-lg bg-[#16263A] border border-[#23354C]">
+                        <span className="text-[10px] text-[#94A3B8] uppercase block">Shop Traveler</span>
+                        <span className="font-bold text-white mt-0.5 block">Job Card #JC-104</span>
                       </div>
-                      <div>
-                        <strong className="text-xs sm:text-sm text-[#F5F3ED] block">
-                          WhatsApp Dispatch & Delivery Updates
-                        </strong>
-                        <span className="text-xs text-[#A4B0BE]">
-                          Send automated dispatch notes, inspection reports, and quotation links directly via WhatsApp.
-                        </span>
+                      <div className="p-3 rounded-lg bg-[#16263A] border border-[#23354C]">
+                        <span className="text-[10px] text-[#94A3B8] uppercase block">ERP Sync</span>
+                        <span className="font-bold text-[#36C98F] mt-0.5 block">Exported to Tally</span>
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3">
-                      <div className="w-5 h-5 rounded-full bg-[#36C98F]/20 text-[#36C98F] flex items-center justify-center shrink-0 mt-0.5">
-                        <CheckCircle2 className="w-3.5 h-3.5" />
-                      </div>
-                      <div>
-                        <strong className="text-xs sm:text-sm text-[#F5F3ED] block">
-                          Instant Mobile Approvals
-                        </strong>
-                        <span className="text-xs text-[#A4B0BE]">
-                          Managing directors can approve high-value quotes and special markups directly from mobile.
-                        </span>
-                      </div>
+                    <div className="p-3 rounded-xl bg-[#36C98F]/10 border border-[#36C98F]/30 flex items-center justify-between text-xs">
+                      <span className="text-white font-medium">Released to CNC Spindles</span>
+                      <span className="text-[#36C98F] font-bold">Plant 01 Operating</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="lg:col-span-6 lg:order-1">
-                  <ReportingMobileMockup />
+                {/* Text Content on Right */}
+                <div className="lg:col-span-6 lg:order-2 space-y-5">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-xs font-semibold uppercase tracking-wider text-[#A855F7]">
+                    <Boxes className="w-3.5 h-3.5" />
+                    <span>SHOP FLOOR RELEASE</span>
+                  </div>
+
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-snug">
+                    From approved quote to shop release in one click.
+                  </h2>
+
+                  <p className="text-sm sm:text-base text-[#94A3B8] leading-relaxed">
+                    When the customer sends a purchase order, KanchanFlow automatically validates unit prices and tax codes against the approved quote. With one click, release verified job travelers directly to machine operators.
+                  </p>
+
+                  {/* Exactly 3 Key Benefits */}
+                  <div className="space-y-3.5 pt-2">
+                    <div className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-[#36C98F]/20 text-[#36C98F] flex items-center justify-center shrink-0 mt-0.5">
+                        <CheckCircle2 className="w-3.5 h-3.5" />
+                      </div>
+                      <div>
+                        <strong className="text-sm font-bold text-white block">Automated PO Line-Item Check</strong>
+                        <span className="text-xs text-[#94A3B8]">Flag price discrepancies between customer POs and approved quotes before metal is cut.</span>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-[#36C98F]/20 text-[#36C98F] flex items-center justify-center shrink-0 mt-0.5">
+                        <CheckCircle2 className="w-3.5 h-3.5" />
+                      </div>
+                      <div>
+                        <strong className="text-sm font-bold text-white block">Digital Shop Travelers</strong>
+                        <span className="text-xs text-[#94A3B8]">Generate job cards with approved drawing links, routing sequence, and quality checklists.</span>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-[#36C98F]/20 text-[#36C98F] flex items-center justify-center shrink-0 mt-0.5">
+                        <CheckCircle2 className="w-3.5 h-3.5" />
+                      </div>
+                      <div>
+                        <strong className="text-sm font-bold text-white block">Seamless ERP / Tally Export</strong>
+                        <span className="text-xs text-[#94A3B8]">Export verified order headers and item masters into your ERP accounting ledger cleanly.</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </Container>
           </section>
         </div>
 
-        {/* SECTION 7: COMPARISON TABLE */}
-        <section
-          id="capabilities"
-          className="py-20 lg:py-24 bg-[#111B29] border-t border-[#2A3B50] relative"
-        >
-          <div className="absolute inset-0 bg-dot-industrial opacity-25 pointer-events-none" />
-
+        {/* ========================================================= */}
+        {/* SECTION 5: HOW IT WORKS (Compact 4-Step Narrative Flow)  */}
+        {/* ========================================================= */}
+        <section id="workflow" className="py-16 lg:py-20 border-b border-[#1E2E42] bg-[#0C1422] relative scroll-mt-20">
           <Container>
             <SectionHeading
-              eyebrow="Capability Comparison"
-              title="Spreadsheets & Email vs. Connected KanchanFlow Workflow"
-              description="A clear, realistic comparison of how switching to a dedicated manufacturing CRM resolves traditional quotation friction."
+              eyebrow="CONNECTED CADENCE"
+              title="Four connected steps from enquiry to production."
+              description="A clear, repeatable workflow designed to eliminate friction between technical sales, commercial costing, and plant operations."
             />
 
-            {/* Desktop Table */}
-            <div className="mt-14 hidden md:block rounded-xl border border-[#2A3B50] bg-[#0B111B] overflow-hidden shadow-2xl">
+            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {/* Step 1 */}
+              <div className="p-6 rounded-2xl bg-[#101B2B] border border-[#23354C] hover:border-[#F0B33E]/50 transition-all shadow-lg flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="w-9 h-9 rounded-xl bg-[#F0B33E]/15 border border-[#F0B33E]/30 text-[#F0B33E] font-mono font-bold text-sm flex items-center justify-center">
+                      01
+                    </span>
+                    <span className="text-[10px] font-mono uppercase text-[#94A3B8]">Intake</span>
+                  </div>
+                  <h3 className="text-base font-bold text-white tracking-tight">Enquiry & Drawing Capture</h3>
+                  <p className="mt-2 text-xs text-[#94A3B8] leading-relaxed">
+                    Log customer RFQs, 2D/3D CAD drawings, specifications, and delivery target dates in one shared queue.
+                  </p>
+                </div>
+                <div className="mt-5 pt-3 border-t border-[#1E2E42] text-[11px] text-[#36C98F] font-mono flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5" /> Centralized Asset Storage
+                </div>
+              </div>
+
+              {/* Step 2 */}
+              <div className="p-6 rounded-2xl bg-[#101B2B] border border-[#23354C] hover:border-[#36C98F]/50 transition-all shadow-lg flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="w-9 h-9 rounded-xl bg-[#36C98F]/15 border border-[#36C98F]/30 text-[#36C98F] font-mono font-bold text-sm flex items-center justify-center">
+                      02
+                    </span>
+                    <span className="text-[10px] font-mono uppercase text-[#94A3B8]">Estimation</span>
+                  </div>
+                  <h3 className="text-base font-bold text-white tracking-tight">BOM Costing & Rates</h3>
+                  <p className="mt-2 text-xs text-[#94A3B8] leading-relaxed">
+                    Calculate raw material weights, machine cycle times, tooling overheads, and target profit margins.
+                  </p>
+                </div>
+                <div className="mt-5 pt-3 border-t border-[#1E2E42] text-[11px] text-[#36C98F] font-mono flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5" /> Spindle Rate Governance
+                </div>
+              </div>
+
+              {/* Step 3 */}
+              <div className="p-6 rounded-2xl bg-[#101B2B] border border-[#23354C] hover:border-[#38BDF8]/50 transition-all shadow-lg flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="w-9 h-9 rounded-xl bg-[#38BDF8]/15 border border-[#38BDF8]/30 text-[#38BDF8] font-mono font-bold text-sm flex items-center justify-center">
+                      03
+                    </span>
+                    <span className="text-[10px] font-mono uppercase text-[#94A3B8]">Approval</span>
+                  </div>
+                  <h3 className="text-base font-bold text-white tracking-tight">Revision Governance</h3>
+                  <p className="mt-2 text-xs text-[#94A3B8] leading-relaxed">
+                    Issue branded quotes with immutable revision tags. Track cost deltas, customer opens, and final approvals.
+                  </p>
+                </div>
+                <div className="mt-5 pt-3 border-t border-[#1E2E42] text-[11px] text-[#36C98F] font-mono flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5" /> Immutable Version Log
+                </div>
+              </div>
+
+              {/* Step 4 */}
+              <div className="p-6 rounded-2xl bg-[#101B2B] border border-[#23354C] hover:border-[#A855F7]/50 transition-all shadow-lg flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="w-9 h-9 rounded-xl bg-[#A855F7]/15 border border-[#A855F7]/30 text-[#A855F7] font-mono font-bold text-sm flex items-center justify-center">
+                      04
+                    </span>
+                    <span className="text-[10px] font-mono uppercase text-[#94A3B8]">Execution</span>
+                  </div>
+                  <h3 className="text-base font-bold text-white tracking-tight">Order & Shop Handoff</h3>
+                  <p className="mt-2 text-xs text-[#94A3B8] leading-relaxed">
+                    Convert approved quotes into verified production job travelers and BOM releases for the shop floor.
+                  </p>
+                </div>
+                <div className="mt-5 pt-3 border-t border-[#1E2E42] text-[11px] text-[#36C98F] font-mono flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5" /> 1-Click Shop Release
+                </div>
+              </div>
+            </div>
+          </Container>
+        </section>
+
+        {/* ========================================================= */}
+        {/* SECTION 6: BUSINESS OUTCOMES (Why Trust KanchanFlow)       */}
+        {/* ========================================================= */}
+        <section className="py-16 lg:py-20 border-b border-[#1E2E42] bg-[#0B111B] relative">
+          <Container>
+            <SectionHeading
+              eyebrow="MEASURABLE IMPACT"
+              title="Real operational outcomes on your shop floor and bottom line."
+              description="KanchanFlow is engineered specifically to eliminate quotation delays, protect commercial margins, and prevent machining rework."
+            />
+
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* Outcome 1 */}
+              <div className="p-7 rounded-2xl bg-[#101B2B] border border-[#23354C] space-y-4 shadow-xl hover:-translate-y-1 transition-transform">
+                <div className="w-12 h-12 rounded-xl bg-[#F0B33E]/15 border border-[#F0B33E]/30 text-[#F0B33E] flex items-center justify-center font-bold text-lg font-mono">
+                  3x
+                </div>
+                <h3 className="text-lg font-bold text-white tracking-tight">Faster Quote Turnaround</h3>
+                <p className="text-xs sm:text-sm text-[#94A3B8] leading-relaxed">
+                  Cut estimation turnaround from 5–7 days to under 48 hours. Send accurate, professional quotes before your competitors finish their initial spreadsheet.
+                </p>
+                <div className="pt-3 border-t border-[#1E2E42] text-xs text-[#36C98F] font-mono font-medium">
+                  Result: +32% Win Rate on High-Value RFQs
+                </div>
+              </div>
+
+              {/* Outcome 2 */}
+              <div className="p-7 rounded-2xl bg-[#101B2B] border border-[#23354C] space-y-4 shadow-xl hover:-translate-y-1 transition-transform">
+                <div className="w-12 h-12 rounded-xl bg-[#36C98F]/15 border border-[#36C98F]/30 text-[#36C98F] flex items-center justify-center font-bold text-lg font-mono">
+                  100%
+                </div>
+                <h3 className="text-lg font-bold text-white tracking-tight">Protected Profit Margins</h3>
+                <p className="text-xs sm:text-sm text-[#94A3B8] leading-relaxed">
+                  Lock machine hourly rates, scrap recovery factors, and minimum margin approval gates so estimators never commit to unprofitable jobs.
+                </p>
+                <div className="pt-3 border-t border-[#1E2E42] text-xs text-[#36C98F] font-mono font-medium">
+                  Result: Zero Negative-Margin Jobs Released
+                </div>
+              </div>
+
+              {/* Outcome 3 */}
+              <div className="p-7 rounded-2xl bg-[#101B2B] border border-[#23354C] space-y-4 shadow-xl hover:-translate-y-1 transition-transform">
+                <div className="w-12 h-12 rounded-xl bg-[#38BDF8]/15 border border-[#38BDF8]/30 text-[#38BDF8] flex items-center justify-center font-bold text-lg font-mono">
+                  0%
+                </div>
+                <h3 className="text-lg font-bold text-white tracking-tight">Outdated Drawing Errors</h3>
+                <p className="text-xs sm:text-sm text-[#94A3B8] leading-relaxed">
+                  Every quotation is version-locked to the customer-approved CAD drawing. Production operators always receive verified, approved drawing revisions.
+                </p>
+                <div className="pt-3 border-t border-[#1E2E42] text-xs text-[#36C98F] font-mono font-medium">
+                  Result: Complete Elimination of Scrap Rework
+                </div>
+              </div>
+            </div>
+          </Container>
+        </section>
+
+        {/* ========================================================= */}
+        {/* SECTION 7: STREAMLINED COMPARISON TABLE                    */}
+        {/* ========================================================= */}
+        <section className="py-16 lg:py-20 border-b border-[#1E2E42] bg-[#0C1422] relative">
+          <Container>
+            <SectionHeading
+              eyebrow="CAPABILITY COMPARISON"
+              title="Spreadsheets vs. Connected KanchanFlow Workflow"
+              description="See how switching to a dedicated manufacturing platform eliminates traditional quoting bottlenecks."
+            />
+
+            {/* Desktop Clean Table */}
+            <div className="mt-12 hidden md:block rounded-2xl border border-[#23354C] bg-[#101B2B] overflow-hidden shadow-2xl">
               <table className="w-full text-left border-collapse">
                 <thead>
-                  <tr className="border-b border-[#2A3B50] bg-[#16263A]/80 text-xs font-semibold text-[#F5F3ED]">
-                    <th className="py-4 px-6 w-1/4">Operational Dimension</th>
-                    <th className="py-4 px-6 w-3/8 text-red-400/90">
-                      Traditional Excel & Email Process
-                    </th>
-                    <th className="py-4 px-6 w-3/8 text-[#F0B33E]">
-                      KanchanFlow Connected Platform
-                    </th>
+                  <tr className="border-b border-[#1E2E42] bg-[#16263A] text-xs font-semibold text-white">
+                    <th className="py-4 px-6 w-1/4">Operational Phase</th>
+                    <th className="py-4 px-6 w-3/8 text-rose-400">Traditional Excel & Email Process</th>
+                    <th className="py-4 px-6 w-3/8 text-[#F0B33E]">KanchanFlow Connected Platform</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-[#2A3B50]/60 text-xs sm:text-sm">
+                <tbody className="divide-y divide-[#1E2E42] text-xs sm:text-sm">
                   {comparisonItems.map((item, idx) => (
                     <tr
                       key={item.dimension}
-                      className={idx % 2 === 0 ? "bg-[#0B111B]" : "bg-[#111B29]/40"}
+                      className={idx % 2 === 0 ? "bg-[#101B2B]" : "bg-[#0E1725]"}
                     >
-                      <td className="py-4 px-6 font-semibold text-[#F5F3ED] align-top">
-                        {item.dimension}
-                      </td>
-                      <td className="py-4 px-6 text-[#A4B0BE] align-top leading-relaxed">
-                        <div className="flex items-start gap-2">
-                          <XCircle className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
+                      <td className="py-4 px-6 font-bold text-white align-top">{item.dimension}</td>
+                      <td className="py-4 px-6 text-[#94A3B8] align-top leading-relaxed">
+                        <div className="flex items-start gap-2.5">
+                          <XCircle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
                           <span>{item.traditional}</span>
                         </div>
                       </td>
-                      <td className="py-4 px-6 text-[#F5F3ED] align-top leading-relaxed bg-[#F0B33E]/5">
-                        <div className="flex items-start gap-2">
+                      <td className="py-4 px-6 text-white align-top leading-relaxed bg-[#F0B33E]/5">
+                        <div className="flex items-start gap-2.5">
                           <CheckCircle2 className="w-4 h-4 text-[#36C98F] shrink-0 mt-0.5" />
-                          <span>{item.kanchanflow}</span>
+                          <span className="font-medium">{item.kanchanflow}</span>
                         </div>
                       </td>
                     </tr>
@@ -634,28 +744,17 @@ export default function FeaturesPage() {
               </table>
             </div>
 
-            {/* Mobile Responsive Stacked Cards */}
-            <div className="mt-10 md:hidden space-y-4">
+            {/* Mobile Stacked Cards */}
+            <div className="mt-8 md:hidden space-y-4">
               {comparisonItems.map((item) => (
-                <div
-                  key={item.dimension}
-                  className="p-5 rounded-xl bg-[#0B111B] border border-[#2A3B50] space-y-3"
-                >
-                  <h3 className="font-bold text-[#F5F3ED] text-base">
-                    {item.dimension}
-                  </h3>
-
-                  <div className="p-3 rounded bg-red-500/10 border border-red-500/20 text-xs text-[#A4B0BE] space-y-1">
-                    <span className="text-red-400 font-semibold block">
-                      Traditional Excel & Email:
-                    </span>
+                <div key={item.dimension} className="p-5 rounded-xl bg-[#101B2B] border border-[#23354C] space-y-3">
+                  <h3 className="font-bold text-white text-sm">{item.dimension}</h3>
+                  <div className="p-3 rounded-lg bg-rose-500/10 border border-rose-500/25 text-xs text-[#94A3B8] space-y-1">
+                    <span className="text-rose-400 font-semibold block">Traditional Process:</span>
                     <p>{item.traditional}</p>
                   </div>
-
-                  <div className="p-3 rounded bg-[#36C98F]/10 border border-[#36C98F]/30 text-xs text-[#F5F3ED] space-y-1">
-                    <span className="text-[#36C98F] font-semibold block">
-                      With KanchanFlow:
-                    </span>
+                  <div className="p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/25 text-xs text-white space-y-1">
+                    <span className="text-[#36C98F] font-semibold block">With KanchanFlow:</span>
                     <p>{item.kanchanflow}</p>
                   </div>
                 </div>
@@ -664,10 +763,12 @@ export default function FeaturesPage() {
           </Container>
         </section>
 
-        {/* SECTION 8: FINAL CTA */}
+        {/* ========================================================= */}
+        {/* SECTION 8: FINAL CALL TO ACTION                           */}
+        {/* ========================================================= */}
         <SectionCTA
-          heading="Experience the connected manufacturing workflow."
-          copy="Schedule a customized 30-minute demonstration with our manufacturing solutions team."
+          heading="Ready to eliminate quotation chaos?"
+          copy="See how KanchanFlow brings clarity, speed, and margin control to your precision manufacturing sales."
           primaryCtaText="Book a Demo"
           secondaryCtaText="View Pricing Plans"
           secondaryHref="/pricing"
@@ -676,5 +777,22 @@ export default function FeaturesPage() {
 
       <Footer />
     </div>
+  );
+}
+
+function LockIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+      <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+    </svg>
   );
 }
