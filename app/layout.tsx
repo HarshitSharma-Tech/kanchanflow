@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
-import { GoldenSparkles } from "@/components/golden-sparkles";
 import { ScrollProgress } from "@/components/scroll-progress";
 import "./globals.css";
 
@@ -67,7 +66,6 @@ export default function RootLayout({
       className={`${inter.variable} ${jetbrainsMono.variable} h-full antialiased dark`}
     >
       <body className="min-h-full flex flex-col bg-[#08090C] text-[#F5F3ED] font-sans selection:bg-[#F0B33E]/30 selection:text-[#F0B33E]">
-        <GoldenSparkles />
         <ScrollProgress />
         <a
           href="#main-content"

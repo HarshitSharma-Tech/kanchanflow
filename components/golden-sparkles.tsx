@@ -11,28 +11,19 @@ interface Particle {
   opacity: number;
   maxOpacity: number;
   pulseSpeed: number;
-  colorIndex: number;
+  color: string;
   rotation: number;
   rotSpeed: number;
 }
 
-export function GoldenSparkles() {
+interface GoldenSparklesProps {
+  className?: string;
+}
+
+export function GoldenSparkles({ className = "" }: GoldenSparklesProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
-    // 1. Accessibility & Performance Guard: Respect prefers-reduced-motion
-    if (
-      typeof window === "undefined" ||
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-      return;
-    }
-
-    // 2. Mobile Battery Guard: Do not run heavy canvas animation loops on small mobile screens
-    if (window.innerWidth < 768) {
-      return;
-    }
-
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -40,181 +31,188 @@ export function GoldenSparkles() {
     if (!ctx) return;
 
     let animationFrameId: number;
-    let width = (canvas.width = window.innerWidth);
-    let height = (canvas.height = window.innerHeight);
-    let isVisible = true;
 
-    // Golden Palette
-    const colors = ["#F0B33E", "#FFD875", "#FFEEC2", "#D99B26", "#F5C869"];
+    const updateDimensions = () => {
+      if (!canvas) return;
+      const parent = canvas.parentElement;
+      const width = parent ? parent.clientWidth : window.innerWidth;
+      const height = parent ? parent.clientHeight : window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+      return { width, height };
+    };
 
-    // 3. Pre-render particle glow sprites once into offscreen canvases
-    // Eliminates thousands of createRadialGradient calls per second
-    const spriteSize = 32;
-    const sprites: HTMLCanvasElement[] = colors.map((color) => {
-      const offscreen = document.createElement("canvas");
-      offscreen.width = spriteSize;
-      offscreen.height = spriteSize;
-      const offCtx = offscreen.getContext("2d");
-      if (offCtx) {
-        const rad = spriteSize / 2;
-        const grad = offCtx.createRadialGradient(rad, rad, 0, rad, rad, rad);
-        grad.addColorStop(0, color);
-        grad.addColorStop(0.35, color);
-        grad.addColorStop(1, "rgba(240, 179, 62, 0)");
-        offCtx.fillStyle = grad;
-        offCtx.beginPath();
-        offCtx.arc(rad, rad, rad, 0, Math.PI * 2);
-        offCtx.fill();
-      }
-      return offscreen;
-    });
+    let { width, height } = updateDimensions() || {
+      width: window.innerWidth,
+      height: window.innerHeight,
+    };
 
-    // Mouse coordinates with smoothing
+    // Golden luxury sparkle palette
+    const colors = [
+      "#F0B33E", // Molten Gold
+      "#FFD875", // Bright Gold highlight
+      "#FFEEC2", // Warm White sparkle
+      "#D99B26", // Deep Amber Gold
+      "#F5C869", // Luminous Gold
+    ];
+
+    // Smooth mouse coordinates relative to hero canvas
     const mouse = {
       x: width / 2,
       y: height / 2,
       targetX: width / 2,
       targetY: height / 2,
+      isInside: false,
     };
 
-    let mouseMoving = false;
-    let mouseTimeout: ReturnType<typeof setTimeout>;
-
     const handleMouseMove = (e: MouseEvent) => {
-      mouse.targetX = e.clientX;
-      mouse.targetY = e.clientY;
-      mouseMoving = true;
-      clearTimeout(mouseTimeout);
-      mouseTimeout = setTimeout(() => {
-        mouseMoving = false;
-      }, 1200);
+      if (!canvas) return;
+      const rect = canvas.getBoundingClientRect();
+      mouse.targetX = e.clientX - rect.left;
+      mouse.targetY = e.clientY - rect.top;
+      mouse.isInside =
+        e.clientX >= rect.left - 50 &&
+        e.clientX <= rect.right + 50 &&
+        e.clientY >= rect.top - 50 &&
+        e.clientY <= rect.bottom + 50;
     };
 
     const handleResize = () => {
-      if (!canvas) return;
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-    };
-
-    // 4. Pause animation when tab is inactive or page is scrolled down
-    const handleVisibility = () => {
-      isVisible = !document.hidden;
-      if (isVisible) {
-        lastTime = performance.now();
-        animationFrameId = requestAnimationFrame(render);
-      } else {
-        cancelAnimationFrame(animationFrameId);
-      }
-    };
-
-    let isScrolledPast = false;
-    const handleScroll = () => {
-      const scrolled = window.scrollY > window.innerHeight * 1.2;
-      if (scrolled !== isScrolledPast) {
-        isScrolledPast = scrolled;
-        if (isScrolledPast) {
-          cancelAnimationFrame(animationFrameId);
-        } else if (isVisible) {
-          lastTime = performance.now();
-          animationFrameId = requestAnimationFrame(render);
-        }
+      const dim = updateDimensions();
+      if (dim) {
+        width = dim.width;
+        height = dim.height;
       }
     };
 
     window.addEventListener("mousemove", handleMouseMove, { passive: true });
-    window.addEventListener("resize", handleResize, { passive: true });
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    document.addEventListener("visibilitychange", handleVisibility);
+    window.addEventListener("resize", handleResize);
 
-    // 5. Lightweight particle count: 20 high-fidelity sparkles on desktop
-    const particleCount = 20;
+    // Dynamic particle count scaled to hero size (glistening & dense)
+    const particleCount = Math.min(Math.floor(width / 32) + 15, 45);
     const particles: Particle[] = [];
 
     for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        size: Math.random() * 2 + 1,
-        speedY: Math.random() * 0.22 + 0.08,
-        speedX: (Math.random() - 0.5) * 0.15,
-        opacity: Math.random() * 0.6 + 0.2,
-        maxOpacity: Math.random() * 0.4 + 0.5,
-        pulseSpeed: Math.random() * 0.015 + 0.005,
-        colorIndex: Math.floor(Math.random() * colors.length),
+        size: Math.random() * 2.4 + 1.2,
+        speedY: Math.random() * 0.35 + 0.15, // Falling gently from top to bottom
+        speedX: (Math.random() - 0.5) * 0.25, // Subtle horizontal sway
+        opacity: Math.random() * 0.65 + 0.25,
+        maxOpacity: Math.random() * 0.45 + 0.55,
+        pulseSpeed: Math.random() * 0.02 + 0.008,
+        color: colors[Math.floor(Math.random() * colors.length)],
         rotation: Math.random() * Math.PI * 2,
-        rotSpeed: (Math.random() - 0.5) * 0.015,
+        rotSpeed: (Math.random() - 0.5) * 0.025,
       });
     }
 
-    let lastTime = performance.now();
+    let isVisible = true;
+    const handleVisibility = () => {
+      isVisible = !document.hidden;
+      if (isVisible) {
+        animationFrameId = requestAnimationFrame(render);
+      } else {
+        cancelAnimationFrame(animationFrameId);
+      }
+    };
+    document.addEventListener("visibilitychange", handleVisibility);
 
-    // 6. Main 60fps render loop with zero GC allocations
-    const render = (currentTime: number) => {
-      if (!isVisible || isScrolledPast) return;
-
-      const delta = Math.min((currentTime - lastTime) / 16.67, 2);
-      lastTime = currentTime;
-
+    // Main render loop
+    const render = () => {
+      if (!isVisible) return;
       ctx.clearRect(0, 0, width, height);
 
-      // Smooth mouse interpolation
-      if (mouseMoving) {
-        mouse.x += (mouse.targetX - mouse.x) * 0.05 * delta;
-        mouse.y += (mouse.targetY - mouse.y) * 0.05 * delta;
-      }
+      // Smooth mouse interpolation towards cursor
+      mouse.x += (mouse.targetX - mouse.x) * 0.08;
+      mouse.y += (mouse.targetY - mouse.y) * 0.08;
 
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
 
-        p.y += p.speedY * delta;
-        p.x += p.speedX * delta;
-        p.rotation += p.rotSpeed * delta;
+        // Gravitational downward fall
+        p.y += p.speedY;
+        p.x += p.speedX;
+        p.rotation += p.rotSpeed;
 
-        p.opacity += p.pulseSpeed * delta;
-        if (p.opacity > p.maxOpacity || p.opacity < 0.15) {
+        // Pulsing twinkle opacity
+        p.opacity += p.pulseSpeed;
+        if (p.opacity > p.maxOpacity || p.opacity < 0.18) {
           p.pulseSpeed = -p.pulseSpeed;
         }
 
-        // Gentle cursor interaction
-        if (mouseMoving) {
+        // Active mouse attraction & swirling wake
+        if (mouse.isInside) {
           const dx = mouse.x - p.x;
           const dy = mouse.y - p.y;
-          const distSq = dx * dx + dy * dy;
-          if (distSq < 40000) {
-            const dist = Math.sqrt(distSq);
-            const force = (1 - dist / 200) * 0.02 * delta;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 260) {
+            const force = (1 - dist / 260) * 0.045;
             p.x += dx * force;
-            p.y += dy * force * 0.4;
+            p.y += dy * force * 0.5;
           }
         }
 
-        // Boundary wrap
-        if (p.y > height + 10) {
-          p.y = -10;
+        // Wrap around hero section boundaries
+        if (p.y > height + 15) {
+          p.y = -12;
           p.x = Math.random() * width;
         }
-        if (p.x > width + 10) p.x = -10;
-        if (p.x < -10) p.x = width + 10;
+        if (p.x > width + 15) p.x = -12;
+        if (p.x < -15) p.x = width + 15;
 
-        // Draw cached sprite
-        const sprite = sprites[p.colorIndex];
-        const drawSize = p.size * 6;
+        // Draw shiny 4-point diamond star sparkle with golden radial glow
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rotation);
+
+        // 1. Soft Molten Gold Atmospheric Glow
+        const glowRadius = p.size * 3.8;
+        const gradient = ctx.createRadialGradient(0, 0, 0, 0, 0, glowRadius);
+        gradient.addColorStop(0, p.color);
+        gradient.addColorStop(0.35, p.color);
+        gradient.addColorStop(1, "rgba(240, 179, 62, 0)");
+
+        ctx.fillStyle = gradient;
         ctx.globalAlpha = Math.max(0, Math.min(1, p.opacity));
-        ctx.drawImage(
-          sprite,
-          p.x - drawSize / 2,
-          p.y - drawSize / 2,
-          drawSize,
-          drawSize
-        );
+        ctx.beginPath();
+        ctx.arc(0, 0, glowRadius, 0, Math.PI * 2);
+        ctx.fill();
 
-        // Core bright center for larger sparkles
-        if (p.size > 2) {
-          ctx.fillStyle = "#FFFFFF";
+        // 2. Shiny 4-Point Diamond Star Sparkle (quadratic curved facets)
+        ctx.fillStyle = p.color;
+        ctx.beginPath();
+        const s = p.size * 2.4;
+        ctx.moveTo(0, -s);
+        ctx.quadraticCurveTo(0, 0, s, 0);
+        ctx.quadraticCurveTo(0, 0, 0, s);
+        ctx.quadraticCurveTo(0, 0, -s, 0);
+        ctx.quadraticCurveTo(0, 0, 0, -s);
+        ctx.closePath();
+        ctx.fill();
+
+        // 3. Central Brilliant White Star Core (Gives crisp, diamond sparkle)
+        ctx.fillStyle = "#FFFFFF";
+        ctx.beginPath();
+        ctx.arc(0, 0, p.size * 0.48, 0, Math.PI * 2);
+        ctx.fill();
+
+        // 4. Subtle Shimmer Cross Spike on larger particles
+        if (p.size > 2.0) {
+          ctx.strokeStyle = "rgba(255, 255, 255, 0.85)";
+          ctx.lineWidth = 0.8;
+          const flare = s * 1.4;
           ctx.beginPath();
-          ctx.arc(p.x, p.y, p.size * 0.4, 0, Math.PI * 2);
-          ctx.fill();
+          ctx.moveTo(-flare, 0);
+          ctx.lineTo(flare, 0);
+          ctx.moveTo(0, -flare);
+          ctx.lineTo(0, flare);
+          ctx.stroke();
         }
+
+        ctx.restore();
       }
 
       animationFrameId = requestAnimationFrame(render);
@@ -226,9 +224,7 @@ export function GoldenSparkles() {
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("resize", handleResize);
-      window.removeEventListener("scroll", handleScroll);
       document.removeEventListener("visibilitychange", handleVisibility);
-      clearTimeout(mouseTimeout);
     };
   }, []);
 
@@ -236,7 +232,7 @@ export function GoldenSparkles() {
     <canvas
       ref={canvasRef}
       aria-hidden="true"
-      className="pointer-events-none fixed inset-0 z-30 h-full w-full select-none hidden md:block"
+      className={`pointer-events-none absolute inset-0 z-15 h-full w-full select-none ${className}`}
     />
   );
 }

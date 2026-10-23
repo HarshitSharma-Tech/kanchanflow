@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { Container } from "./container";
 import { Button } from "./button";
+import { GoldenSparkles } from "./golden-sparkles";
 
 // Code splitting: dynamically import DemoModal so it does not block critical bundle
 const DemoModal = dynamic(
@@ -31,20 +32,24 @@ export function VideoHero() {
 
   // Defer video stream until after initial render paint to guarantee 90+ LCP
   useEffect(() => {
-    // Check reduced motion preference
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
 
-    // On mobile or reduced-motion, defer or let user control
     if (!prefersReducedMotion) {
-      // Small timeout lets browser finish critical layout and fonts
       const timer = setTimeout(() => {
         setShouldLoadVideo(true);
-      }, 100);
+      }, 80);
       return () => clearTimeout(timer);
     }
   }, []);
+
+  // Ensure video runs at smooth 0.6x cinematic walking speed
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.6;
+    }
+  }, [shouldLoadVideo]);
 
   const togglePlay = () => {
     if (videoRef.current) {
@@ -61,35 +66,44 @@ export function VideoHero() {
     <>
       <section className="relative min-h-[92vh] flex items-center pt-10 pb-16 lg:pt-16 lg:pb-24 overflow-hidden bg-[#08090C]">
         {/* ========================================================= */}
-        {/* FULL BACKGROUND VIDEO / POSTER: Subtle Precision Manufacturing */}
+        {/* FULL BACKGROUND VIDEO / POSTER: Walking Down Factory Side  */}
         {/* ========================================================= */}
         <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none select-none z-0">
           <video
             ref={videoRef}
-            poster="/videos/hero-poster.webp"
+            poster="/videos/factory-poster.webp"
             autoPlay
             loop
             muted
             playsInline
             preload={shouldLoadVideo ? "metadata" : "none"}
+            onLoadedData={() => {
+              if (videoRef.current) videoRef.current.playbackRate = 0.6;
+            }}
             className="w-full h-full object-cover object-center scale-[1.02] filter contrast-[1.06] brightness-[0.88] opacity-90 transition-opacity duration-700"
           >
             {shouldLoadVideo && (
               <>
-                <source src="/videos/hero-subtle-opt.webm" type="video/webm" />
-                <source src="/videos/hero-subtle-opt.mp4" type="video/mp4" />
+                <source
+                  src="/videos/factory-precision-walkthrough.mp4"
+                  type="video/mp4"
+                />
+                <source
+                  src="/videos/factory-precision-walkthrough.webm"
+                  type="video/webm"
+                />
               </>
             )}
           </video>
 
-          {/* Left Gradient so text has 100% solid contrast on all devices */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#08090C]/95 via-[#08090C]/75 via-45% to-[#08090C]/35 z-10" />
+          {/* Left Gradient for 100% solid contrast on all devices */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#08090C]/95 via-[#08090C]/78 via-45% to-[#08090C]/40 z-10" />
 
           {/* Top & Bottom Vignettes for Seamless Blending */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#08090C] via-transparent via-40% to-[#08090C]/85 z-10" />
 
           {/* Molten Amber / Tungsten Color Grade Tint */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#F0B33E]/10 via-transparent to-amber-950/20 mix-blend-color-dodge z-10 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#F0B33E]/12 via-transparent to-amber-950/20 mix-blend-color-dodge z-10 pointer-events-none" />
 
           {/* Deep Film Contrast Multiplier */}
           <div className="absolute inset-0 bg-[#08090C]/20 mix-blend-multiply z-10 pointer-events-none" />
@@ -133,6 +147,11 @@ export function VideoHero() {
             </defs>
           </svg>
         </div>
+
+        {/* ========================================================= */}
+        {/* SHINY GOLDEN SPARKLES: Scoped ONLY to Hero & Follows Mouse */}
+        {/* ========================================================= */}
+        <GoldenSparkles />
 
         {/* Hero Content Container */}
         <Container size="wide" className="relative z-20">
@@ -229,13 +248,13 @@ export function VideoHero() {
               </div>
             </div>
 
-            {/* Right Side: Unobstructed View with Floating Video Controller Badge */}
+            {/* Right Side: Floating Video Controller Badge */}
             <div className="lg:col-span-4 xl:col-span-5 flex flex-col items-start lg:items-end justify-end">
               <div className="flex items-center gap-2 p-1.5 rounded-full bg-[#08090C]/85 backdrop-blur-md border border-[#262B38] shadow-xl text-xs">
                 <div className="flex items-center gap-2 px-3 py-1">
                   <span className="w-2 h-2 rounded-full bg-[#36C98F] animate-pulse" />
                   <span className="text-white font-medium text-xs">
-                    Precision CNC Machining
+                    Plant Floor • 0.6x Walkthrough
                   </span>
                 </div>
 
@@ -293,7 +312,7 @@ export function VideoHero() {
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#36C98F]" />
                 <span className="text-sm font-semibold text-white">
-                  Precision Plant Engineering • CNC Machining & Costing Pipeline
+                  Precision Plant Floor • 0.6x Cinematic Machining Walkthrough
                 </span>
               </div>
               <button
@@ -309,13 +328,22 @@ export function VideoHero() {
             {/* Video Viewport */}
             <div className="relative aspect-video w-full bg-black">
               <video
-                poster="/videos/hero-poster.webp"
+                poster="/videos/factory-poster.webp"
                 controls
                 autoPlay
+                onLoadedData={(e) => {
+                  e.currentTarget.playbackRate = 0.6;
+                }}
                 className="w-full h-full object-contain filter contrast-[1.08] brightness-[0.92]"
               >
-                <source src="/videos/hero-subtle-opt.webm" type="video/webm" />
-                <source src="/videos/hero-subtle-opt.mp4" type="video/mp4" />
+                <source
+                  src="/videos/factory-precision-walkthrough.mp4"
+                  type="video/mp4"
+                />
+                <source
+                  src="/videos/factory-precision-walkthrough.webm"
+                  type="video/webm"
+                />
               </video>
             </div>
           </div>
